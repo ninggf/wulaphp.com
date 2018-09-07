@@ -1,0 +1,21 @@
+<div class="sidebar">
+    <ul class="main-menu">
+        <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+    <div class="list">
+        <a class="become-backer" href="<%- url_for('/support-wula/') %>">
+            支持一下
+        </a>
+        <ul class="menu-root">
+            <% site.pages.find({type: type}).sort('order').each(function (p) { %>
+                <% var fileName = p.catalog %>
+                <% if (type === 'guide' && fileName) { %>
+                    <li><h3><%= fileName %></h3></li>
+                <% } %>
+                <li>
+                    <a href="<%- url_for(p.path) %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
