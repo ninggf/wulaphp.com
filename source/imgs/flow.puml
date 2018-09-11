@@ -1,4 +1,6 @@
 @startuml flow
+
 A -> B
 B -> C
+
 @enduml
