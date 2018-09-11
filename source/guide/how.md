@@ -1,7 +1,7 @@
 ---
-title: 原理
+title: 
 type: guide
-order: 4
+order: 10
 ---
 
 {% blockquote 古人 , 中国的 %}

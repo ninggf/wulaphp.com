@@ -1,7 +1,7 @@
 ---
 title: 配置
 type: guide
-order: 5
+order: 20
 ---
 
 ## 概述

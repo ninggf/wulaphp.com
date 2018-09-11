@@ -97,6 +97,11 @@ markdown:
 ## Themes: https://hexo.io/themes/
 theme: wula
 
+# search
+search:
+  path: search.json
+  field: page
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

@@ -15,12 +15,14 @@
     <%- page.content %>
     <% if (page.type === 'guide') { %>
       <div class="guide-links">
-        <% site.pages.find({ type: page.type, order: page.order - 1 }).each(function (page) { %>
-          <span>← <a href="<%- url_for(page.path) %>"><%- page.title %></a></span>
-        <% }) %>
-        <% site.pages.find({ type: page.type, order: page.order + 1 }).each(function (page) { %>
-          <span style="float:right"><a href="<%- url_for(page.path) %>"><%- page.title %></a> →</span>
-        <% }) %>
+        <% let prePage = site.pages.find({ type: page.type, order: {'$lt':page.order} }).sort('order') %>
+        <% let nextPage = site.pages.find({ type: page.type, order: {'$gt': page.order } }).sort('order') %>
+        <% if(prePage && prePage.data.length>=1) { %>
+          <span>← <a href="<%- url_for(prePage.data[prePage.data.length-1].path) %>"><%- prePage.data[prePage.data.length-1].title %></a></span>
+        <% } %>
+        <% if(nextPage && nextPage.data.length>=1) { %>
+          <span style="float:right"><a href="<%- url_for(nextPage.data[0].path) %>"><%- nextPage.data[0].title %></a> →</span>
+        <% } %>
       </div>
     <% } %>
     <div class="footer">

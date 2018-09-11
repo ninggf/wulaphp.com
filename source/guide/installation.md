@@ -50,6 +50,19 @@ order: 2
 
 等一会会儿，wulaphp就安装好啦^_^
 
+<p class="tip">
+也许聪明你的已经注意到了:
+**1. 我们没有从`wula/wulaphp`创建项目.**
+**2. 我们没有从`https://github.com/ninggf/wulaphp.git` clone代码.**
+
+那是因为wulaphp分两部分:
+**1. 核心库 - wulaphp**: 框架核心代码,对应Composer包:`wula/wulaphp`
+**2. 项目库 - wula**: 框架目录结构,对应Composer包:`wula/wula`
+
+这样设计的好处是,**框架目录结构**不常变动,而**框架的核心**代码需要经常升级.
+当需要升级`wulaphp`核心库时只需要简单的执行`composer update`即可将框架核心升级到最新.
+</p>
+
 ## 配置
 
 ### 核心配置
@@ -103,7 +116,7 @@ wulaphp提供了wwwroot/.htaccess文件用来实现漂亮的URL, 只要你的Apa
 ```
 > 注:
 >
-> $your_project是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
+> `$your_project`是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
 > 
 > 配置完成后重启apache生效.
 
@@ -137,7 +150,7 @@ DocumentRoot "$your_project/wwwroot"
 
 > 注:
 >
-> $your_project是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
+> `$your_project`是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
 > 
 > 配置完成后重启apache生效.
 
@@ -174,7 +187,7 @@ server {
 
 > 注:
 >
-> 再次强调！$your_project是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
+> 再次强调！`$your_project`是你的wulaphp安装目录，你要根据实际情况进行替换(`pwd`命令可以打印当前目录).
 > 
 > 可以通过`fastcgi_param  APPMODE` 来定义wulaphp的运行模式:
 >   * pro 为线上生产环境
@@ -191,11 +204,18 @@ wulaphp提供了`docker-compose`模板文件,如果你想使用Docker运行wulap
 3. 启动docker: `$ docker-compose up -d`
 4. 关闭docker: `$ docker-compose down`
 
-模板文件中使用的镜像如下:
+**模板文件中使用的镜像如下:**
 * [windywany/php:latest](https://hub.docker.com/r/windywany/php/)为wulaphp定制的php镜像.
 * [mysql:5.7.23](https://hub.docker.com/_/mysql/)
 * [nginx:latest](https://hub.docker.com/_/nginx/)
 * [redis:4.0.11](https://hub.docker.com/_/redis/)
+
+**windywany/php支持的环境变量说明:**
+* `XDEBUG_REMOTE_HOST` 是你电脑的IP，默认`127.0.0.1`
+    * `ifconfig` **类unix**系统查询
+    * `ipconfig /all` **windows**系统查询
+* `XDEBUG_REMOTE_PORT`你的IDE监听的端口,默认`9000`
+* `XDEBUG_ENABLE` 等于1时开启`xdebug`调试,默认`0`
 
 更多Docker使用方法请移步到[Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/).
 
