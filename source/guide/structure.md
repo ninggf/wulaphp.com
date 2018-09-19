@@ -5,7 +5,9 @@ order: 3
 ---
 
 ## 初始目录
+
 安装好wulaphp版框架后,可以看到初始的目录结构如下：
+
 <pre>
 project
 ├─conf                         # 配置目录
@@ -14,13 +16,13 @@ project
 │  ├─cache_config.php          # 缓存配置文件
 │  ├─config.php                # 默认应用配置文件
 │  ├─dbconfig.php              # 默认数据库配置文件
-│  ├─cluster_config.php        # 基于Redis的分布式运行时缓存 
+│  ├─cluster_config.php        # 基于Redis的分布式运行时缓存
 │  ├─redis_config.php          # redis配置文件
 │  └─site.conf                 # docker中nginx的网站配置文件
 ├─crontab                      # 定时任务运行目录
 │  └─cron.php                  # 定时任务脚本
 ├─extensions                   # 扩展目录
-│  └─ext1                      # 扩展 
+│  └─ext1                      # 扩展
 │     ├─classes                # 扩展类
 │     └─ext1.php               # 扩展引导文件
 ├─includes                     # 应用使用的第三方库
@@ -54,7 +56,7 @@ project
 │  │ ├─404.tpl                 # 404页面模板
 │  │ ├─403.tpl                 # 403页面模板
 │  │ ├─500.tpl                 # 500页面模板
-│  │ └─template.php            # 主题数据处理器定义文件 
+│  │ └─template.php            # 主题数据处理器定义文件
 │  └─theme1                    # 其它主题
 │    └─...                     # 主题模板,资源等文件
 ├─wwwroot                      # 网站根目录
@@ -72,6 +74,7 @@ project
 </pre>
 
 ### 目录权限
+
 如果你使用`Mac OS`或`类Unix`系统,那么框架要求**Web服务器**能读写`storage`,`storage/logs`和`storage/logs`目录:
 
 `$ chmod 777 storage storage/tmp storage/logs`
@@ -85,15 +88,15 @@ project
 `bootstrap.php`是用户可修改的引导配置文件,通过修改此文件中的相关常量定义可以自定义项目目录结构:
 
 * `PUBLIC_DIR`: 网站公共目录,默认为`wwwroot`
-    * 同时修改`composer.json`中的`extra.wwwroot`
+  * 同时修改`composer.json`中的`extra.wwwroot`
 * `ASSETS_DIR`: 资源目录,默认为`assets`
-    * 同时修改`composer.json`中的`extra.wula.assets-dir`
+  * 同时修改`composer.json`中的`extra.wula.assets-dir`
 * `MODULE_DIR`: 模块目录,默认为`modules`
-    * 同时修改`composer.json`中的`extra.wula.modules-dir`
+  * 同时修改`composer.json`中的`extra.wula.modules-dir`
 * `THEME_DIR`: 主题目录,默认为`themes`
-    * 同时修改`composer.json`中的`extra.wula.themes-dir`
+  * 同时修改`composer.json`中的`extra.wula.themes-dir`
 * `EXTENSION_DIR`: 扩展目录,默认为`extensions`
-    * 同时修改`composer.json`中的`extra.wula.extensions-dir`
+  * 同时修改`composer.json`中的`extra.wula.extensions-dir`
 * `CONF_DIR`: 配置目录,默认为`conf`
 * `LIBS_DIR`: 第三方库目录,默认为`includes`
 * `STORAGE_DIR`: 存储目录,默认为`storage`
@@ -104,6 +107,7 @@ project
 
 和其它框架不同,`wulaphp`有一个特殊的目录:`themes`主题目录. 为你创建一个可更换主题的网站助力;为你开发一个CMS系统助力.
 在`Controller`(控制器)的`Action`里可以通过以下代码渲染主题中的模板:
+
 ```php
 class MyController extends Controller {
     public function abc(){
