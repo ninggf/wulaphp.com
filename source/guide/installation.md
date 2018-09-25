@@ -7,32 +7,38 @@ order: 2
 
 ## 环境要求
 
-- PHP >= 5.6.9
-- pdo_mysql
-- mysqlnd （支持UTF8MB4用）
-- mbstring
-- curl
-- json
-- gd
+* PHP >= 5.6.9 (推荐 7.1.+)
+* mysqlnd （支持UTF8MB4编码）
+* pdo_mysql
+* mbstring
+* json
 
 <p class="tip">
-推荐安装`redis`,`memcached`,`posix`,`pcntl`,`sockets`,`scws`等扩展.
+推荐安装`curl`,`gd`,`redis`,`memcached`,`posix`,`pcntl`,`sockets`,`scws`等扩展.
 </p>
 
 ## 安装
 
 <p class="tip">
-特别强调下列所有安装方式都需要`Composer`,请事先准备好它。
+在开始安装之前强烈建议事先准备好`Composer`。
 
 如果你使用`Mac OS`或`类Unix`[点我可以下载最新版Composer](https://getcomposer.org/download/)。
-如果你使用的`Windows`,请下载[Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)。
+如果你使用的`Windows`,请下载[Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)并安装。
 
-如果你不了解Composer(作为一个PHPer, Composer是必须会的)，请传送到[Composer](https://getcomposer.org/)或[Google](https://www.google.com/#q=composer)或[度娘](https://www.baidu.com/s?wd=composer)学习一下.
+如果你还不了解Composer，请传送到[Composer](https://getcomposer.org/)或[Google](https://www.google.com/#q=composer)或[度娘](https://www.baidu.com/s?wd=composer)学习一下.
 </p>
+
+### 下载完整包
+
+最简单省事的方式,请到[Github](https://github.com/ninggf/wula/releases)下载最新的
+完整包`wula-vx.x.x.tar.gz`(`x.x.x`是最新的版本号),解压即可(完整包已经包括所有依赖库).
+开箱即用!
+
+> 解压后可以通过`composer update`来升级依赖库到最新版本.
 
 ### Composer
 
-虽然我们知道Composer在国内可能慢得跟蜗牛一样，但是我们依然选择了它:
+超级简单:
 
 `$composer create-project wula/wula your_project`
 
@@ -40,7 +46,7 @@ order: 2
 
 <p class="tip">
 如果真的慢到你无法忍受，可以通过下边的命令使用国内境象：
-`composer config -g repo.packagist composer https://packagist.phpcomposer.com`
+`composer config -g repo.packagist composer https://packagist.laravel-china.org`
 国内境象中的包版本可以会比[packagist.org](https://packagist.org/)有点延时。
 </p>
 
@@ -48,7 +54,7 @@ order: 2
 
 1. `$ git clone https://github.com/ninggf/wula.git your_project`
 2. `$ cd your_project`
-3. `$ composer install --no-dev`
+3. `$ composer install`
 
 等一会会儿，wulaphp就安装好啦^_^
 
@@ -87,7 +93,7 @@ order: 2
 
 ### 目录权限
 
-如果你使用`Mac OS`或`类Unix`,那么框架要求**Web服务器**能读写`storage`,`storage/logs`和`storage/logs`目录:
+如果你使用`Mac OS`或`类Unix`,那么框架要求**Web服务器**能读写`storage`,`storage/tmp`和`storage/logs`目录:
 
 `$ chmod 777 storage storage/tmp storage/logs`
 
@@ -104,7 +110,7 @@ order: 2
 
 ### Apache
 
-wulaphp提供了wwwroot/.htaccess文件用来实现漂亮的URL, 只要你的Apache启用了`mod_rewrite`且像下边这样配置你的网站即可：
+wulaphp提供了`wwwroot/.htaccess`文件用来实现漂亮的URL, 只要你的Apache启用了`mod_rewrite`且像下边这样配置你的网站即可：
 
 ``` xml
 <VirtualHost *:80>
@@ -205,25 +211,25 @@ server {
 > * dev 为开发环境（默认）
 > * test 为测试环境
 >
-> 配置完成后重新加载nginx的配置生效.
+> 配置完成后重新加载nginx的配置生效:`nginx -s reload`.
 
 ## Docker
 
 wulaphp提供了`docker-compose`模板文件,如果你想使用Docker运行wulaphp,请:
 
 1. 重命名`docker-compose.sample.yml`为`docker-compose.yml`
-2. 按需要修改`docker-compose.yml`和`conf/site.conf`
+2. 按需修改`docker-compose.yml`和`conf/site.conf`
 3. 启动docker: `$ docker-compose up -d`
 4. 关闭docker: `$ docker-compose down`
 
 **模板文件中使用的镜像如下:**
 
-* [windywany/php:latest](https://hub.docker.com/r/windywany/php/)为wulaphp定制的php镜像.
+* [windywany/php:latest](https://hub.docker.com/r/windywany/php/) : 为wulaphp定制的php镜像.
 * [mysql:5.7.23](https://hub.docker.com/_/mysql/)
 * [nginx:latest](https://hub.docker.com/_/nginx/)
 * [redis:4.0.11](https://hub.docker.com/_/redis/)
 
-**windywany/php支持的环境变量说明:**
+**`windywany/php`支持的环境变量说明:**
 
 * `XDEBUG_REMOTE_HOST` 是你电脑的IP，默认`127.0.0.1`
   * `ifconfig` **类unix**系统查询

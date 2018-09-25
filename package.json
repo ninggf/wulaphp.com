@@ -7,8 +7,7 @@
     },
     "scripts": {
         "start": "hexo server",
-        "build": "node pre-deploy.js && hexo clean && hexo generate",
-        "plantuml": "node pre-deploy.js",
+        "build": "node pre-deploy.js",
         "deploy": "npm run build"
     },
     "engines": {
@@ -24,7 +23,9 @@
         "hexo-renderer-ejs": "^0.3.1",
         "hexo-renderer-marked": "^0.3.2",
         "hexo-renderer-stylus": "^0.3.3",
-        "hexo-server": "^0.3.1",
+        "hexo-server": "^0.3.1"
+    },
+    "devDependencies": {
         "node-plantuml": "^0.7.0"
     }
 }

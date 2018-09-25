@@ -56,6 +56,7 @@ project
 │  │ ├─404.tpl                 # 404页面模板
 │  │ ├─403.tpl                 # 403页面模板
 │  │ ├─500.tpl                 # 500页面模板
+│  │ ├─503.tpl                 # 503页面模板
 │  │ └─template.php            # 主题数据处理器定义文件
 │  └─theme1                    # 其它主题
 │    └─...                     # 主题模板,资源等文件
@@ -66,10 +67,9 @@ project
 │  ├─robots.txt                # 蜘蛛抓取规则文件
 │  ├─favicon.ico               # 网站图标（可自定义,可删除）
 │  └─crossdomain.xml           # flash跨域文件（可删除）
-├─artisan                      # wula命令行工具
+├─artisan                      # 命令行工具
 ├─bootstrap.php                # 引导配置文件
 ├─composer.json                # composer配置文件
-├─docker-compose.yml           # docker-compose配置文件
 └─docker-compose.sample.yml    # docker-compose样例文件
 </pre>
 

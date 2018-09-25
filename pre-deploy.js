@@ -1,4 +1,4 @@
-const umlFolder = 'source/imgs';
+const umlFolder = './source/imgs';
 const fs = require('fs');
 const path = require('path');
 const plantuml = require('node-plantuml');
