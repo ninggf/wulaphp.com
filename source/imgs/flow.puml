@@ -1,7 +1,41 @@
 @startuml flow
-
-A -> B
-B -> C
-B -> 小张
-
+start
+#2ee0f4:bootstrap.php;
+-[#gray]-> 框架初始化;
+#2ee0f4:加载配置(o)|
+-[#gray]->
+#2ee0f4:加载语言文件(o)|
+-[#gray]->
+#2ee0f4:加载扩展;
+-[#gray]->
+#2ee0f4:加载模块;
+-[#green]->初始化完成;
+fork
+    -[#green]-> URL请求处理;
+    :App::run();
+    :请求预处理;
+    if (处理成功?) then (no)
+        :分发请求;
+        if (分发成功?) then (no)
+            #red:错误处理;
+        else (yes)
+            :请求后处理;
+            :绘制模板;
+        endif
+    else (yes)
+        :绘制模板;
+    endif
+    :输出响应;
+fork again
+    -[#3f7a4e]-> 命令行脚本;
+    #3f7a4e:自定义脚本;
+    #3f7a4e:使用框架提供的各种功能;
+    #3f7a4e:脚本实现的种种功能;
+fork again
+    -[#orange]-> artisan脚本;
+    #orange:artisan命令;
+    #orange:自定义artisan子命令;
+    #orange:子命令实现的种种功能;
+end fork
+stop
 @enduml

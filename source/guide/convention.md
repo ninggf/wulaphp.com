@@ -6,14 +6,14 @@ order: 4
 
 ## 模块、扩展
 
-wulaphp以模块、扩展为最小单元组织代码,以便代码重用.每个模块、扩展都有其唯一的[命名空间](http://php.net/manual/zh/language.namespaces.php)。
-顶级命名空间与模块、扩展目录一般情况下相同（为了安全，可以不相同）。
+wulaphp以**模块、扩展**为最小单元组织代码,以便代码重用.每个**模块、扩展**都有其唯一的[命名空间](http://php.net/manual/zh/language.namespaces.php)。
+顶级命名空间与**模块、扩展**目录一般情况下相同（为了安全，可以不相同）。
 
-> **顶级命名空间约定由小写字母组成.**
+> *顶级命名空间* 约定由 _小写字母_ 组成.
 
 ## URL路由约定
 
-wulaphp支持所见即所得URL路由规则,通过URL可直接对应到具体的控制器,如`user`模块的`MyController`的`view`方法:
+wulaphp支持 **所见即所得** URL路由规则,通过URL可直接对应到具体的控制器,如`user`模块的`MyController`的`view`方法:
 
 ```php
 <?php

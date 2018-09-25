@@ -40,14 +40,17 @@ order: 2
 
 超级简单:
 
-`$composer create-project wula/wula your_project`
+`composer create-project wula/wula your_project`
 
 等一会会儿，wulaphp就安装好啦~
 
 <p class="tip">
 如果真的慢到你无法忍受，可以通过下边的命令使用国内境象：
-`composer config -g repo.packagist composer https://packagist.laravel-china.org`
-国内境象中的包版本可以会比[packagist.org](https://packagist.org/)有点延时。
+
+1. `composer config -g repo.packagist composer https://packagist.laravel-china.org`
+2. `composer create-project wula/wula your_project`
+
+国内境象中的包版本可能会比[官方](https://packagist.org/)低一点。
 </p>
 
 ### git clone
@@ -59,7 +62,7 @@ order: 2
 等一会会儿，wulaphp就安装好啦^_^
 
 <p class="tip">
-也许聪明你的已经注意到了:
+也许聪明的你已经注意到了:
 **1. 我们没有从`wula/wulaphp`创建项目.**
 **2. 我们没有从`https://github.com/ninggf/wulaphp.git` clone代码.**
 
@@ -68,7 +71,7 @@ order: 2
 **2. 项目库 - wula**: 框架目录结构,对应Composer包:`wula/wula`
 
 这样设计的好处是,**框架目录结构**不常变动,而**框架的核心**代码需要经常升级.
-当需要升级`wulaphp`核心库时只需要简单的执行`composer update`即可将框架核心升级到最新.
+当需要升级`wulaphp`核心库时只需要简单的执行`composer update`即可将框架核心升级到最新版本.
 </p>
 
 ## 配置
@@ -77,7 +80,7 @@ order: 2
 
 框架核心配置全都在`bootstrap.php`文件中，请参考注释进行修改(一班的人不修改，只有二班的才需要修改)。
 <p class="tip">
-此文件请谨慎修改哦
+此文件请谨慎修改哦~
 </p>
 
 ### 应用配置
