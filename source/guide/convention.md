@@ -56,6 +56,18 @@ class UserModel extends Model{
 
 > 控制器里的动作函数命名不推荐**驼峰**命名规则.
 
+## 控制器类名
+
+所有控制器的类名必须以`Controller`结尾。如:`UserController`, `IndexController`.
+
+## 模型类名
+
+数据模型类必须以`Model`、`View`、`Table`结尾。如:`UserModel`,`UserView`,`StudentTable`.
+
+## 模型主键
+
+默认模型主键为`id`.
+
 ## 配置约定
 
 wulaphp的所有配置文件位于`conf`目录中,其中:

@@ -1,7 +1,7 @@
 ---
 title: 如何工作
 type: guide
-order: 10
+order: 5
 ---
 
 {% blockquote 古人, 中国的 %}
@@ -49,7 +49,7 @@ wulaphp通过`bootstrap.php`文件经过以下步骤将自己拉起来:
 include 'bootstrap.php';
 ```
 
-> 唯一注意一点，保证能正确`include`到`bootstrap.php`文件.
+> 唯一注意一点，不管你的脚本文件在哪个目录请保证能正确`include`到`bootstrap.php`文件.
 
 ## artisan
 
