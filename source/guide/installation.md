@@ -50,7 +50,7 @@ order: 2
 1. `composer config -g repo.packagist composer https://packagist.laravel-china.org`
 2. `composer create-project wula/wula your_project`
 
-国内境象中的包版本可能会比[官方](https://packagist.org/)低一点。
+国内境象中的包的版本更新速度可能会比[官方](https://packagist.org/)慢一点。
 </p>
 
 ### git clone
