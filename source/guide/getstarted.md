@@ -259,7 +259,8 @@ helloworld/math/sub/1/2
 3. IndexController的math方法，接受三个参数:sub,1,2
 4. IndexController的index方法，接收四个参数:math,sub,1,2
 
-如果经过上述4步分发都找不到控制器或者参数个数不对，则分发失败。如果模块有子模块，则路由规则参见[子模块](./advance/submodule.html).
+如果经过上述4步分发都找不到控制器或者参数个数不对，则分发失败。
+如果模块有子模块，则路由规则参见[子模块](./advance/submodule.html#路由规则)相关的路由规则.
 
 ## 接下来
 

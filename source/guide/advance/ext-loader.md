@@ -1,7 +1,7 @@
 ---
 title: 扩展加载器
 type: guide
-order: 1002
+order: 1101
 ---
 
 ## 默认加载器

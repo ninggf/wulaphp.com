@@ -93,6 +93,8 @@ if ($options) {
 }
 ```
 
+更多配置请参考[数据库配置](config/db.html)。
+
 ## 显示用户列表
 
 1. 在`helloworld`模块的controllers目录创建控制器`helloworld\controllers\UserController`:
@@ -229,7 +231,7 @@ if ($options) {
     }
     ```
 
-连接数据库并进行简单的查询就是这么简单哦,至于"增删改"等更多数据库操作请查看[数据库访问](database).
+连接数据库并进行简单的查询就是这么简单哦,至于"增删改"等更多数据库操作请查看[数据库访问](db).
 
 ## 接下来
 

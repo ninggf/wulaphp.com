@@ -26,6 +26,9 @@ wulaphp内置勾子(扩展点)一览表:
 |smarty\getFilters|修改|过滤器列表['pre'=>[],'post'=>[]]|注册Smarty过滤器|
 |get_theme|修改|1. 当前主题; 2. 要显示的数据|获取主题时|
 |get_tpl|修改|1. 当前模板; 2. 要显示的数据|获取模板时|
+|tpl\regCtsDatasource|修改|1. 数据源列表(id=>实例)|初始化数据源管理器时|
+|combinater\getPath|修改|1. 合并文件存储目录名|合并资源时|
+|combinater\getURL|修改|1. 合并文件访问根URL|开始合并资源时|
 |logger\getLogger|修改|默认日志记录器|系统获取日志记录器时|
 |get_session_name|修改|会话名|开启会话时|
 |get_media_domains|修改|多媒体资源URL列表|生成图片等资源URL时|

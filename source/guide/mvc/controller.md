@@ -75,9 +75,25 @@ class IndexController extends Controller {
     //等同于下边代码
     return new JsonView(['code'=>0,'message'=>'ok']);
     ```
-6. 创建[XmlView](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/XmlView.php)实例以响应XML文档(响应头为:`Content-type: text/xml; charset=utf-8`).
+6. 使用`xmlview`创建[XmlView](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/XmlView.php)实例以响应XML文档(响应头为:`Content-type: text/xml; charset=utf-8`).
     ```php
+    return xmlview(...)
+    // 或
     return new XmlView(...);
+    ```
+7. 使用`excel`创建Excel文件(用于下载/导出Excel文件)
+    ```php
+    $data[1] = ['A'=>'A1','B'=>'B1','E'=>'E1'];
+    ...
+    $data[n] = ['A'=>'An'];
+
+    return excel('文件名',$data);
+    ```
+8. 输出JS文件
+    ```php
+    $js = $this->module->loadFile('your_js_file');
+    // 对js一顿猛操作
+    return new JsView($js);
     ```
 
 当然你可以在方法里直接使用`die`、`exit`干死当前请求或者使用`Response::redirect`或`App::redirect`跳转到其它页面。
@@ -132,6 +148,10 @@ class AuthController extends Controller{
 
 视图文件存放在`views`目录中!
 
+<p class="tip">
+如果你还不熟悉Smarty模板引擎,请在开始使用主题之前花点时间熟悉一下<a href="https://www.smarty.net/docs/zh_CN/" target="_blank">Smarty</a>。
+</p>
+
 如果你的方法通过`view`或`pviews`来加载`views`目录下的Smarty模板或PHP模板做为视图，那么请您记住以下三点约定:
 
 1. `view/pview`方法加载的视图默认响应为`Content-type: text/html`,可通过它们的第三个参数进行修改:
@@ -150,9 +170,9 @@ class AuthController extends Controller{
     return pview('math/add.php',$data);//错误
     ```
 
-另外wulaphp为Smarty模板视图提供了一些有用的[修改器](theme.html#修改器)，不妨去看看。
+另外wulaphp为Smarty模板视图提供了一些有用的[变量修饰器](theme.html#修饰器)，不妨去看看。
 
-> 通过继承`wulaphp\mvc\view\View`可以很方便地实现自己的视图模板引擎哦~,请移步[自定义模板引擎](../advance/view.html).
+> 通过继承`wulaphp\mvc\view\View`可以很方便地实现自己的视图模板引擎哦~,请移步[自定义模板引擎](view.html#自定义视图).
 
 ## 方法执行前后
 
