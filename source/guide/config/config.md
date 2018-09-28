@@ -1,5 +1,5 @@
 ---
-title: 配置概述
+title: 系统配置
 type: guide
 order: 200
 catalog: 配置
@@ -33,7 +33,10 @@ $conf['debug']  = DEBUG_DEBUG;
 return $conf;
 ```
 
-`conf/config.php`文件是默认配置组(`default`)的配置文件,可以通过以下方式读取普通配置:
+`conf/config.php`文件是默认配置组(`default`)的配置文件,
+wulaphp支持将配置分组，分组配置文件名的格式: `分组名_config.php`。
+如`cache`组的配置文件名为`cache_config.php`。
+可以通过以下方式读取普通配置:
 
 1. `App::bcfg($name, $default = false)`:读取`bool`型配置
 2. `App::icfg($name, $default = 0)`:读取`int`型配置
@@ -46,8 +49,8 @@ return $conf;
     * 调用`App::cfg('@hello')`时返回`hello`配置实例.
     * 调用`App::cfg('name@hello')`时返回`hello`配置中`name`配置项的值.
 
-wulaphp支持将配置分组，分组配置文件名的格式: `分组名_config.php`。
-如`cache`组的配置文件名为`cache_config.php`。
+### .env
+
 在配置文件中可以通过`evn`函数读取`conf/.env`文件中的配置(如果.env文件存在)。`.env`文件示例如下:
 
 ```ini
@@ -67,41 +70,58 @@ return [
 如果在`.env`文件中配置了`debug`，那么使用`.env`文件中的配置，不然使用`0`。
 `.env`文件存在的目的主要是为了方便团队开发，团队里只要有一个人维护配置文件即可。
 
+> 在所有配置文件中(包括数据库配置)，都可以使用`env`函数从`.env`文件中加载配置。
+
 ## 数据库配置
 
 数据库配置大体上和基本配置一样，区别如下:
 
-1. 配置文件名以`dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
-2. 配置文件要返回[DatabaseConfiguration](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/conf/DatabaseConfiguration.php)实例（PDO相关配置信息）。
+1. `dbconfig.php`是默认数据库配置文件。
+2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
+3. 配置文件要返回[DatabaseConfiguration](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/conf/DatabaseConfiguration.php)实例（PDO相关配置信息）。
 
 更多信息请传送至[数据库配置](db.html)。
 
 ## 特殊配置
 
-wulaphp目前定义几个特殊的配置:
+wulaphp目前定义了几个特殊的配置:
 
-1. [缓存配置](cache.html) - 配置后可直接使用wulaphp提供的缓存功能。
-2. [分布式配置](cluster.html) - 配置后分分钟系统可以分布式部署。
-3. [Redis配置](redis.html) - 配置后可直接使用基于Redis的一切功能。
-4. [Service配置](../utils/service.html) - 详见`service`命令。
+1. [缓存](../utils/cache.html) - 配置后可直接使用wulaphp提供的缓存功能。
+2. [集群](cluster.html) - 配置后分分钟系统可以分布式部署。
+3. [Redis](../utils/redis.html) - 配置后可直接使用基于Redis的一切功能。
+4. [Service](../utils/service.html) - 详见`service`命令。
 
-## 运行模式与配置
+## 运行模式
 
 wulaphp默认运行在`dev`模式，可以通过以下几种方式定义wulaphp的运行模式:
 
 1. 在`bootstrap.php`文件中定义APP_MODE常量
 2. 定义web服务器的环境变量APPMODE(推荐)
-3. 在`conf/.env`文件中添加`app_mode=[pro|test|dev|...]`。
+3. 在`conf/.env`文件中添加`app_mode=[pro|test|dev|...]`
 
-wulaphp在加载配置时优先加载的文件是`config_模式.php`。
-假设当前wulaphp的运行模式为`test`那么在加载配置文件时先加载`config_test.php`，如果`config_test.php`文件不存在则加载`config.php`。
-
-> `pro`是wulaphp定义的生产模式。wulaphp只有运行在这个模式下，才会启用:
-> 1. 运行时缓存
+> `pro`是wulaphp定义的生产模式。wulaphp只有运行在`pro`模式下，才会启用以下功能:
+> 1. 运行时缓存(需要yac、apc、xcache等扩展支持)
 > 2. 模板缓存
-> 3. 缓存
+> 3. 类加载缓存(需要yac、apc、xcache等扩展支持)
+>
+> 产品上线后，强烈建议将运行模式设为`pro`。
 
-> 1. 分组配置文件加载也应用模式规则,如`test`模式下`cache_config_test.php`优于`cache_config.php`。
-> 2. 无论在哪个文件，都可以使用`env`函数从`.env`文件中加载配置。
+### 加载规则
 
-如果wulaphp的这种配置方案满足不了你，请自定义一个[配置加载器](../advance/cfg-loader.html)。
+wulaphp可以根据运行模式智能地加载与运行模式相对应的配置，假设当前运行模式为`test`，此时
+我们调用`App::cfg('name@hello')`读取`hello`组的`name`值，wulaphp是这样加载配置的:
+
+1. 加载`conf/hello_config.php`中的配置
+    ```php
+    return ['name'=>'bad name'];
+    ```
+2. 如果`conf/hello_config_test.php`文件存在，则加载它的配置并覆盖上一步中加载的配置。
+    ```php
+    return ['name'=>'一枝花','age'=>18];
+    ```
+
+`App::cfg('name@hello')`返回`一枝花`；`App::cfg('age@hello')`返回`18`。
+
+> 在所有配置文件中，还是可以使用`env`函数从`.env`文件中加载配置的。
+
+如果wulaphp的这种配置方案满足不了你，请自定义一个[配置加载器](../advance/cfg-loader.html)，随便你怎么加载配置。

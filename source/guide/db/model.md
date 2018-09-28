@@ -401,6 +401,38 @@ protected $autoIncrement = false;
 protected $primaryKeys = ['user_id','role_id'];
 ```
 
+### 数据校验
+
+如果你向下边这样定义模型，那么wulaphp在“增改”操作的时候还会自动为你做数据校验哦:
+
+```php
+class UserTable extends \wulaphp\db\Table {
+    use \wulaphp\validator\Validator;
+    /**
+     * @required 这个字段是必须的
+     */
+    public $username;
+    /**
+     * @minlength (6) => 怎么着也要有6个字符吧
+     */
+    public $nickname;
+    /**
+     * @phone
+     */
+    public $phone;
+    /**
+     * @email 正确的邮箱来一个
+     */
+public $email;
+    /**
+     * @passwd (3) => 密码强度不够哦
+     */
+    public $hash;
+}
+```
+
+关于数据检验，请传送到[数据检验](../advance/validator.html)
+
 ## WHERE条件
 
 到[查询条件](query.html#查询条件)处复习一下。

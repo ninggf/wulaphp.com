@@ -101,6 +101,10 @@ $view = template('abc.tpl',$data);
 $view = template('abc.tpl',$data)->mustache();
 ```
 
+<p class="tip">
+模板文件的加载会受到用户选择的语言影响，具体见<a href="../advance/i18n.html">I18N</a>国际化。
+</p>
+
 ### 勾子与failback
 
 1. 可以通过`get_theme`勾子来设置当前使用的**主题**。
@@ -150,7 +154,9 @@ Smarty里的`modifier`，wulaphp提供了以下`modifier`:
     <p>abc-AadgeqeAAD</p>
     ```
 14. `render` 绘制[Renderable](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/Renderable.php)实例(比如视图View的实例)。
-15. `checked`输出`checked="checked"`
+15. `t`与`tf`翻译，详见[I18N](../advance/i18n.html#使用)。
+16. `i18n`生成语言资源URL，详见[I18N](../advance/i18n.html#使用)。
+17. `checked`输出`checked="checked"`
     ```html
     <!-- $status = 1 -->
     <input type="radio" name="radio" value="0" {'0'|checked:$status}>关
@@ -163,7 +169,7 @@ Smarty里的`modifier`，wulaphp提供了以下`modifier`:
     <input type="checkbox" name="opt[]" value="1" {'1'|checked:$opts}>选项2
     <input type="checkbox" name="opt[]" value="2" {'2'|checked:$opts}>选项3
     ```
-16. `status`输出值对应的文本
+18. `status`输出值对应的文本
     ```html
     <!-- $value = 2; $status = [0=>'保密',1=>'男',2=>'女'] -->
     用户的性别为:<strong>{$value|status:$status}</strong>

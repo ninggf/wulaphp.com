@@ -248,6 +248,10 @@ class PhpView extends View implements IModuleView {
 }
 ```
 
+<p class="tip">
+模板文件的加载会受到用户选择的语言影响，具体见<a href="../advance/i18n.html">I18N</a>国际化。
+</p>
+
 ## 接下来
 
 视图是给控制器用的，对于前端页面，wulaphp使用[主题(T)](theme.html)来搞定。

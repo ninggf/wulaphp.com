@@ -9,6 +9,10 @@ order: 22
 <pre>
     helloword
     ├─assets                  #静态资源目录
+    ├─lang                    #I18N语言目录
+    │  ├─en.php               #English
+    │  ├─zh-CN.php            #简体中文
+    │  └─zh.php               #所有中文
     ├─classes                 #类目录
     │  ├─ClassOne.php         #ClassOne类
     │  └─OtherClass.php       #OtherClass
