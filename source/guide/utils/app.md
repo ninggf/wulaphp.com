@@ -1,7 +1,7 @@
 ---
 title: App类
 type: guide
-order: 604
+order: 605
 ---
 
 使用wulaphp真的要瞅一瞅它的[源代码](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/App.php)。
