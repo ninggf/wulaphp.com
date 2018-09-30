@@ -100,6 +100,17 @@ order: 2
 
 `$ chmod 777 storage storage/tmp storage/logs`
 
+## 快速体验
+
+可以使用`php`提供的`build-in server`进行快速体验，
+只需要在项目根目录中执行`php -S 127.0.0.1:9090 -t wwwroot/ wwwroot/index.php`。
+
+打开[http://127.0.0.1:9090](http://127.0.0.1:9090)，你会看到:
+
+<pre>
+Hello wula !!
+</pre>
+
 ## 服务器配置
 
 **wulaphp**不支持以下URL，不漂亮:

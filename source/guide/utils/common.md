@@ -1,7 +1,7 @@
 ---
 title: 公共函数库
 type: guide
-order: 605
+order: 607
 ---
 
 最喜欢PHP了，不仅支持面向对象编程，还支持面向过程编程，wulaphp提供的[wula/common](https://github.com/ninggf/wula-common/blob/master/common.php)包(可独立使用)里有些好用的函数(你可以直接读代码)，供君享用:

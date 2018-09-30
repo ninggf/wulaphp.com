@@ -8,12 +8,12 @@ order: 25
 
 控制器[Controller](controller.html)功能太简单了，啥功能都得自己从头写。现代WEB应用哪能离开会话，登录授权这些功能。得益于PHP的[Trait](http://php.net/manual/zh/language.oop5.traits.php)，wulaphp利用Trait实现了为控制器动态添加功能的特性。目前内置的特性有:
 
-1. [SessionSupport](#sessionsupport): 会话支持(自动开启会话)
-2. [PassportSupport](#passportsupport): 通行证支持(依赖SessionSupport)
-3. [RbacSupport](#rbacsupport): 授权验证支持（依赖PassportSupport）
-4. [CacheSupport](#cachesupport): 缓存支持
-5. [LayoutSupport](#layoutsupport): 视图布局支持
-6. [URLGroupSupport](#urlgroupsupport): 将控制器分组
+1. [SessionSupport](#SessionSupport): 会话支持(自动开启会话)
+2. [PassportSupport](#PassportSupport): 通行证支持(依赖SessionSupport)
+3. [RbacSupport](#RbacSupport): 授权验证支持（依赖PassportSupport）
+4. [CacheSupport](#CacheSupport): 缓存支持
+5. [LayoutSupport](#LayoutSupport): 视图布局支持
+6. [URLGroupSupport](#URLGroupSupport): 将控制器分组
 
 当然[自己实现一个特性](#自定义特性)也是很简单的。
 

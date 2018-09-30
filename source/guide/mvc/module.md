@@ -7,26 +7,26 @@ order: 22
 `wulaphp`通过模块来组织代码，将实现一组相关业务功能的所有资源、代码封装在一起方便管理。模块资源、代码存放在`modules`目录(可通过MODULES_DIR常量修改)下。一个模块的典型目录结构如下:
 
 <pre>
-    helloword
-    ├─assets                  #静态资源目录
-    ├─lang                    #I18N语言目录
-    │  ├─en.php               #English
-    │  ├─zh-CN.php            #简体中文
-    │  └─zh.php               #所有中文
-    ├─classes                 #类目录
-    │  ├─ClassOne.php         #ClassOne类
-    │  └─OtherClass.php       #OtherClass
-    ├─controllers             #控制器目录
-    │  ├─IndexController.php  #默认控制器
-    │  └─OtherController.php  #别的控制器
-    ├─views                   #视图目录
-    │  ├─index                #IndexController的视图目录
-    │  │  ├─index.tpl         #默认视图文件(Smarty)
-    │  │  └─abc.php           #abc方法视图文件(php)
-    │  └─other                #OtherController的视图目录
-    │     ├─index.tpl         #默认视图文件
-    │     └─def.php           #def方法视图文件
-    └─bootstrap.php           #引导文件
+helloword
+  ├─assets                  #静态资源目录
+  ├─lang                    #I18N语言目录
+  │  ├─en.php               #English
+  │  ├─zh-CN.php            #简体中文
+  │  └─zh.php               #所有中文
+  ├─classes                 #类目录
+  │  ├─ClassOne.php         #ClassOne类
+  │  └─OtherClass.php       #OtherClass
+  ├─controllers             #控制器目录
+  │  ├─IndexController.php  #默认控制器
+  │  └─OtherController.php  #别的控制器
+  ├─views                   #视图目录
+  │  ├─index                #IndexController的视图目录
+  │  │  ├─index.tpl         #默认视图文件(Smarty)
+  │  │  └─abc.php           #abc方法视图文件(php)
+  │  └─other                #OtherController的视图目录
+  │     ├─index.tpl         #默认视图文件
+  │     └─def.php           #def方法视图文件
+  └─bootstrap.php           #引导文件
 </pre>
 
 <p class="tip">
@@ -52,7 +52,9 @@ modules
 namespace def;
 
 use wulaphp\app\Module;
-
+/**
+ * @group groupname
+ */
 class GhiModule extends Module{
     public function getName() {
         return 'Hello World';
@@ -81,6 +83,9 @@ class GhiModule extends Module{
 3. 模块名称: Hello World，沟通交流、模块管理功能显示用
 4. 模块类名: GhiModule, 模块管理功能使用
 5. 模块版本列表: 供模块管理使用
+6. 支持注解:
+    1. `@group` 模块分组，供模块管理使用
+    2. `@subEnabled` 是否启用[子模块](../advance/submodule.html)
 
 看上去他们之间没有半毛钱关系(**强烈建议现实中不要这么干**), 推荐下边的写法:
 
@@ -186,6 +191,10 @@ class AbcModule extends Module{
     ```
 > 如不指定`优先级`,则使用默认优先级:10
 
+## urlGroup
+
+
+
 ## 公共模块
 
 如果你有一颗开源的心，可以将你写的牛逼的模块作为composer包发布分享给其他人,只需要简单地添加一个composer.json并提交到composer库即可，示例如下:
@@ -218,6 +227,24 @@ class AbcModule extends Module{
 <p class="tip">
 通过composer安装的模块,`wula-installer`会自动执行软链接操作.
 </p>
+
+## 默认模块
+
+wulaphp支持默认模块，何谓默认模块？就是URL中未指定模块目录时还可以访问的模块。要设置默认模块，只需要在`bootstrap.php`文件中定义常量`DEFAULT_MODULE`:
+
+```php
+/* 配置系统的默认模块配置,请取消下一行的注释，将其值改为模块命名空间 */
+define('DEFAULT_MODULE', 'abc');
+```
+
+原URL `abc/add/user`在将`abc`设置默认模块后就可以通过`add/user`访问啦(前提是没有`add`模块哦)。
+更多URL路由信息请查看[高级路由](../advance/route.html#默认分发器)。
+
+> 默认模块的功能应尽量简单！
+
+## URL路由
+
+见[简单路由](../getstarted.html#URL路由简述)和[高级路由](../advance/route.html#默认分发器)。
 
 ## 控制器
 

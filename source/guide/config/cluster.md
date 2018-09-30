@@ -1,7 +1,7 @@
 ---
 title: 集群配置
 type: guide
-order: 202
+order: 203
 ---
 
 wulaphp基于`Redis`提供分布式缓存。分布式缓存不需要显式的使用，它是wulaphp内部使用的缓存，只需要通过`conf/cluster_config.php`配置:

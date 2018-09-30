@@ -53,7 +53,7 @@ include 'bootstrap.php';
 
 ## artisan
 
-`artisan`是wulaphp提供的命令行工具，通过`php artisan`或`./artisan`即可执行。同时可以很方便的通过插件机制实现自己的命令,具体见[实现自己的命令](#cmd)。
+`artisan`是wulaphp提供的命令行工具，通过`php artisan`或`./artisan`即可执行。同时可以很方便的通过插件机制实现自己的命令,具体见[实现自己的命令](artisan/index.html#自定义命令)。
 
 <p class="tip">
 任何问题，欢迎加QQ群找群主:<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=9be37f660c70dd33c22f6055cd113215a52e9cab29d46b5c02fe2f68c67a0f17">371487281</a>

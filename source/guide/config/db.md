@@ -1,7 +1,7 @@
 ---
 title: 数据库配置
 type: guide
-order: 201
+order: 202
 ---
 
 wulaphp使用[PDO](http://php.net/manual/zh/class.pdo.php)连接数据库并进行数据库操作，所以数据库的配置也就相对简单了，只要配置PDO需要的信息就成。

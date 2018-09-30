@@ -9,7 +9,8 @@ wulaphp内置勾子(扩展点)一览表:
 |wula\configLoaded|事件|无|配置加载完成时|
 |wula\extensionLoaded|事件|无|扩展加载完成时|
 |wula\moduleLoaded|事件|无|模块加载完成时|
-|wula\bootstrapped|事件|无|App启动完成时|
+|app\started|事件|无|App启动完成时|
+|wula\bootstrapped|事件|无|框架引导完成时|
 |wula\stop|事件|无|App停止时|
 |loader\loadClass|修改|1.类文件 2.类名|自动加载类|
 |router\registerDispatcher|修改|Router实例|Router实例创建完成时|

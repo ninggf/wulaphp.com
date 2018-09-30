@@ -55,7 +55,7 @@ class TestCron implements ICrontabJob {
 假设脚本文件位于`crontab`目录，文件名为`job1.php`。
 
 ```php
-include '../bootstrap.php';
+include __DIR__.'/../bootstrap.php';
 
 file_put_contents(LOGS_PATH . 't.log', date('Y-m-d H:i:s') . "\n", FILE_APPEND);
 ```
@@ -65,6 +65,10 @@ file_put_contents(LOGS_PATH . 't.log', date('Y-m-d H:i:s') . "\n", FILE_APPEND);
 1. 通过`php artisan cron -i 10 crontab/job1.php start`运行，然后观察`storage/logs/t.log`文件内容.
 2. 通过`php artisan cron crontab/job1.php stop`停止`job`。
 3. 通过`php artisan cron crontab/job1.php status`查看`job`状态。
+
+<p class="tip">
+请通过绝对路径`include`框架的引导文件`bootstrap.php`。
+</p>
 
 如果你有很多定时任务要运行，推荐使用[service](service.html)命令来管理。
 
