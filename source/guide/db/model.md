@@ -423,7 +423,7 @@ class UserTable extends \wulaphp\db\Table {
     /**
      * @email 正确的邮箱来一个
      */
-public $email;
+    public $email;
     /**
      * @passwd (3) => 密码强度不够哦
      */
