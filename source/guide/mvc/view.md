@@ -67,7 +67,7 @@ return ['greeting'=>'Hello World!'];
 看代码吧:
 
 ```php
-$data['books'][] = ['book' => ['@auther' => '曹雪芹', '#' => '红楼梦']];
+$data['books'][] = ['book' => ['@auther' => '曹雪芹', '#' => '红楼梦']];
 $data['books'][] = ['book' => ['@auther' => '金庸', '#' => '笑傲江湖']];
 $data['books']['@total'] = 2;
 
