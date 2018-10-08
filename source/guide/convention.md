@@ -13,7 +13,7 @@ wulaphp以**模块、扩展**为最小单元组织代码,以便代码重用.每�
 
 ## URL路由约定
 
-wulaphp支持 **所见即所得** URL路由规则,通过URL可直接对应到具体的控制器,如`user`模块的`MyController`的`view`方法:
+wulaphp支持 **所见即所得** URL路由规则,通过URL可直接对应到具体的控制器,如`user`模块的`MyController`的`view`方法:
 
 ```php
 <?php
