@@ -5,12 +5,12 @@ order: 16
 ---
 
 项目大了，数据库操作复杂了，散落在代码中的数据库操作(很多人特别喜欢直接在控制器里干这事)让项目变得几乎不可维护。
-所以有了DAO（Database Access Object）, 所以有了模型(Model)，它们把数据库的『增删改查』集中到一起便于维护，这便是MVC中的M（Model）。
-每个MVC框架实现的模型机制可能都不一样，八仙过海各显神通。在wulaphp框架里通过继承[View](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/View.php)与[Table](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/Table.php)定义一个模型.
+所以有了DAO（Database Access Object）, 所以有了模型(Model)，它们把数据库的『增删改查』集中到一起便于维护，这便是MVC中的M（Model）。
+每个MVC框架实现的模型机制可能都不一样，八仙过海各显神通。在wulaphp框架里通过继承[View](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/View.php)与[Table](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/Table.php)定义一个模型.
 
 ## 定义
 
-1. View模型基类，定义了所有[查询相关](query.html)的操作（只有查询没有增删改）比如在[连接数据库](../database.html)文档中创建的user表，它的模型定义如下:
+1. View模型基类，定义了所有[查询相关](query.html)的操作（只有查询没有增删改）比如在[连接数据库](../database.html)文档中创建的user表，它的模型定义如下:
     ```php
     class UserTable extends \wulaphp\db\View {
 
@@ -27,11 +27,11 @@ order: 16
 
 1. `user`表的合法模型类名为`UserTable`、`UserView`、`UserModel`或`User`
 2. `user_group`表的合法模型类名为 `UserGroup[Table|View|Model]`
-3. `usergroup`表的合法模型类名为`Usergroup[Table|View|Model]`
+3. `usergroup`表的合法模型类名为`Usergroup[Table|View|Model]`
 
 ### 指定表名
 
-如果想自定义模型类对应的表名(遗留系统可能会有这样的需求)则可通过如下代码实现模型类与表的对应：
+如果想自定义模型类对应的表名(遗留系统可能会有这样的需求)则可通过如下代码实现模型类与表的对应：
 
 ```php
 class UserAbcModel extends \wulaphp\db\View {
@@ -63,12 +63,12 @@ class UserAbcModel extends \wulaphp\db\View {
 通过[Table](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/Table.php)基类提供的`insert`、`update`和`delete`方法可以很方便的对数据库进行『增删改』。只是这些方法都是`protected`（受保护）的，只能在子类中被访问。
 新增数据有两个方法:
 
-1. 单个新增使用`insert`方法
+1. 单个新增使用`insert`方法
 2. 批量新增使用`inserts`方法
 
 ### 单个新增
 
-在`UserTable`(继承自Table的那个)类新增方法`addUser`:
+在`UserTable`(继承自Table的那个)类新增方法`addUser`:
 
 ```php
 public function addUser($user) {
@@ -111,7 +111,7 @@ protected function insert($data, $cb = null)
 
 ### 批量新增
 
-在`UserTable`(继承自Table的那个)类新增方法`addUsers`:
+在`UserTable`(继承自Table的那个)类新增方法`addUsers`:
 
 ```php
 public function addUsers($users) {
@@ -140,7 +140,7 @@ $users[] = [
 $rtn = $userTable->addUsers($users);
 ```
 
-就这样。`inserts`的声明如下:
+就这样。`inserts`的声明如下:
 
 ```php
 /**
@@ -161,10 +161,10 @@ protected function inserts($datas, \Closure $cb = null)
 
 删除数据有两个方法:
 
-1. 软删使用`recycle`方法（将deleted字段置为1）
-2. 彻底删除`delete`方法
+1. 软删使用`recycle`方法（将deleted字段置为1）
+2. 彻底删除`delete`方法
 
-根据用户ID(主键)删除用户:
+根据用户ID(主键)删除用户:
 
 ```php
 public function deleteUserById($id) {
@@ -172,7 +172,7 @@ public function deleteUserById($id) {
 }
 ```
 
-根据用户账户删除用户:
+根据用户账户删除用户:
 
 ```php
 public function deleteUserByUsername($username) {
@@ -223,7 +223,7 @@ public function deleteUserByMaster($master) {
 }
 ```
 
-### 软删除
+### 软删除
 
 `recycle`方法请直接看源代码:
 
@@ -246,7 +246,7 @@ protected function recycle($where, $uid = 0, $cb = null)
 
 ## 改
 
-通过`update`方法实现数据库修改操作。
+通过`update`方法实现数据库修改操作。
 
 根据用户ID修改用户信息,在`UserTable`中添加方法`updateUserById`:
 
@@ -260,7 +260,7 @@ public function updateUserById($name, $id) {
 }
 ```
 
-就这样。`update`方法声明如下:
+就这样。`update`方法声明如下:
 
 ```php
 /**
@@ -282,7 +282,7 @@ protected function update($data = null, $con = null, $cb = null)
 
 不给`update`方法提供参数时它将返回一个[UpdateSQL](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/sql/UpdateSQL.php)实例。通过这个实例，可以完成一些高难度的修改操作。
 
-1. 只更新满足条件的前2条记录
+1. 只更新满足条件的前2条记录
     ```sql
     UPDATE user SET cid = 3 WHERE gid = 1 ORDER BY cid ASC limit 2
     ```
@@ -351,8 +351,8 @@ $rst = $userTable->updatePhoneByUsername($phones);
 
 ## 增改进阶
 
-`insert`、`inserts`和`update`都有一个匿名函数类型的参数`$cb`，用户可以通过此函数对数据进行修改。
-这个`$cb`是每个具体调用方法的指定过滤器，每个方法都可以不同。Table类还有一个全局的数据过滤处理器`filterFields`。声明如下:
+`insert`、`inserts`和`update`都有一个匿名函数类型的参数`$cb`，用户可以通过此函数对数据进行修改。
+这个`$cb`是每个具体调用方法的指定过滤器，每个方法都可以不同。Table类还有一个全局的数据过滤处理器`filterFields`。声明如下:
 
 ```php
 /**
@@ -364,7 +364,7 @@ protected function filterFields(&$data) {
 }
 ```
 
-它能干啥？举个例子，假设user表新增加了二个字段`update_time`更新时间和`update_uid`更新用户。如果每次新增或更新时都手动填写这二个字段有点傻傻的，可以将下边代码添加到`UserTable`类中完美解决这个问题:
+它能干啥？举个例子，假设user表新增加了二个字段`update_time`更新时间和`update_uid`更新用户。如果每次新增或更新时都手动填写这二个字段有点傻傻的，可以将下边代码添加到`UserTable`类中完美解决这个问题:
 
 ```php
 protected function filterFields(&$data) {
@@ -384,8 +384,8 @@ protected function filterFields(&$data) {
 ### 主键与自增
 
 当我们执行`delete(1)`或`update(['name'=>'1'],1)`这样的操作时默认使用`id`作为模型（表）的主键。
-当我们在新增数据时返回的数值也是默认把id做为自增字段处理的。
-如果表的主键不是`id`或者主键不是自增的，我们可以通过下边的代码进行修改:
+当我们在新增数据时返回的数值也是默认把id做为自增字段处理的。
+如果表的主键不是`id`或者主键不是自增的，我们可以通过下边的代码进行修改:
 
 ```php
 //将主键修改为user_id
