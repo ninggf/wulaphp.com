@@ -50,7 +50,7 @@ order: 2
 1. `composer config -g repo.packagist composer https://packagist.laravel-china.org`
 2. `composer create-project wula/wula your_project`
 
-国内境象中的包的版本更新速度可能会比[官方](https://packagist.org/)慢一点。
+国内境象中的包的版本更新速度可能会比[官方](https://packagist.org/)慢一点。
 </p>
 
 ### git clone
@@ -78,7 +78,7 @@ order: 2
 
 ### 核心配置
 
-框架核心配置全都在`bootstrap.php`文件中，请参考注释进行修改(一班的人不修改，只有二班的才需要修改)。
+框架核心配置全都在`bootstrap.php`文件中，请参考注释进行修改(一般的人不修改，只有二般的才需要修改)。
 <p class="tip">
 此文件请谨慎修改哦~
 </p>
