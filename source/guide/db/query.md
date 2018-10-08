@@ -4,7 +4,7 @@ type: guide
 order: 15
 ---
 
-在[DB Connection](query.html)中使用数据库连接直接进行数据库操作，实在是太暴力。本文档提供一个不那么暴力的简单访问方式。
+在[DB Connection](query.html)中使用数据库连接直接进行数据库操作，实在是太暴力。本文档提供一个不那么暴力的简单访问方式。
 
 ## SimpleTable
 
@@ -15,9 +15,9 @@ order: 15
 1. `$table = App::table('tablename'[,$db])`
 2. `$table = new SimpleTable('tablename'[,$db])`
 
-> $db为可选参数，默认为'default'数据库连接。
+> $db为可选参数，默认为'default'数据库连接。
 
-有了SimpleTable实例，请尽情玩耍吧。
+有了SimpleTable实例，请尽情玩耍吧。
 
 ## 查询初探
 
@@ -43,7 +43,7 @@ SELECT User.*, GP.*, CLASS.name AS class_name
     ORDER BY CLASS.id ASC
 ```
 
-可以通过`$query->getSqlString()`得到wulaphp生成的SQL:
+可以通过`$query->getSqlString()`得到wulaphp生成的SQL:
 
 ```sql
 SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
@@ -56,13 +56,13 @@ SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
 
 > 说明:
 >
-> `:User_id_0`和`:GP_id_0`是通过`PDO::prepare`生成的`prepareStatement`的参数，在将执行时赋值。wulaphp使用prepareStatement以防止SQL注入攻击。
+> `:User_id_0`和`:GP_id_0`是通过`PDO::prepare`生成的`prepareStatement`的参数，在将执行时赋值。wulaphp使用prepareStatement以防止SQL注入攻击。
 >
-> 链式调用的好处是调用顺序与SQL表达很像，心中所想即为调用所写，信手拈来。
+> 链式调用的好处是调用顺序与SQL表达很像，心中所想即为调用所写，信手拈来。
 
 ### 结果获取
 
-上例中的`$query`是[Query](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/sql/Query.php)类的实例，
+上例中的`$query`是[Query](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/sql/Query.php)类的实例，
 她代表一个查询，可以通过她的以下方法获取结果:
 
 1. 直接通过`foreach`循环遍历结果集
@@ -71,7 +71,7 @@ SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
         $data = $row->ary();
     }
     ```
-2. `toArray`将查询到的结果集转换为数组
+2. `toArray`将查询到的结果集转换为数组
     ```php
     $rows = $query->toArray()
     ```
@@ -91,11 +91,11 @@ SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
     ```php
     $className = $query->get(2,'class_name');
     ```
-7. 通过`total`方法获取满足条件的记录总数
+7. 通过`total`方法获取满足条件的记录总数
     ```php
     $total = $query->total('User.id');
     ```
-8. 通过`count`方法获取满足条件的记录总数(不是本次查询到的记录总数)
+8. 通过`count`方法获取满足条件的记录总数(不是本次查询到的记录总数)
     ```php
     $total = count($query);
     ```
@@ -103,35 +103,35 @@ SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
     ```php
     $data = $query->first();
     ```
-10. 通过`implode`将结果记录中对应字段连接起来
+10. 通过`implode`将结果记录中对应字段连接起来
     ```php
     $class_names = $query->implode('class_name', ',', function ($className) {
         return strtoupper($className);
     });
     ```
-11. 通过`ary`将当前(通过foreach遍历时)记录或第一条记录转换为数组
+11. 通过`ary`将当前(通过foreach遍历时)记录或第一条记录转换为数组
     ```php
     $data = $query->ary();
     ```
-12. 通过`recurse(&$crumbs, $idkey = 'id', $upkey = 'upid')`递归生成结果数组
+12. 通过`recurse(&$crumbs, $idkey = 'id', $upkey = 'upid')`递归生成结果数组
     ```php
         $crumbs = [];
-        // 适用于通过upid树型结构设计的表
+        // 适用于通过upid树型结构设计的表
         $query->recurse($crumbs);
     ```
-13. 通过`exist`判断符合条件的结果存不存在
+13. 通过`exist`判断符合条件的结果存不存在
     ```php
         if($query->exist('User.id')){
-            // 存在时要干的事
+            // 存在时要干的事
         }
     ```
 14. 通过`tree`生成树型SELECT选项
     ```php
     $options = [];
-    // 适用于通过upid树型结构设计的表
+    // 适用于通过upid树型结构设计的表
     $query->treeKey('id')->treepad(true)->tree($options,'id','upid','name');
     ```
-15. 通过`forupdate`获取第一条结果记录并锁定表(需要在[事务](trans.html)中)
+15. 通过`forupdate`获取第一条结果记录并锁定表(需要在[事务](trans.html)中)
     ```php
     $table->db()->start();
     $data = $query->forupdate();
@@ -148,7 +148,7 @@ SELECT `User`.*,`GP`.*,`CLASS`.`name` AS `class_name`
 $query->field('CLASS.master', 'teacher');
 ```
 
-添加classes表的master字段到查询语句，结果如下:
+添加classes表的master字段到查询语句，结果如下:
 
 ```sql
 SELECT User.*, GP.*, CLASS.name AS class_name, CLASS.master AS teacher
@@ -156,7 +156,7 @@ SELECT User.*, GP.*, CLASS.name AS class_name, CLASS.master AS teacher
 
 > 字段是一个[子查询](#子查询)时特别有用.
 
-## 分页查询
+## 分页查询
 
 1. 最原生的最形象的方式(从第10条记录开始获取100条):
     ```php
@@ -169,7 +169,7 @@ SELECT User.*, GP.*, CLASS.name AS class_name, CLASS.master AS teacher
     ```php
     $query->page(1,20);
     ```
-    使用用户通过GET或POST方法传来的参数pager[page],pager[limit]
+    使用用户通过GET或POST方法传来的参数pager[page],pager[limit]
     ```php
     //不给参数就可以了^_^
     $query->page();
@@ -199,16 +199,16 @@ $query->groupBy('CLASS.id')->groupBy('GP.id');
     ```php
     $query->sort('f1,f2','a,d');
     ```
-    * 使用用户通过GET或POST方法传来的参数`sort[name]`、`sort[dir]`
+    * 使用用户通过GET或POST方法传来的参数`sort[name]`、`sort[dir]`
     ```php
     $query->sort();
     ```
 
-> sort方法的第二个参数为排序方向，默认为a升序。
+> sort方法的第二个参数为排序方向，默认为a升序。
 
 ## JOIN
 
-`join`方法你看到喽，`join`默认是左连接(LEFT JOIN)。通过第三个参数来改变连接方式如下:
+`join`方法你看到喽，`join`默认是左连接(LEFT JOIN)。通过第三个参数来改变连接方式如下:
 
 ```php
 //右
@@ -242,7 +242,7 @@ $query->left('{abc} AS ABC','T.id','ABC.id');
 
 ## HAVING
 
-查出学生数量大于10的班级：
+查出学生数量大于10的班级：
 
 ```sql
 SELECT COUNT(User.cid) AS total, CLASS.*
@@ -267,11 +267,11 @@ $query->having('total > 10');
 > `imv`函数用于生成SQL内部表达式，比如此例中的COUNT函数，更多的还有:
 > 1. `UPDATE abc SET num=num+1`语句中的`num+1`。
 > 2. `SELECT * FROM abc LEFT JOIN def ON abc.fid = def.id WHERE abc.name = def.name`语句中的`def.name`。
-> 3. 其它更多的表达式都需要通过imv函数生成不然会报错地!!!
+> 3. 其它更多的表达式都需要通过imv函数生成不然会报错地!!!
 
 ## 子查询
 
-通过子查询方式查出学生数量大于10的班级：
+通过子查询方式查出学生数量大于10的班级：
 
 ```sql
 SELECT *,
@@ -295,11 +295,11 @@ $query->field($subQuery, 'total');
 $query->having('total > 6');
 ```
 
-> **再次强调**
+> **再次强调**
 >
 > `imv`函数用于生成SQL内部表达式。
 >
-> 1. `COUNT(*)` 是函数调用，不是字符.
+> 1. `COUNT(*)` 是函数调用，不是字符.
 > 2. `WHERE cid = C.id`中的C.id是主表的字段，不是字符。
 
 ## 查询条件
@@ -445,7 +445,7 @@ $query->having('total > 6');
     * @param array  $con 条件.
     * @param string $id  字段用于count的字段,默认为*.
     *
-    * @return int 符合条件的记录总数.
+    * @return int 符合条件的记录总数.
     */
     public function count($con, $id = null) 
     ```
@@ -488,4 +488,4 @@ $query->having('total > 6');
 
 ## 接下来
 
-查询搞得不丑，『增删改』哪儿去了？请立即传送至[模型](model.html)。
+查询搞得不丑，『增删改』哪儿去了？请立即传送至[模型](model.html)。
