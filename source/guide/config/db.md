@@ -4,11 +4,11 @@ type: guide
 order: 202
 ---
 
-wulaphp使用[PDO](http://php.net/manual/zh/class.pdo.php)连接数据库并进行数据库操作，所以数据库的配置也就相对简单了，只要配置PDO需要的信息就成。
+wulaphp使用[PDO](http://php.net/manual/zh/class.pdo.php)连接数据库并进行数据库操作，所以数据库的配置也就相对简单了，只要配置PDO需要的信息就成。
 
 ## 默认配置
 
-数据库配置大体上和基本配置一样，区别如下:
+数据库配置大体上和基本配置一样，区别如下:
 
 1. `dbconfig.php`是默认数据库配置文件。
 2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
@@ -39,7 +39,7 @@ $config->password('888888');
 return $config;
 ```
 
-PDO的[属性](http://php.net/manual/zh/pdo.setattribute.php)通过`DatabaseConfiguration::options`方法配置,比如设置`PDO::ATTR_STRINGIFY_FETCHES`(提取的时候将数值转换为字符串):
+PDO的[属性](http://php.net/manual/zh/pdo.setattribute.php)通过`DatabaseConfiguration::options`方法配置,比如设置`PDO::ATTR_STRINGIFY_FETCHES`(提取的时候将数值转换为字符串):
 
 ```php
 $config->options([PDO::ATTR_STRINGIFY_FETCHES=>true]);
@@ -51,7 +51,7 @@ $config->options([PDO::ATTR_STRINGIFY_FETCHES=>true]);
 
 ## 连接不同库
 
-有些时候吧需要同时连接好多个数据库（感觉是个大项目）。wulaphp提供了此项能力且只需要简单的添加一个数据库配置即可。添加配置文件`conf/newdb_dbconfig.php`:
+有些时候吧需要同时连接好多个数据库（感觉是个大项目）。wulaphp提供了此项能力且只需要简单的添加一个数据库配置即可。添加配置文件`conf/newdb_dbconfig.php`:
 
 ```php
 <?php
@@ -78,6 +78,6 @@ return $config;
 1. 通过`App::db('newdb')`直接获取数据库连接然后进行[数据库操作](../db/index.html#CRUD)。
 2. 通过[模型](../db/model.html#使用模型)方式: `$table = new UserTable('newdb')`。
 
-## 自定义数据库配置加载器
+## 自定义数据库配置加载器
 
 如果这都满足不了你，你是要[上天](../advance/cfg-loader.html#自定义加载器)啊。
