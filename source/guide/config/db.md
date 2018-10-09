@@ -4,14 +4,14 @@ type: guide
 order: 202
 ---
 
-wulaphp使用[PDO](http://php.net/manual/zh/class.pdo.php)连接数据库并进行数据库操作，所以数据库的配置也就相对简单了，只要配置PDO需要的信息就成。
+wulaphp使用[PDO](http://php.net/manual/zh/class.pdo.php)连接数据库并进行数据库操作，所以数据库的配置也就相对简单了，只要配置PDO需要的信息就成。
 
 ## 默认配置
 
 数据库配置大体上和基本配置一样，区别如下:
 
 1. `dbconfig.php`是默认数据库配置文件。
-2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
+2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
 3. 配置文件要返回[DatabaseConfiguration](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/conf/DatabaseConfiguration.php)实例（PDO相关配置信息）。
 
 默认数据库配置文件`conf/dbconfig.php`:
