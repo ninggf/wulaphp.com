@@ -182,7 +182,7 @@ return [
     * 调用`App::cfg('@hello')`时返回`hello`配置实例.
     * 调用`App::cfg('name@hello')`时返回`hello`配置中`name`配置项的值.
 
-更多配置相关信息,请移步[配置详解](advance/config.html).
+更多配置相关信息,请移步[配置详解](/guide/config/config).
 
 ## 接下来
 
