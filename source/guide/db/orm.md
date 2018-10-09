@@ -4,15 +4,15 @@ type: guide
 order: 18
 ---
 
-ORM(Object Relational Mapping)对象关系映射，对象间的关系无外乎:
+ORM(Object Relational Mapping)对象关系映射，对象间的关系无外乎:
 
-1. 1对1，夫妻关系(一夫一妻制)。
-2. 1对多/多对1，一个男人娶多个小妾(一夫一妻多妾)。
+1. 1对1，夫妻关系(一夫一妻制)。
+2. 1对多/多对1，一个男人娶多个小妾(一夫一妻多妾)。
 3. 多对多，不好举例子啊。
 
 通过[模型](model.html)可以很方便地实现简单的ORM。
 
-本文档将详细讲解下图(ER图，实体关系图)所示的关系:
+本文档将详细讲解下图(ER图，实体关系图)所示的关系:
 
 ![E-R](../../imgs/orm.png)
 
@@ -31,7 +31,7 @@ ORM(Object Relational Mapping)对象关系映射，对象间的关系无外乎:
 
 通过View类的`hasOne`和`belongsTo`方法定义。
 
-一个用户有一个余额账户，一个余额账户只有属于一个人，一对一关系在设计表时可以有多种设计方案，本示例中使用的方案如下:
+一个用户有一个余额账户，一个余额账户只有属于一个人，一对一关系在设计表时可以有多种设计方案，本示例中使用的方案如下:
 
 ```sql
 -- ------
@@ -61,7 +61,7 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=UTF8 COMMENT '用户账户';
 ```
 
-本方案中`user`与`account`表通过字段`user_id`进行关联。请通过下边代码添加一些测试数据:
+本方案中`user`与`account`表通过字段`user_id`进行关联。请通过下边代码添加一些测试数据:
 
 ```sql
 INSERT INTO
@@ -107,12 +107,12 @@ class UserTable extends \wulaphp\db\Table {
 protected final function hasOne($tableCls, $foreign_key = '', $value_key = '')
 ```
 
-**参数说明:**
+**参数说明:**
 
 1. `$tableCls`:拥有的实体表，可以是表名也可以是模型类实例.
-2. `$foreign_key`:拥有的实体表中与当前表关联的字段名.
+2. `$foreign_key`:拥有的实体表中与当前表关联的字段名.
     * 默认的字段名格式是"表名_id", 此例中如果不提供则使用`user_id`。
-3. `$value_key`:本实例表中的主键或唯一键，与`$foreign_key`关联。
+3. `$value_key`:本实例表中的主键或唯一键，与`$foreign_key`关联。
     * 默认字段名是`id`.
 
 ### 账户属于一个用户
@@ -190,10 +190,10 @@ foreach ($users as $user) {
 
 **关系描述:**
 
-一个班级有多个学生(用户)，一个学生(用户)只能属于一个班级。奉上SQL:
+一个班级有多个学生(用户)，一个学生(用户)只能属于一个班级。奉上SQL:
 
 ```sql
--- 修改学生表添加cid字段
+-- 修改学生表添加cid字段
 ALTER TABLE user
 ADD COLUMN cid INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '班级编号';
 -- 班级表
@@ -214,7 +214,7 @@ UPDATE user SET cid = 1 WHERE id IN (1,2);
 UPDATE user SET cid = 2 WHERE id IN (3,4,5);
 ```
 
-### 属于一个班级
+### 属于一个班级
 
 在orm.php中的`UserTable`类中添加以下方法:
 
@@ -245,7 +245,7 @@ class ClassesTable extends \wulaphp\db\Table {
  * one-to-many.
  *
  * @param View|string $tableCls
- * @param string      $foreign_key 字段在$tableCls中的引用.
+ * @param string      $foreign_key 字段在$tableCls中的引用.
  * @param string      $value_key   关联字段，默认为本表主键.
  *
  * @return array
@@ -256,16 +256,16 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
 参数说明:
 
 1. `$tableCls`:拥有的实体表，可以是表名也可以是模型类实例.
-2. `$foreign_key`:拥有的实体表中与当前表关联的字段名.
+2. `$foreign_key`:拥有的实体表中与当前表关联的字段名.
     * 默认的字段名格式是"表名_id", 此例中如果不提供则使用`class_id`。
-3. `$value_key`:本实例表中的主键或唯一键，与`$foreign_key`关联。
+3. `$value_key`:本实例表中的主键或唯一键，与`$foreign_key`关联。
     * 默认字段名是`id`.
 
 ### 一对多演示
 
-代码有了，数据有了，跑起来，跑起来。。。
+代码有了，数据有了，跑起来，跑起来。。。
 
-在`orm.php`中添加演示代码(可以把其它演示代码注释掉):
+在`orm.php`中添加演示代码(可以把其它演示代码注释掉):
 
 1. 取用户班级信息.
     ```php
@@ -287,7 +287,7 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
         }
     }
     ```
-3. 再来一波骚操作，获取班级中按姓名排序后的前2名学生。
+3. 再来一波骚操作，获取班级中按姓名排序后的前2名学生。
     ```php
     $clsTable = new ClassesTable();
     $clses    = $clsTable->find(['id @' => [1, 2]]);
@@ -311,7 +311,7 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
 
 > **注意**
 >
-> 1. `students`调用将返回一个Query实例。可以通过此实例进行排序，分页，添加添加等处理。
+> 1. `students`调用将返回一个Query实例。可以通过此实例进行排序，分页，添加添加等处理。
 > 2. 可以注释`->with('myclass')`看看执行的SQL数量的变化。
 > 3. `with`只能用于`belongsTo`定义的字段。
 
@@ -351,7 +351,7 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
 protected final function belongsToMany($tableCls, $mtable = '', $value_keys = '', $table_keys = '') {
 ```
 
-**特别说明**当表的主键是不`id`时`$value_keys`或`$table_keys`需要通过数组方式传主键和$mtable中的关联键。如`user`表的主键是uid时,UserTable中`roles`字段声明代码如下:
+**特别说明**当表的主键是不`id`时`$value_keys`或`$table_keys`需要通过数组方式传主键和$mtable中的关联键。如`user`表的主键是uid时,UserTable中`roles`字段声明代码如下:
 
 ```php
 protected $primaryKeys = ['uid'];
@@ -361,4 +361,4 @@ public function roles() {
 }
 ```
 
-> 思考题，如果roles表的主键是`id`呢？
+> 思考题，如果roles表的主键是`id`呢？
