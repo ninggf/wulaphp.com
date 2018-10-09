@@ -6,12 +6,12 @@ order: 1101
 
 ## 默认加载器
 
-wulaphp通过默认的[ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)扩展加载器加载扩展, 流浏程大致如下:
+wulaphp通过默认的[ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)扩展加载器加载扩展, 流浏程大致如下:
 
 <pre>
-    创建扩展加载器（由EXTENSION_LOADER_CLASS指定）
+    创建扩展加载器（由EXTENSION_LOADER_CLASS指定）
                 &dArr;
-        扫描扩展目录（包含二级目录）
+        扫描扩展目录（包含二级目录）
                 &dArr;
         加载引导文件(如果有)
                 &dArr;
@@ -40,12 +40,12 @@ $abc = new hello\classes\AbcCls();
 
 ## 自定义扩展加载器
 
-如果有对扩展进行管理的需要（安装，启用，禁用，卸载，升级等）可以自定义扩展加载器实现。根据wulaphp处理流程，自定义扩展加载器可以通过`composer`类库方式实现。自定义一个类继承[\wulaphp\app\ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)并重写:
+如果有对扩展进行管理的需要（安装，启用，禁用，卸载，升级等）可以自定义扩展加载器实现。根据wulaphp处理流程，自定义扩展加载器可以通过`composer`类库方式实现。自定义一个类继承[\wulaphp\app\ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)并重写:
 
 1. `load` 加载扩展引导文件
 2. `scanExtensions` 扫描扩展目录（至少扫描二级）
 
-假设我们实现了一个自定义模块加载器:
+假设我们实现了一个自定义模块加载器:
 
 ```php
 <?php
