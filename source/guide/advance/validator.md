@@ -4,13 +4,13 @@ type: guide
 order: 1102
 ---
 
-『不要相信任何人』，特别是对于要『保存』到数据库的数据更要进行校验。所以保存数据到数据库之前必须对数据进行校验以使其符合业务要求。
+『不要相信任何人』，特别是对于要『保存』到数据库的数据更要进行校验。所以保存数据到数据库之前必须对数据进行校验以使其符合业务要求。
 
 ## Validator
 
 wulaphp提供了一个[Validator](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/validator/Validator.php)，它是一个PHP的[Trait](http://php.net/manual/zh/language.oop5.traits.php)。
-[Table](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/Table.php)的子类(模型)使用它之后，那么调用`Table`的`insert`, `inserts`, `update`方法时就会自动对数据根据设定的规则进行校验；
-[Params](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/util/Params.php)的子类使用它，就可以方便的获取合法的参数（数据）。
+[Table](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/Table.php)的子类(模型)使用它之后，那么调用`Table`的`insert`, `inserts`, `update`方法时就会自动对数据根据设定的规则进行校验；
+[Params](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/util/Params.php)的子类使用它，就可以方便的获取合法的参数（数据）。
 
 ## 简单示例
 
@@ -71,7 +71,7 @@ try {
 }
 ```
 
-执行上边的代码你将得到下边的结果:
+执行上边的代码你将得到下边的结果:
 
 <pre>
 Array
@@ -92,7 +92,7 @@ Array
 > **重点来了**
 >
 > 请想一想为什么结果不一样呢？那是因为:
-> 1. 新增时以定义的字段进行校验
+> 1. 新增时以定义的字段进行校验
 > 2. 修改时以要修改的字段进行校验
 
 ## 校验规则
@@ -106,14 +106,14 @@ Validator通过注解方式来定义校验规则。注解格式有四种:
 
 ### 内置检验规则
 
-|注解|说明|参数详解|参数可省畋|
+|注解|说明|参数详解|参数可省畋|
 |---|---|---|:---:|
 |required|非空字段|依赖的字段（多个以逗号分隔），当依赖字段全为空时此规则不起作用|是|
 |equalTo|和另一个字段相等|字段名|否|
 |notEqualTo|不等于别一个字段|字段名|否|
 |num|数字|无||
 |number|同`num`|无||
-|digits|整数|无||
+|digits|整数|无||
 |min|最小值|数值|否|
 |max|最大值|数值|否|
 |range|取值范围|最小值,最大值|否|
@@ -125,20 +125,20 @@ Validator通过注解方式来定义校验规则。注解格式有四种:
 |pattern|正则|正则表达式|否|
 |email|邮箱|无||
 |url|URL|无||
-|ip|IP地址|无||
-|ipv6|IP6地址|无||
+|ip|IP地址|无||
+|ipv6|IP6地址|无||
 |date|日期|分隔符|是|
 |datetime|分隔符|格式|是|
 |step|按指定步长增减|步长|否|
 |rangeWords|单词个数范围|最小值,最大值|否|
 |minWords|最少单词数|数值|否|
 |maxWords|最大单词数|数值|否|
-|require_from_group|组内至少有N个字段不为空|2,组名,字段1,字段2|否|
-|passwd|密码强度|强度值:1,2,3|是|
+|require_from_group|组内至少有N个字段不为空|2,组名,字段1,字段2|否|
+|passwd|密码强度|强度值:1,2,3|是|
 
 ## 动态规则
 
-除了通过注解方式配置校验规则，还可以通过Validator提供的`addRule`和`removeRule`来动态管理规则.
+除了通过注解方式配置校验规则，还可以通过Validator提供的`addRule`和`removeRule`来动态管理规则.
 
 ### addRule
 
@@ -157,16 +157,16 @@ public final function addRule($field, array $rules, $multiple = false)
 
 参数说明:
 
-1. $field: 要校验的字段
+1. $field: 要校验的字段
 2. $rules: 规则数组，支持多种格式:
-    * ['校验规则','参数','提示',$multiple]
+    * ['校验规则','参数','提示',$multiple]
     * '校验规则 (参数)'=> '提示'
     * '检验规则 (参数)'
-3. $multiple: 字段是否会出现多次
+3. $multiple: 字段是否会出现多次
 
 示例:
 
-为上例中手机号字段添加『必填』校验规则:
+为上例中手机号字段添加『必填』校验规则:
 
 ```php
 $userTable->addRule('phone', ['required' => '请填写手机号']);
@@ -189,7 +189,7 @@ public final function removeRule($field, $rule = null)
 参数说明:
 
 1. $field:字段
-2. $rule: 要删除的规则，不指定时删除字段所有校验规则。
+2. $rule: 要删除的规则，不指定时删除字段所有校验规则。
 
 ## Params
 
@@ -230,7 +230,7 @@ if ($errors) {
 
 ## 手动校验
 
-上边演示的都是自动校验，接下来演示Validator的`validate`方法,接上例:
+上边演示的都是自动校验，接下来演示Validator的`validate`方法,接上例:
 
 ```php
 $userLogindata    = new UserLoginData();
@@ -244,7 +244,7 @@ try {
 }
 ```
 
-如果你愿意再写一遍校验规则，那么请为`validate`方法提供第二个参数就行了，参数具体格式参见[addRule](#addRule):
+如果你愿意再写一遍校验规则，那么请为`validate`方法提供第二个参数就行了，参数具体格式参见[addRule](#addRule):
 
 ```php
 $userLogindata->validate($data,['username'=>[...]]);
