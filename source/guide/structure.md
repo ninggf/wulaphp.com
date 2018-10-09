@@ -117,4 +117,4 @@ class MyController extends Controller {
 }
 ```
 
-更多主参考[主题](theme.html)相关文档.
+更多参考[主题](/guide/mvc/theme)相关文档.

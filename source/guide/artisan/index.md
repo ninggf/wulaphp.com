@@ -38,7 +38,7 @@ Run  '#php artisan help &lt;command&gt;' for more information on a command.
 
 ## 自定义命令
 
-实现一个命令很简单，让我演示一下如何实现一个命令将用户输入的两个数加起来（以扩展提供此命令）:
+实现一个命令很简单，让我演示一下如何实现一个命令将用户输入的两个数加起来（以扩展提供此命令）:
 
 1. 新建文件`extensions/cmd/cmd.php`:
     ```php
@@ -96,16 +96,16 @@ Run  '#php artisan help &lt;command&gt;' for more information on a command.
 4. 执行`./artisan add 1 2`:
     <pre>3</pre>
 
-一个简单的加法命令就这么完成了。
+一个简单的加法命令就这么完成了。
 
-### 几点说明
+### 几点说明
 
-1. 首先继承[ArtisanCommand](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/artisan/ArtisanCommand.php)类实现你的命令
+1. 首先继承[ArtisanCommand](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/artisan/ArtisanCommand.php)类实现你的命令
     * `cmd()` 定义命令
     * `desc()` 命令描述
     * `argDesc()` 命令参数说明.
     * `getOpts()` 定义短选项(标识)，使用格式`-f`或`-f10`或`-f 10`。
-        * f=>标识说明 - 开启标识
+        * f=>标识说明 - 开启标识
         * f::flag=>标识说明 - 可选有值短选项
         * f:flag=>标识说明 - 必填有值短选项
     * `getLongOpts()` 定义命令选项，使用格式`--arg`或`--arg 10`
@@ -115,12 +115,12 @@ Run  '#php artisan help &lt;command&gt;' for more information on a command.
     * `execute($options)` 实现你的命令
         * 可以使用`opt()`函数获取参数。`-2`表示获取倒数第二个参数，以此类推。默认获取倒数第一个参数.
         * 可以使用`help($message)`提供错误信息
-        * 命令执行成功返回`0`，失败返回非`0`值.
+        * 命令执行成功返回`0`，失败返回非`0`值.
 2. 然后通过`artisan\getCommands`勾子将命令注册到`artisan`
 
 ## 短选项演示
 
-改写上例中的`AddCommand`以添加短选项:
+改写上例中的`AddCommand`以添加短选项:
 
 ```php
 class AddCommand extends ArtisanCommand {
@@ -161,7 +161,7 @@ Options:
 
 ## 长选项演示
 
-改写上例中的`AddCommand`以添加长选项:
+改写上例中的`AddCommand`以添加长选项:
 
 ```php
 class AddCommand extends ArtisanCommand {
@@ -207,7 +207,7 @@ Options:
 
 执行`./artisan add --num1 1 --num2 2 --num3 3`你将得到`6`.
 
-执行`./artisan add --num2 2 --num3 3`你将得到:
+执行`./artisan add --num2 2 --num3 3`你将得到:
 
 <pre>
 ERROR:

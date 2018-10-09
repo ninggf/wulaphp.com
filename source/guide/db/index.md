@@ -5,15 +5,15 @@ catalog: 数据库
 order: 14
 ---
 
-**目前wulaphp只支持MySQL和SQLite**,wulaphp的数据库访问是基于PDO的，可以面向对象(Model)地访问数据库也可以直接操作。同时wulaphp还提供了轻量级的ORM实现。
+**目前wulaphp只支持MySQL和SQLite**,wulaphp的数据库访问是基于PDO的，可以面向对象(Model)地访问数据库也可以直接操作。同时wulaphp还提供了轻量级的ORM实现。
 
-## DB Connection
+## DB Connection
 
 访问数据库之前，先得连上它以获取一个数据库连接 -- **DB Connection**。
-可以参考之前文档中的[配置数据库链接](../database.html#配置数据库)进行快速配置，
+可以参考之前文档中的[配置数据库链接](../database.html#配置数据库)进行快速配置，
 详细配置请传送至[数据库配置](../config/db.html)。
 
-配置好了之后我们就可以使用下边的代码直接创建一个默认的**数据库连接**:
+配置好了之后我们就可以使用下边的代码直接创建一个默认的**数据库连接**:
 
 ```php
 $db = \wulaphp\app\App::db();
@@ -25,7 +25,7 @@ $db = \wulaphp\app\App::db();
 $db = \wulaphp\app\App::db('db2');
 ```
 
-当然我们还可以直接通过配置创建数据库连接:
+当然我们还可以直接通过配置创建数据库连接:
 
 ```php
 $db = \wulaphp\app\App::db(['driver' => 'MySQL',
@@ -54,7 +54,7 @@ $db = \wulaphp\app\App::db(['driver' => 'MySQL',
         'email'    => 'abc@aaaa.com'
     ])->into('user')->newId();
     ```
-2. 增（批量）, $newId为第一个记录的ID,$affected为新增成功条数
+2. 增（批量）, $newId为第一个记录的ID,$affected为新增成功条数
     ```php
     $db      = \wulaphp\app\App::db();
     $users[] = [
@@ -112,7 +112,7 @@ $db = \wulaphp\app\App::db(['driver' => 'MySQL',
     //或者下边这种写法 
     $row = $db->select('id,username,nickname AS nk')->from('user')->where(['id' => 1])->ary();
     ```
-8. 查（联接查询），假如一个组(group)可以有多个用户，一个用户只能属于一个组.
+8. 查（联接查询），假如一个组(group)可以有多个用户，一个用户只能属于一个组.
     ```php
     $db = \wulaphp\app\App::db();
 
@@ -129,4 +129,4 @@ $db = \wulaphp\app\App::db(['driver' => 'MySQL',
 
 ## 接下来
 
-**其实上边的示例用法是wulaphp最不推荐的用法**，因为没人希望对数据库的『增删改』散落在代码的各个角落。wulaphp提供[模型](model.html)以集中数据库访问。
+**其实上边的示例用法是wulaphp最不推荐的用法**，因为没人希望对数据库的『增删改』散落在代码的各个角落。wulaphp提供[模型](model.html)以集中数据库访问。

@@ -5,18 +5,18 @@ order: 200
 catalog: 配置
 ---
 
-wulaphp默认的[配置加载器](../advance/cfg-loader.html)可以加载以下两类（不要怕，分类是为了更简单）配置:
+wulaphp默认的[配置加载器](../advance/cfg-loader.html)可以加载以下两类（不要怕，分类是为了更简单）配置:
 
 1. [普通配置](#普通配置)
 2. [数据库配置](#数据库配置)
 
 默认配置加载器加载的配置，不管是哪种类型的配置都是`conf`目录(可通过`CONF_DIR`常量修改)下一个普通的php文件。
-本文档基于默认配置加载器。如果有需要你可以自己实现配置加载器，你想怎么加载就怎么加载。
+本文档基于默认配置加载器。如果有需要你可以自己实现配置加载器，你想怎么加载就怎么加载。
 
 ## 普通配置
 
 普通配置通过[Configuration](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/conf/Configuration.php)类实现。
-wulaphp的默认配置加载器提供了简化的配置方法，只需要在配置文件中返回配置数组即可。如`conf/config.php`:
+wulaphp的默认配置加载器提供了简化的配置方法，只需要在配置文件中返回配置数组即可。如`conf/config.php`:
 
 ```php
 return [
@@ -24,7 +24,7 @@ return [
 ];
 ```
 
-默认的配置加载器将自动把数组转换为`Configuration`实例，上述代码等同于:
+默认的配置加载器将自动把数组转换为`Configuration`实例，上述代码等同于:
 
 ```php
 $conf           = new Configuration();
@@ -34,15 +34,15 @@ return $conf;
 ```
 
 `conf/config.php`文件是默认配置组(`default`)的配置文件,
-wulaphp支持将配置分组，分组配置文件名的格式: `分组名_config.php`。
-如`cache`组的配置文件名为`cache_config.php`。
-可以通过以下方式读取普通配置:
+wulaphp支持将配置分组，分组配置文件名的格式: `分组名_config.php`。
+如`cache`组的配置文件名为`cache_config.php`。
+可以通过以下方式读取普通配置:
 
 1. `App::bcfg($name, $default = false)`:读取`bool`型配置
 2. `App::icfg($name, $default = 0)`:读取`int`型配置
 3. `App::icfgn($name, $default = 0)`:
     * 读取`int`型配置
-    * 如果配置值为0则返回`$default`
+    * 如果配置值为0则返回`$default`
 4. `App::acfg($name, $default = [])`:加载`array`型配置
 5. `App::cfg($name = '@default', $default = '')`:
     * 调用`App::cfg()`时返回默认配置(Configuration)实例.
@@ -76,21 +76,21 @@ return [
 
 ## 数据库配置
 
-数据库配置大体上和基本配置一样，区别如下:
+数据库配置大体上和基本配置一样，区别如下:
 
 1. `dbconfig.php`是默认数据库配置文件。
-2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
+2. 其它配置组的文件名以`_dbconfig.php`为结尾，如`newdb_dbconfig.php`为`newdb`数据库配置。
 3. 配置文件要返回[DatabaseConfiguration](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/conf/DatabaseConfiguration.php)实例（PDO相关配置信息）。
 
 更多信息请传送至[数据库配置](db.html)。
 
-## 特殊配置
+## 特殊配置
 
 wulaphp目前定义了几个特殊的配置:
 
 1. [缓存](../utils/cache.html) - 配置后可直接使用wulaphp提供的缓存功能。
-2. [集群](cluster.html) - 配置后分分钟系统可以分布式部署。
-3. [Redis](../utils/redis.html) - 配置后可直接使用基于Redis的一切功能。
+2. [集群](cluster.html) - 配置后分分钟系统可以分布式部署。
+3. [Redis](../utils/redis.html) - 配置后可直接使用基于Redis的一切功能。
 4. [Service](../utils/service.html) - 详见`service`命令。
 
 ## 运行模式
@@ -98,7 +98,7 @@ wulaphp目前定义了几个特殊的配置:
 wulaphp默认运行在`dev`模式，可以通过以下几种方式定义wulaphp的运行模式:
 
 1. 在`bootstrap.php`文件中定义APP_MODE常量
-2. 定义web服务器的环境变量APPMODE(推荐)
+2. 定义web服务器的环境变量APPMODE(推荐)
 3. 在`conf/.env`文件中添加`app_mode=[pro|test|dev|...]`
 
 > `pro`是wulaphp定义的生产模式。wulaphp只有运行在`pro`模式下，才会启用以下功能:
@@ -126,4 +126,4 @@ wulaphp可以根据运行模式智能地加载与运行模式相对应的配置�
 
 > 在所有配置文件中，还是可以使用`env`函数从`.env`文件中加载配置的。
 
-如果wulaphp的这种配置方案满足不了你，请自定义一个[配置加载器](../advance/cfg-loader.html)，随便你怎么加载配置。
+如果wulaphp的这种配置方案满足不了你，请自定义一个[配置加载器](../advance/cfg-loader.html)，随便你怎么加载配置。

@@ -22,7 +22,7 @@ order: 17
         }
     }
     ```
-2. 自动处理（通过捕获异常实现回滚）
+2. 自动处理（通过捕获异常实现回滚）
     ```php
     $db = \wulaphp\app\App::db();
     $rst = $db->trans(function (\wulaphp\db\DatabaseConnection $con) {
@@ -35,7 +35,7 @@ order: 17
     });
     ```
 
-关键是`trans`方法.详细请阅读[DatabaseConnection](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/DatabaseConnection.php)的源代码:
+关键是`trans`方法.详细请阅读[DatabaseConnection](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/db/DatabaseConnection.php)的源代码:
 
 ```php
 /**

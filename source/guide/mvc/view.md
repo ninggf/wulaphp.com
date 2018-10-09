@@ -5,10 +5,10 @@ order: 26
 mustache: '{{}}'
 ---
 
-MVC的V - 视图，就是页面、JSON数据、XML、EXCEL表格、图片这些东东吧, 反正用户可以直接看到（使用）它，控制器需要返回它的实例。
+MVC的V - 视图，就是页面、JSON数据、XML、EXCEL表格、图片这些东东吧, 反正用户可以直接看到（使用）它，控制器需要返回它的实例。
 
 <p class="tip">
-如果你还不熟悉Smarty模板引擎,请在开始使用视图之前花点时间熟悉一下<a href="https://www.smarty.net/docs/zh_CN/" target="_blank">Smarty</a>
+如果你还不熟悉Smarty模板引擎,请在开始使用视图之前花点时间熟悉一下<a href="https://www.smarty.net/docs/zh_CN/" target="_blank">Smarty</a>
 </p>
 
 ## 内置视图
@@ -16,8 +16,8 @@ MVC的V - 视图，就是页面、JSON数据、XML、EXCEL表格、图片这些
 wulaphp内置了以下几种视图模板引擎:
 
 1. [SmartyView](#SmartyView)
-2. [ThemeView](#ThemeView)
-3. [HtmlView](#HtmlView)
+2. [ThemeView](#ThemeView)
+3. [HtmlView](#HtmlView)
 4. [JsonView](#JsonView)
 5. [XmlView](#XmlView)
 6. [ExcelView](#ExcelView)
@@ -33,9 +33,9 @@ wulaphp内置了以下几种视图模板引擎:
 
 默认输出头: `Content-Type: text/html; charset=utf-8`
 
-详见控制器如何使用[视图](controller.html#视图).
+详见控制器如何使用[视图](controller.html#视图).
 
-### ThemeView
+### ThemeView
 
 基于**Smarty**模板引擎的视图,为wulaphp提供[主题](theme.html)功能.
 
@@ -50,11 +50,11 @@ wulaphp内置了以下几种视图模板引擎:
 
 默认输出头: `Content-Type: text/html; charset=utf-8`
 
-详见控制器如何使用[视图](controller.html#视图).
+详见控制器如何使用[视图](controller.html#视图).
 
 ### JsonView
 
-这个最简单喽,直接返回`array`即可:
+这个最简单喽,直接返回`array`即可:
 
 ```php
 return ['greeting'=>'Hello World!'];
@@ -67,7 +67,7 @@ return ['greeting'=>'Hello World!'];
 看代码吧:
 
 ```php
-$data['books'][] = ['book' => ['@auther' => '曹雪芹', '#' => '红楼梦']];
+$data['books'][] = ['book' => ['@auther' => '曹雪芹', '#' => '红楼梦']];
 $data['books'][] = ['book' => ['@auther' => '金庸', '#' => '笑傲江湖']];
 $data['books']['@total'] = 2;
 
@@ -117,7 +117,7 @@ return excel('文件名',$data,'excel_tpl');
 
 ### SimpleView
 
-这个也简单哦,直接返回`string`即可:
+这个也简单哦,直接返回`string`即可:
 
 ```php
 return 'Hello World!';
@@ -139,10 +139,10 @@ return new JsView($js);
 
 ## Smarty引擎
 
-Smarty模板引擎使用的`{}`与`Mustache`(Vuejs、Angular等库)使用的`{{mustache}}`会产生冲突,解决这个冲突的途径有:
+Smarty模板引擎使用的`{}`与`Mustache`(Vuejs、Angular等库)使用的`{{mustache}}`会产生冲突,解决这个冲突的途径有:
 
 1. 使用`mustache()`代替`view()`
-2. 如果你使用`SmartyView`:
+2. 如果你使用`SmartyView`:
     ```php
     return new SmartyView(...)->mustache();
     ```
@@ -161,14 +161,14 @@ wulaphp为Smarty提供了几个新的[变量修饰器](theme.html#修饰器).
 
 wulaphp为Smarty提供了几个新的[内置函数](theme.html#Smarty内置函数).
 
-## 自定义视图
+## 自定义视图
 
-所有视图都是[View](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/View.php)的子类，基于此你可以很随便地实现一个基于自己熟悉的模板引擎的视图。
+所有视图都是[View](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/View.php)的子类，基于此你可以很随便地实现一个基于自己熟悉的模板引擎的视图。
 不信我实现一个基于PHP语法的视图给你看看。
 
 我们通过[扩展(E)](extension.html)机制来实现这个屌屌的视图模板引擎。
 
-1. 在`extensions`目录创建文件`myview/PhpView.php`:
+1. 在`extensions`目录创建文件`myview/PhpView.php`:
     ```php
     namespace myview;
 
@@ -201,7 +201,7 @@ wulaphp为Smarty提供了几个新的[内置函数](theme.html#Smarty内置函�
         }
     }
     ```
-2. 写个控制器使用它（假设是helloworld\controllers\ViewController）:
+2. 写个控制器使用它（假设是helloworld\controllers\ViewController）:
     ```php
     <?php
     namespace helloworld\controllers;
@@ -217,7 +217,7 @@ wulaphp为Smarty提供了几个新的[内置函数](theme.html#Smarty内置函�
         }
     }
     ```
-3. 模板文件`helloworld/views/index.php`:
+3. 模板文件`helloworld/views/index.php`:
     ```php
     <html>
     <head>
@@ -232,12 +232,12 @@ wulaphp为Smarty提供了几个新的[内置函数](theme.html#Smarty内置函�
 就这么简单(实现`render`就行), 它和wulaphp的[HtmlView](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/view/HtmlView.php)一模一样呢。有几点要说明：
 
 1. wulaphp默认使用Smarty模板引擎。
-    * 可以通过[勾子](../../hooks.html)来修改Smarty引擎。
+    * 可以通过[勾子](../../hooks.html)来修改Smarty引擎。
 2. wulaphp内置了一些视图，详见[控制器(C)](controller.html#方法-Action)文档中相关部分。
 
 ### 模板文件自加载
 
-想让`PhpView`像SmartyView和HtmlView一样自动加载`views`目录下对应的模板文件吗?简单得很,只需要让`PhpView`实现``就可以啦:
+想让`PhpView`像SmartyView和HtmlView一样自动加载`views`目录下对应的模板文件吗?简单得很,只需要让`PhpView`实现``就可以啦:
 
 ```php
 use wulaphp\mvc\view\View;
@@ -254,4 +254,4 @@ class PhpView extends View implements IModuleView {
 
 ## 接下来
 
-视图是给控制器用的，对于前端页面，wulaphp使用[主题(T)](theme.html)来搞定。
+视图是给控制器用的，对于前端页面，wulaphp使用[主题(T)](theme.html)来搞定。

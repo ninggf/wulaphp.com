@@ -46,15 +46,15 @@ helloword
   │  └─zh.php                  #所有中文
   ├─classes                    #类目录
   │  ├─ClassOne.php            #ClassOne类
-  │  └─OtherClass.php          #OtherClass
+  │  └─OtherClass.php          #OtherClass
   ├─sub1                       #子模块sub1
   │  ├─classes                 #子模块的类目录
   │  ├─controllers             #控制器目录
   │  │  └─IndexController.php  #默认控制器
   │  └─views                   #视图目录
   │     └─index                #IndexController的视图目录
-  │        ├─index.tpl         #默认视图文件(Smarty)
-  │        └─abc.php           #abc方法视图文件(php)
+  │        ├─index.tpl         #默认视图文件(Smarty)
+  │        └─abc.php           #abc方法视图文件(php)
   ├─sub2                       #子模块sub2
   │  ├─controllers             #控制器目录
   │  └─views                   #视图目录
@@ -66,6 +66,6 @@ helloword
 
 嗯，对的，子模块就是一个文件夹，子模块的控制器放在其`controllers`目录，视图放在...。
 
-其它方面就和[模块](../mvc/module.html)一样啦。
+其它方面就和[模块](../mvc/module.html)一样啦。
 
 ### URL

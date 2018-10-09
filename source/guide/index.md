@@ -4,19 +4,19 @@ type: guide
 order: 1
 ---
 
-## 介绍
+## 介绍
 
 她的名字来自电影《异星战场》里那个速度极快的狗狗(真的很快) - 乌拉(wula)，wulaphp和她一样快。
 她是一个简单、小巧、高效、快速、灵活、模块化的轻量级`PHP MVC`开发框架；
 她是一个学习成本极底，任何人都可以快速上手，只需专注于业务开发的框架；
-她是一个站在前辈肩膀上的新框架，集前辈优点于一身，时刻将性能、简洁、易用做为最高设计原则。
+她是一个站在前辈肩膀上的新框架，集前辈优点于一身，时刻将性能、简洁、易用做为最高设计原则。
 
 她遵循`MIT`开源许可协议发布，放心使用。
 
 她自身仍在快速发展中，生态环境也在蓬勃成长。
 
 * 欢迎参与项目维护:
-    1. [修订记录](https://github.com/ninggf/wulaphp/blob/v2.0.0/changelog.md)
+    1. [修订记录](https://github.com/ninggf/wulaphp/blob/v2.0/changelog.md)
     2. [贡献者名单](https://github.com/ninggf/wulaphp/graphs/contributors)
 * 生态环境
     1. [wulacms](https://github.com/ninggf/wulacms)基于wulaphp的CMS系统.

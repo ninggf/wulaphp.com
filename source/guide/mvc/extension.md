@@ -4,7 +4,7 @@ type: guide
 order: 23
 ---
 
-扩展 - 将通用功能进行高度内聚形成类库供wulaphp模块调用.
+扩展 - 将通用功能进行高度内聚形成类库供wulaphp模块调用.
 
 ## 使用时机
 
@@ -25,7 +25,7 @@ extensions
     └─hello.php
 </pre>
 
-在hello.php文件中定义扩展类`hello\HelloExtension`:
+在hello.php文件中定义扩展类`hello\HelloExtension`:
 
 ```php
 <?php
@@ -51,11 +51,11 @@ class HelloExtension extends Extension {
 App::registerExtension(new HelloExtension());
 ```
 
-通过`App::registerExtension(new HelloExtension())`将扩展注册到系统同时实现勾子的[自动绑定](#自动绑定).
+通过`App::registerExtension(new HelloExtension())`将扩展注册到系统同时实现勾子的[自动绑定](#自动绑定).
 
-<p class="tip">如不需绑定勾子等初始化扩展操作,引导文件与扩展类可省略.</p>
+<p class="tip">如不需绑定勾子等初始化扩展操作,引导文件与扩展类可省略.</p>
 
-### 勾子绑定
+### 勾子绑定
 
 只需在扩展类中重写`Extension::bind`方法，在其中实现勾子绑定,如下:
 
@@ -83,12 +83,12 @@ class HelloExtension extends Extension{
 
 ### 自动绑定
 
-通过wulaphp提供的**注解功能**可以很方便地实现勾子自动绑定:
+通过wulaphp提供的**注解功能**可以很方便地实现勾子自动绑定:
 
 1. 通过`@bind`绑定通知/事件型勾子；
-2. 通过`@filter`绑定修改型勾子;
+2. 通过`@filter`绑定修改型勾子;
 
-这两个注解只能作用于扩展类的公众静态方法上。通过它们实现自动绑定可以自动检测参数个数。更多绑定相关内容可以查看[插件(P)](plugin.html)。
+这两个注解只能作用于扩展类的公众静态方法上。通过它们实现自动绑定可以自动检测参数个数。更多绑定相关内容可以查看[插件(P)](plugin.html)。
 
 1. 通知/事件型: `@bind 勾子[ 优先级]`
     ```php
@@ -125,9 +125,9 @@ class HelloExtension extends Extension{
     }
     ```
 
-## 公共扩展
+## 公共扩展
 
-如果你有一颗开源的心，可以将你写的牛逼的扩展作为composer包发布分享给其他人,只需要简单地添加一个composer.json并发布到composer即可，示例如下:
+如果你有一颗开源的心，可以将你写的牛逼的扩展作为composer包发布分享给其他人,只需要简单地添加一个composer.json并发布到composer即可，示例如下:
 
 ```json
 {
@@ -139,12 +139,12 @@ class HelloExtension extends Extension{
 }
 ```
 
-1. `type`必须为`wula-extension`，这样它才能被正确安装到扩展目录。
+1. `type`必须为`wula-extension`，这样它才能被正确安装到扩展目录。
 2. 必须依赖`wula/wula-installer`，不然composer不知道如何安装它。
-3. 其它依赖请根据实际情况添加.
-4. 其它各项composer配置请根据实现情况添加.
+3. 其它依赖请根据实际情况添加.
+4. 其它各项composer配置请根据实现情况添加.
 
-更多composer知识请传送至[Composer](https://getcomposer.org/).
+更多composer知识请传送至[Composer](https://getcomposer.org/).
 
 ## 类自动加载
 

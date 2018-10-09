@@ -18,7 +18,7 @@ order: 12
     CREATE DATABASE demo_db DEFAULT CHARSET UTF8;
     ```
 
-2. 创建表
+2. 创建表
 
     ```sql
     CREATE TABLE `user` (
@@ -48,7 +48,7 @@ order: 12
         ('user5','李雷','13588888888','admin@mno.com',MD5('123321'));
     ```
 
-数据准备好了，让我们连上它并读出用户列表吧.
+数据准备好了，让我们连上它并读出用户列表吧.
 
 ## 配置数据库
 
@@ -95,7 +95,7 @@ if ($options) {
 
 更多配置请参考[数据库配置](config/db.html)。
 
-## 显示用户列表
+## 显示用户列表
 
 1. 在`helloworld`模块的controllers目录创建控制器`helloworld\controllers\UserController`:
 
@@ -148,11 +148,11 @@ if ($options) {
     </html>
     ```
 
-3. 访问`helloworld/user`,结果如你想见。
+3. 访问`helloworld/user`,结果如你想见。
 
 ### 更多显示方式
 
-1. 按姓名倒序显示列表:
+1. 按姓名倒序显示列表:
 
     ```php
     public function index() {
@@ -164,7 +164,7 @@ if ($options) {
     }
     ```
 
-2. 只显示2个用户
+2. 只显示2个用户
 
     ```php
     public function index() {
@@ -176,7 +176,7 @@ if ($options) {
     }
     ```
 
-3. 只显示用户ID大于2且姓名中含有「李」的用户
+3. 只显示用户ID大于2且姓名中含有「李」的用户
 
     ```php
     public function index() {

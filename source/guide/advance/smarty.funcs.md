@@ -9,10 +9,10 @@ wulaphp利用Smarty的扩展特性为其增加了一些函数，有了这些函�
 ## {cts}
 
 `{cts}`通过数据源获取数据集，并根据`loop`值决定是否遍历这个数据集。
-`{cts}`与Smarty的`{foreach}`很像，除了以下三点不同，其它用法与`{foreach}`相同:
+`{cts}`与Smarty的`{foreach}`很像，除了以下三点不同，其它用法与`{foreach}`相同:
 
 * 遍历的对象由数据源提供。
-* 可通过设置`loop`属性为`false`关闭遍历功能。
+* 可通过设置`loop`属性为`false`关闭遍历功能。
 * `{ctselse}`处理无可遍历数据情况
 
 ### 属性
@@ -26,8 +26,8 @@ wulaphp利用Smarty的扩展特性为其增加了一些函数，有了这些函�
 
 ### 数据源
 
-所有继承[CtsDataSource](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/model/CtsDataSource.php)类并通过勾子`tpl\regCtsDatasource`将其实例注册到数据源管理器的类都可以做为`{cts}`的数据源为`{cts}`提供数据集。
-每个数据源都可以有自己的属性，以便准确提供数据，只是要注意一点这些属性不能与`{cts}`的标准属性重名！
+所有继承[CtsDataSource](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/mvc/model/CtsDataSource.php)类并通过勾子`tpl\regCtsDatasource`将其实例注册到数据源管理器的类都可以做为`{cts}`的数据源为`{cts}`提供数据集。
+每个数据源都可以有自己的属性，以便准确提供数据，只是要注意一点这些属性不能与`{cts}`的标准属性重名！
 系统内置了一个超级简单的数据源`split`:
 
 ```php
@@ -39,7 +39,7 @@ class SplitDataSource extends CtsDataSource {
     * @param array                          $con 属性数组
     * @param \wulaphp\db\DatabaseConnection $db  数据库连接
     * @param \wulaphp\router\UrlParsedInfo  $pageInfo 分页信息
-    * @param array                          $tplvar 已经传到模板的变量
+    * @param array                          $tplvar 已经传到模板的变量
     *
     * @return \wulaphp\mvc\model\CtsData
     */
@@ -67,12 +67,12 @@ class SplitDataSource extends CtsDataSource {
 根据上述代码，可以发现`splite`数据源自定义了三个属性:
 
 1. `content`要分隔的内容
-2. `sp`分隔字符，默认为','
+2. `sp`分隔字符，默认为','
 3. `r`是否使用正则
 
 实现一个数据源是不是很简单？！请按需实现你自己的数据源.
 
-### 示例
+### 示例
 
 模板文件(使用`splite`数据源):
 
@@ -96,7 +96,7 @@ class SplitDataSource extends CtsDataSource {
 
 ## {ctsp}
 
-`{ctsp}`用来对数据集(`CtsData`)进行分页,数据集可以是通过`{cts}`获取到的也可以是直接以变量名`_cts_{$var}_data`({$var}即`var`属性值)传递到模板的`CtsData`实例.
+`{ctsp}`用来对数据集(`CtsData`)进行分页,数据集可以是通过`{cts}`获取到的也可以是直接以变量名`_cts_{$var}_data`({$var}即`var`属性值)传递到模板的`CtsData`实例.
 
 ### 属性
 
@@ -105,15 +105,15 @@ class SplitDataSource extends CtsDataSource {
 |var|string|Y|N/A|分页数据变量名|
 |for|string|N|N/A|`{cts}`的[`var`属性](#属性)|
 |loop|bool|N|true|是否遍历分页数据|
-|limit|int|N|10|每页条数|
-|pp|int|N|10|一共显示多少页|
+|limit|int|N|10|每页条数|
+|pp|int|N|10|一共显示多少页|
 
 ### 分页数据
 
-|KEY|说明|
+|KEY|说明|
 |---|---|
-|total|总页数|
-|ctotal|总条数|
+|total|总页数|
+|ctotal|总条数|
 |first|第一页URL|
 |prev|上一页URL|
 |next|下一页URL|
@@ -122,21 +122,21 @@ class SplitDataSource extends CtsDataSource {
 |1|页码`1`对应的URL|
 |2|页码`2`对应的URL|
 |...|页码...对应的URL|
-|n|页码`n`对应的URL|
+|n|页码`n`对应的URL|
 
 ### 示例
 
-模板文件:
+模板文件:
 
 ```html
-<h3>新闻</h3>
+<h3>新闻</h3>
 <ul>
 {cts var=news from=page model=article limit='0,10'}
 <li> <a href="{$news.url|url}">{$news.title}</a></li>
 {/cts}
 </ul>
 <div>
-分页:
+分页:
 {ctsp var=pp for=news limit=10 loop=0}
 <ul>
     <li>{$_cp}/{$pp.total}</li>
@@ -162,7 +162,7 @@ class SplitDataSource extends CtsDataSource {
 {/cts}
 </ul>
 <div>
-分页:
+分页:
 <ul>
 {ctsp var=pp for=news limit=10}
     {if $pp@key=='total'}
@@ -184,14 +184,14 @@ class SplitDataSource extends CtsDataSource {
 
 ## {combinate}
 
-`{combinate}`可以将多个JS或CSS文件合并成一个文件.
+`{combinate}`可以将多个JS或CSS文件合并成一个文件.
 
 ### 属性
 
 |参数名称|类型|必选参数|默认值|说明|
 |---|---|---|:---:|---|
-|type|string|Y|N/A|文件类型,可选`js`、`css`|
-|ver|string|N|1|版本号|
+|type|string|Y|N/A|文件类型,可选`js`、`css`|
+|ver|string|N|1|版本号|
 
 ### 示例
 
@@ -214,8 +214,8 @@ class SplitDataSource extends CtsDataSource {
 > 说明:
 >
 > 1. 需要在配置中开启合并功能`['resource'=>['combinate'=>1]]`
-> 2. 可以通过`combinater\getPath`勾子修改合并后文件存储目录，默认为`files`。
-> 3. 可以通过`combinater\getURL`勾子修改合并后文件的URL基地址,默认由`WWWROOT`常量定义。
+> 2. 可以通过`combinater\getPath`勾子修改合并后文件存储目录，默认为`files`。
+> 3. 可以通过`combinater\getURL`勾子修改合并后文件的URL基地址,默认由`WWWROOT`常量定义。
 
 ## {minify}
 
@@ -225,11 +225,11 @@ class SplitDataSource extends CtsDataSource {
 
 |参数名称|类型|必选参数|默认值|说明|
 |---|---|---|:---:|---|
-|type|string|Y|N/A|代码类型,可选`js`、`css`|
+|type|string|Y|N/A|代码类型,可选`js`、`css`|
 
 ### 示例
 
-压缩JS:
+压缩JS:
 
 ```html
 <script type="text/javascript">

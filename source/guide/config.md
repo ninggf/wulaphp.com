@@ -105,11 +105,11 @@ return [
     </html>
     ```
 
-读取配置就是这么简单。
+读取配置就是这么简单。
 
 ## 自定义配置
 
-上边是把配置添加到默认配置组了，下边我们创建自定义配置组:`hello`。
+上边是把配置添加到默认配置组了，下边我们创建自定义配置组:`hello`。
 
 1. 创建文件 `conf/hello_config.php`:
 
@@ -125,7 +125,7 @@ return [
     ];
     ```
 
-2. 添加`infoHello`方法到`InfoController`控制器:
+2. 添加`infoHello`方法到`InfoController`控制器:
 
     ```php
     public function infoHello() {
@@ -175,14 +175,14 @@ return [
 2. `App::icfg($name, $default = 0)`:读取`int`型配置
 3. `App::icfgn($name, $default = 0)`:
     * 读取`int`型配置
-    * 如果配置值为0则返回`$default`
+    * 如果配置值为0则返回`$default`
 4. `App::acfg($name, $default = [])`:加载`array`型配置
 5. `App::cfg($name = '@default', $default = '')`:
     * 调用`App::cfg()`时返回默认配置(Configuration)实例.
     * 调用`App::cfg('@hello')`时返回`hello`配置实例.
     * 调用`App::cfg('name@hello')`时返回`hello`配置中`name`配置项的值.
 
-更多配置相关信息,请移步[配置详解](advance/config.html).
+更多配置相关信息,请移步[配置详解](/guide/config/config).
 
 ## 接下来
 
