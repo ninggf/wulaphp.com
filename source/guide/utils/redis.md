@@ -77,7 +77,7 @@ return ['host'=>'localhost','port'=>6379,'db'=>0,'auth'=>'','timeout'=>5];
 public static function getRedis($cnf = null, $db = null, $prefix = '') 
 ```
 
-`$cnf`参数详解(因为这个参数太神奇)，它有4种格式:
+`$cnf`参数详解(因为这个参数太神奇)，它有4种格式:
 
 1. string - 如果你传的是字符串，那么它一定是Redis服务器的IP或域名(主机地址).
 2. array  - 如果你传的是数组，那么格式是下边这样的:
