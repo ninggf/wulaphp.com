@@ -298,7 +298,7 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
         }
     }
     ```
-4. 通过`with`加速用户班级信息(myclass)加载
+4. 通过`with`加载用户班级信息(myclass)
     ```php
     $userTable = new UserTable();
     $users     = $userTable->find(['id @' => [1, 2, 3, 4, 5]])->with('myclass');
@@ -311,7 +311,7 @@ protected final function hasMany($tableCls, $foreign_key = '', $value_key = '')
 
 > **注意**
 >
-> 1. `students`调用将返回一个Query实例。可以通过此实例进行排序，分页，添加添加等处理。
+> 1. `students`调用将返回一个Query实例。可以通过此实例进行排序，分页，添加等处理。
 > 2. 可以注释`->with('myclass')`看看执行的SQL数量的变化。
 > 3. `with`只能用于`belongsTo`定义的字段。
 
