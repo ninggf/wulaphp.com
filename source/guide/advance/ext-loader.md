@@ -6,7 +6,7 @@ order: 1101
 
 ## 默认加载器
 
-wulaphp通过默认的[ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)扩展加载器加载扩展, 流浏程大致如下:
+wulaphp通过默认的[ExtensionLoader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/app/ExtensionLoader.php)扩展加载器加载扩展, 流程大致如下:
 
 <pre>
     创建扩展加载器（由EXTENSION_LOADER_CLASS指定）
