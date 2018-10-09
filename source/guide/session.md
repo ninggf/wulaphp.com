@@ -46,7 +46,7 @@ order: 13
     {"name":"wulaphp is great!"}
     ```
 
-就是这么简单的, 原汁原味的PHP会话操作方式~
+就是这么简单的, 原汁原味的PHP会话操作方式~
 
 ## 登录实战
 
@@ -161,14 +161,14 @@ order: 13
     }
     ```
 
-一个简单的登录功能就完成了，用[连接数据库](database.html)一节中创建的用户(`user1、user2、user3、user4、user5`，默认的密码是`123321`)去登录一下试试吧。
+一个简单的登录功能就完成了，用[连接数据库](database.html)一节中创建的用户(`user1、user2、user3、user4、user5`，默认的密码是`123321`)去登录一下试试吧。
 
 **说明:**
 
 1. `sess_del`函数为wualphp提供的会话快捷操作函数
     * sess_del 取值并删除
     * sess_get 取值
-2. `{'helloworld/user/login'|app}`中`app`是wulaphp提供的Smarty模板修饰器(modifier)
+2. `{'helloworld/user/login'|app}`中`app`是wulaphp提供的Smarty模板修饰器(modifier)
     * 模板中的模块控制器的URL都应使用`app`修饰器，因为模块的目录名是可变的
 3. `rqst` 读取POST和GET数据,同时还有`irqst`,`frqst`等.
 4. 当我们以POST方法请求`helloworld/user/login`时,请求将优先分发给`loginPost`处理.
