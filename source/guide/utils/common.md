@@ -4,13 +4,13 @@ type: guide
 order: 607
 ---
 
-最喜欢PHP了，不仅支持面向对象编程，还支持面向过程编程，wulaphp提供的[wula/common](https://github.com/ninggf/wula-common/blob/master/common.php)包(可独立使用)里有些好用的函数(你可以直接读代码)，供君享用:
+最喜欢PHP了，不仅支持面向对象编程，还支持面向过程编程，wulaphp提供的[wula/common](https://github.com/ninggf/wula-common/blob/master/common.php)包(可独立使用)里有些好用的函数(你可以直接读代码)，供君享用:
 
 1. `aryget($name, $array, $default = '')` 从数组取值，如果数组中无指定key，则返回默认值.
     * $name - key
     * $array - 从这里取值
     * $default - 默认值
-2. `pure_comman_string($string)` 将以'，',' ','　','-',';','；','－'分隔的字符串转换成以逗号分隔的字符.
+2. `pure_comman_string($string)` 将以',',' ','　','-',';',';','－'分隔的字符串转换成以逗号分隔的字符.
 3. `in_atag($content, $tag)` 判断$tag是否在A标签中或是某个标签的属性.
     * $content - html代码
     * $tag - 标签
@@ -18,7 +18,7 @@ order: 607
     $rst = in_atag('这是一篇关于<a href="/">wulacms</a>的文档','wulacms');
     // $rst = true;
     ```
-4. `the_media_src($url)` 生成图片（特指用户上传的图片）URL。
+4. `the_media_src($url)` 生成图片（特指用户上传的图片）URL。
 5. `trailingslashit($string)` 在$string添加'/'
 6. `untrailingslashit($string)` 删除$string尾部的'/'或'\\'
 7. `sanitize_file_name($filename)` 去除文件名中不合法的字符.
@@ -28,13 +28,13 @@ order: 607
     * $pattern - 查找规则
     * $excludes - 排除规则
     * $recursive - 是否递归查找
-    * $stop - 递归层数
+    * $stop - 递归层数
 10. `rmdirs($dir, $keep = true)` 删除目录下的所有内容
     * $dir - 要删除的目录
-    * $keep - 目录里的内容删除后是否保留$dir
+    * $keep - 目录里的内容删除后是否保留$dir
 11. `keepargs($url, $include = [])` 只保留URL中部分参数.
     * $url - URL
-    * $include - 要保留的参数
+    * $include - 要保留的参数
     ```php
     $url = 'http://www.abc.com/?name=1&age=2&sex=2';
     $url = keepargs($url,['name','sex']);
@@ -48,7 +48,7 @@ order: 607
     $url = unkeepargs($url,['age']);
     // $url = 'http://www.abc.com/?name=1&sex=2'
     ```
-13. `safe_ids($ids, $sp = ',', $array = false)` 安全数字ID.
+13. `safe_ids($ids, $sp = ',', $array = false)` 安全数字ID.
     * $ids - 以$sp分隔的id列表,只能是大与0的整数.
     * $sp - 分隔符.
     * $array - 是否返回数组.
