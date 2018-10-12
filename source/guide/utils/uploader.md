@@ -60,7 +60,7 @@ UploadFile只能处理通过表单上传的文件且存储在本地，
 wulaphp也提供了相应的解决方案: `Uploader`。
 wulaphp内置了`LocaleUploader`(本地文件上传器)，可以通过继承`\wulaphp\io\Uploader`实现自己的文件上传器。
 
-代码中通过`$uploader = Uploader::defaultUploader()`获取系统默认的文件上传器,
+代码中通过`$uploader = Uploader::getUploader()`获取系统默认的文件上传器或`$uploader = Uploader::getUploader('myUploader')`,
 通过`$uploader->save()`将文件保存到它该保存的地方，比如阿里云OSS，千牛等等。
 
 ### 自定义文件上传器
@@ -92,3 +92,4 @@ wulaphp内置了`LocaleUploader`(本地文件上传器)，可以通过继承`\wu
     * 返回值: **string** 上传过程中发生的错误信息.
 
 具体可以参考[LocaleUploader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/io/LocaleUploader.php)源代码实现你的文件上传器（需要把上传的文件保存到其它地方时）。
+然后通过勾子`upload\getUploader`修改默认文件上传器,通过勾子`upload\regUploaders`将上传器注册到系统。
