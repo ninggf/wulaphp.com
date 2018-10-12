@@ -19,6 +19,7 @@ return [
     'expire'         => 0,// 会话过期时间单位秒
     'static_base'    => '',// 静态资源Base URL
     'cdn_base'       => '',// CDN资源Base URL
+    'ssn'            => 'file:path=storage',// 存储器配置
     'proxy'          => [ //curl代理配置
         'type' => '',// 代理类型,可选值http,SOCKS4,SOCKS5,SOCKS4A
         'auth' => '',// 认证
@@ -45,9 +46,11 @@ return [
 
 **简单说明:**
 
-1. `static_base` 影响Smarty变量修饰器`assets`、`vendor`和函数`App::assets()`、`App::vendor()`
-2. `cdn_base` 影响Smarty变量修饰器`cdn`和函数`App::cdn()`
-3. `resource.combinate` 影响Smarty函数[combinate](../advance/smarty.funcs.html#combinate)
-4. `resource.minify` 影响Smarty函数[minify](../advance/smarty.funcs.html#minify)
-5. `proxy` 详见[curl扩展](#http://php.net/manual/zh/function.curl-setopt.php)。
+1. `static_base` 影响Smarty变量修饰器`assets`、`vendor`和函数`App::assets()`、`App::vendor()`。
+2. `cdn_base` 影响Smarty变量修饰器`cdn`和函数`App::cdn()`。
+3. `ssn` 存储器配置，详见[存储器](../utils/storage.html)。
+4. `upload` 文件上传配置，详见[文件上传](../utils/uploader.html)。
+5. `resource.combinate` 影响Smarty函数[combinate](../advance/smarty.funcs.html#combinate)。
+6. `resource.minify` 影响Smarty函数[minify](../advance/smarty.funcs.html#minify)。
+7. `proxy` 详见[curl扩展](#http://php.net/manual/zh/function.curl-setopt.php)。
     * `type`为空，不使用代理。
