@@ -20,6 +20,8 @@ wulaphp内置勾子(扩展点)一览表:
 |after_content_output|事件|已经输出的内容|内容发送之后|
 |get_redis_cache|修改|1. 缓存实例；2.配置|系统需要Redis缓存实现时|
 |get_memcached_cache|修改|1. 缓存实例；2. 配置|系统需要memcached缓存实例时|
+|upload\getUploader|修改|1. 上传器实例|获取系统默认文件上传器时|
+|upload\regUploaders|修改|1. 上传器实例数组|获取所有可用文件上传器时|
 |artisan\getCommands|修改|命令列表|命令行执行artisan命令时|
 |init_smarty_engine|事件|Smarty实例|初始化Smarty引擎时|
 |init_view_smarty_engine|事件|Smarty实例|初始化Smarty视图引擎时|
