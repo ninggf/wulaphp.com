@@ -32,7 +32,7 @@ foreach ($files as $upf) {
 参数:
 
 1. `$name` **string|array** 参数名或上传的文件数组.
-2. `$ext`  **array** 允许的扩展名列表(包括'.'哦，如:['.png','.gif']).
+2. `$ext`  **array** 允许的扩展名列表(包括'.'，如:['.png','.gif']).
 3. `$max`  **int** 允许的最大上传尺寸.
 
 ### save
