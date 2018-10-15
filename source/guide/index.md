@@ -18,9 +18,6 @@ order: 1
 * 欢迎参与项目维护:
     1. [修订记录](https://github.com/ninggf/wulaphp/blob/v2.0/changelog.md)
     2. [贡献者名单](https://github.com/ninggf/wulaphp/graphs/contributors)
-* 生态环境
-    1. [wulacms](https://github.com/ninggf/wulacms)基于wulaphp的CMS系统.
-    2. [jqadmin](https://github.com/ninggf/wula_assets_jqadmin/tree/v2.0)后台界面UI
 
 ## 特性
 
@@ -28,6 +25,7 @@ order: 1
     1. 她是一个composer包，可以通过composer进行引用
     2. 她只依赖`psr/log`与`smarty/smarty`这两个第三方库
     3. 高效的类懒加载机制
+* 提供[RESTFulServer](restful)以快速开发API接口.
 * 基于插件(plugin)机制提供无限扩展性.
 * 利用模块(module)来合理组织你的应用,大大提高代码重用率.
 * 提供扩展(extension)机制,将通用功能高度内聚,大大提高代码重用率.

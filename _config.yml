@@ -11,7 +11,7 @@ author: Leo Ning
 language:
 timezone:
 email: windywany@gmail.com
-latest_version: "2.3.0"
+latest_version: "2.3.1"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
