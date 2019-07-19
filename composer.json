@@ -1,0 +1,6 @@
+{
+    "require": {
+        "wula/wulaphp": "^2.9",
+		"wula/booky": "^1.0"
+    }
+}
