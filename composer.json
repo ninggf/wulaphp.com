@@ -1,6 +1,8 @@
 {
     "require": {
-        "wula/wulaphp": "^2.9",
-		"wula/booky": "^1.0"
+        "ext-yaml": "*",
+        "ext-pdo_sqlite": "*",
+        "wula/wulaphp": "^2.10",
+        "wula/booky": "^1.1"
     }
 }

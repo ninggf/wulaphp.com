@@ -1,6 +1,9 @@
 .DS_Store
 *.log
-Thumbs.db
+.idea
+*.db
 /vendor
 /storage/logs
 /storage/tmp
+/extensions
+/modules
