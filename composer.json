@@ -3,6 +3,7 @@
         "ext-yaml": "*",
         "ext-pdo_sqlite": "*",
         "wula/wulaphp": "^2.10",
-        "wula/booky": "^1.1"
+        "wula/booky": "^1.1",
+        "wula/jqadmin": "^2.3"
     }
 }

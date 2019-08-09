@@ -10,7 +10,10 @@
 
 return [
     'dir'      => 'doc',
-    'theme'    => 'wula',
-    'theme_en' => 'wen',
-    'langs'    => ['default' => '中文', 'en' => '英文']
+    'summary'  => ['l1cls' => 'menu-root', 'l2cls' => 'menu-sub', 'acls' => 'sidebar-link', 'ccls' => 'current'],
+    'theme'    => 'zh',
+    'theme_en' => 'en',
+    'langs'    => ['default' => '中文', 'en' => '英文'],
+    'github'   => 'https://github.com/ninggf/wulaphp.com/edit/v2/',
+    'version'  => env('wulaphp.ver', '2.10.3')
 ];

@@ -2,7 +2,9 @@
 *.log
 .idea
 *.db
+*.lock
 /vendor
+/wwwroot/assets/jqadmin
 /storage/logs
 /storage/tmp
 /extensions

@@ -1,0 +1,32 @@
+#search-wrapper {
+    position: fixed;
+    width: 300px;
+    top: 50px;
+    max-height: 500px;
+    min-height: 10px;
+    overflow-y: auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 15px;
+    padding: 15px 15px 15px 20px;
+    display: none;
+    z-index: 99;
+    background-color: #fff;
+}
+
+ul.search-rst {
+    list-style: inside none;
+    padding: 0 10px 0;
+    margin: 0;
+}
+
+ul.search-rst a, #search-wrapper small {
+    font-size: 0.8em;
+}
+
+#search-wrapper small {
+    color: #999;
+}
+
+ul.search-rst a:hover {
+    border-bottom: 2px solid #42b983;
+}
