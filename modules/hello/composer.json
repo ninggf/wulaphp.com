@@ -1,0 +1,7 @@
+{
+  "name": "wula/hello",
+  "type": "wula-module",
+  "require": {
+	"wula/wula-installer": "^2.0"
+  }
+}
