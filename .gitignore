@@ -3,6 +3,7 @@
 .idea
 *.db
 *.lock
+.env
 /vendor
 /wwwroot/assets/jqadmin
 /storage/logs
