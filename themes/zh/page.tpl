@@ -16,18 +16,15 @@
                 </div>
             </div>
         </div>
-        <div id="sidebar-sponsors-platinum-right">
-
-        </div>
+        <div id="sidebar-sponsors-platinum-right"></div>
         <div class="content with-sidebar">
             <div id="ad"></div>
-
             {if trim($page.title)}
                 <h1>{$page.title}</h1>
             {/if}
 
             {if $page.showToc !== 0}
-                {$page.tocStr}
+                <div id="toc">{$page.tocStr}</div>
             {/if}
 
             {$page.content}

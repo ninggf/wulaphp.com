@@ -1089,7 +1089,7 @@ ul.demo li {
 }
 
 .sidebar li {
-    margin-top: 0.5em;
+    margin-top: 0.15em;
 }
 
 .sidebar .sidebar-inner {
@@ -1107,11 +1107,9 @@ ul.demo li {
 }
 
 .sidebar .menu-root strong {
-    margin: 0.5em 0;
+    margin: 0.5em 0 0.2em;
     display: block;
     font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
     margin-inline-start: 0;
     margin-inline-end: 0;
 }
@@ -1750,11 +1748,15 @@ ul.demo li {
     z-index: 1;
 }
 
+.content p {
+    margin-top: 1.0em;
+}
+
 .content ul,
 .content ol {
     padding-left: 1.5em;
     position: inherit;
-    margin: 0 0 -1.2em;
+    margin: 0.2em 0 -1.2em;
 }
 
 .content a {
@@ -1763,16 +1765,22 @@ ul.demo li {
 }
 
 .content blockquote {
-    margin: 2em 0;
-    padding-left: 20px;
+    margin: 1.5em 0 2em;
+    padding-left: 10px;
     border-left: 4px solid #42b983;
 }
 
 .content blockquote p {
-    font-weight: 600;
     margin-left: 0;
     margin-bottom: 0;
     padding-bottom: 0;
+    font-size: 0.9em;
+    color: #999999;
+}
+
+.content blockquote ul, .content blockquote ol{
+    padding-bottom: 0;
+    margin-bottom: -1em;
 }
 
 .content iframe {
@@ -1851,6 +1859,7 @@ ul.demo li {
 
 .content p.tip {
     border-left-color: #f66;
+    color: #999;
 }
 
 .content p.tip:before {
@@ -2029,7 +2038,7 @@ ul.toc-1, ul.toc-2, ul.toc-3 {
 }
 
 @media screen and (min-width: 1300px) {
-    ul.toc {
+    #toc {
         position: fixed;
         top: 230px;
         width: 220px;
@@ -2037,15 +2046,15 @@ ul.toc-1, ul.toc-2, ul.toc-3 {
         display: none;
     }
 
-    ul.toc a {
+    #toc ul.toc a {
         color: #34495e;
     }
 
-    ul.toc a:hover {
+    #toc ul.toc a:hover {
         border-bottom: 2px solid #42b983;
     }
 
-    ul.toc, ul.toc ul {
+    #toc ul.toc, #toc ul.toc ul {
         list-style: none;
     }
 }

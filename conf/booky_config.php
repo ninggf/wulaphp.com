@@ -15,5 +15,6 @@ return [
     'theme_en' => 'en',
     'langs'    => ['default' => '中文', 'en' => '英文'],
     'github'   => 'https://github.com/ninggf/wulaphp.com/edit/v2/',
-    'version'  => env('wulaphp.ver', '2.10.3')
+    'version'  => env('wulaphp.ver', 'latest'),
+    'siteDesc' => 'wulaphp一个有心的php mvc框架'
 ];

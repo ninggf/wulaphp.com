@@ -47,7 +47,7 @@
     }
 
     function initToc() {
-        var toc     = document.querySelector('ul.toc'),
+        var toc     = document.querySelector('#toc'),
             main    = document.querySelector('div.content'),
             showToc = function () {
                 var w = window.innerWidth;

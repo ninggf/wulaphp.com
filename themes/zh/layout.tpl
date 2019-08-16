@@ -3,11 +3,11 @@
 <head>
     <title>{$page.title|default:'文档'} - wulaphp</title>
     <meta charset="utf-8">
-    <meta name="description" content="{$config.siteDesc}">
+    <meta name="description" content="{$page.desc|default:$config.siteDesc|escape}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{$page.title}">
-    <meta property="og:description" content="{$config.siteDesc}">
+    <meta property="og:description" content="{$page.desc|default:$config.siteDesc|escape}">
     <link rel="icon" href="{'../images/logo.png'|here}" type="image/x-icon">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet'
           type='text/css'>
@@ -27,9 +27,7 @@
 </div>
 {include './partials/header.tpl'}
 {block body}{/block}
-<div id="search-wrapper">
-
-</div>
+<div id="search-wrapper"></div>
 <script src="{'../js/zepto.min.js'|here}"></script>
 <script src="{'../js/common.js'|here}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
