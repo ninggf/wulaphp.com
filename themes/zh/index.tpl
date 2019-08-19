@@ -20,7 +20,7 @@
                     又一个PHP框架 </h1>
                 <p>
                     <a class="button" href="{'guide/index.md'|docurl}">起步</a>
-                    <a class="button" href="/wulaphp-{$config.version}.tar.gz" target="_blank">下载</a>
+                    <a class="button" href="/wulaphp-{$config.version}.zip" target="_blank">下载</a>
                     <a class="button white" href="https://github.com/ninggf/wulaphp" target="_blank">GITHUB</a>
                 </p>
             </div>
