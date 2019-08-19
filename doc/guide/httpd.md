@@ -64,4 +64,4 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Httpd一起工�
 
 **Hello wula !!**
 
-如果未能看到上边的输出，请移步[FQA](fqa.md#install)。
+如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。

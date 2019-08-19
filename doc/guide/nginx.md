@@ -91,4 +91,4 @@ location ~ ^/(modules|themes)/.+\.(js|css|png|gif|jpe?g)$ {
 
 **Hello wula !!**
 
-如果未能看到上边的输出，请移步[FQA](fqa.md#install)。
+如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。

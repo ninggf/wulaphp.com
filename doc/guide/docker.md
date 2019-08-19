@@ -42,4 +42,4 @@ wulaphp提供了`docker-compose`模板文件,如果你想使用Docker运行wulap
 
 **Hello wula !!**
 
-如果未能看到上边的输出，请移步[FQA](fqa.md#install)。
+如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。
