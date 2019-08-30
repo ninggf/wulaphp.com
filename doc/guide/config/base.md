@@ -19,6 +19,8 @@ return [
     'static_base'    => '',// 静态资源Base URL
     'cdn_base'       => '',// CDN资源Base URL
     'ssn'            => 'file:path=storage',// 存储器配置
+    'domains'        => [],// 模块域名绑定配置
+    'alias'          => [],// 模块别名配置
     'proxy'          => [ //curl代理配置
         'type' => '',// 代理类型,可选值http,SOCKS4,SOCKS5,SOCKS4A
         'auth' => '',// 认证
@@ -48,8 +50,10 @@ return [
 1. `static_base` 影响Smarty变量修饰器`assets`、`vendor`和函数`App::assets()`、`App::vendor()`。
 2. `cdn_base` 影响Smarty变量修饰器`cdn`和函数`App::cdn()`。
 3. `ssn` 存储器配置，详见[存储器](../utils/storage.md)。
-4. `upload` 文件上传配置，详见[文件上传](../utils/uploader.md)。
-5. `resource.combinate` 影响Smarty函数[combinate](../advance/smarty.funcs.md#combinate)。
-6. `resource.minify` 影响Smarty函数[minify](../advance/smarty.funcs.md#minify)。
-7. `proxy` 详见[curl扩展](#http://php.net/manual/zh/function.curl-setopt.php)。
+4. `domains` 模块域名绑定配置，模块和域名绑定后，只能通过绑定的域名访问。
+5. `alias` 模块别名设置，设置后只能通过别名访问模块。
+6. `upload` 文件上传配置，详见[文件上传](../utils/uploader.md)。
+7. `resource.combinate` 影响Smarty函数[combinate](../advance/smarty.funcs.md#combinate)。
+8. `resource.minify` 影响Smarty函数[minify](../advance/smarty.funcs.md#minify)。
+9. `proxy` 详见[curl扩展](#http://php.net/manual/zh/function.curl-setopt.php)。
    * `type`为空，不使用代理。
