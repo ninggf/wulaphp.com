@@ -6,7 +6,11 @@ cate: 基础
 desc: wulaphp的默认目录结构
 ---
 
-安装好`wulaphp`框架并初始化后,可以看到初始目录结构如下：
+安装好`wulaphp`框架并初始化后,可以看到初始目录结构：
+
+<img src="/doc/guide/img/dir.jpg" style="width:237px" alt="dir"/>
+
+## 详细说明
 
 <pre>
 project
@@ -24,10 +28,6 @@ project
 ├─extensions                   # 扩展目录
 ├─includes                     # 应用使用的第三方库
 │  └─ common.php               # 第三方库加载入口。
-├─storage                      # 存储目录
-│  ├─logs                      # 目录日志
-│  └─tmp                       # 运行临时目录
-├─vendor                       # composer库目录,不可自定义
 ├─modules                      # 模块目录，大部分时间你将在这个目录里工作
 │  ├─home                      # home模块
 │  │ ├─classes                 # 模块类目录
@@ -39,6 +39,10 @@ project
 │  │ └─bootstrap.php           # 模块引导文件
 │  ├─...                       # 其它模块
 │  └─ alias.php                # URL别名配置文件
+├─storage                      # 存储目录
+│  ├─logs                      # 目录日志
+│  └─tmp                       # 运行临时目录
+├─tests                        # 测试目录（基于phpunit)
 ├─themes                       # 网站前台主题目录
 │  └─default                   # 默认主题
 │    ├─index.tpl               # 网站首页模板
@@ -47,6 +51,7 @@ project
 │    ├─500.tpl                 # 500页面模板
 │    ├─503.tpl                 # 503页面模板
 │    └─template.php            # 主题数据处理器定义文件
+├─vendor                       # composer库目录,不可自定义
 ├─wwwroot                      # 网站根目录 (DocumentRoot)
 │  ├─.htaccess                 # 用于 apache 的重写
 │  ├─assets                    # 公共资源目录
@@ -56,7 +61,6 @@ project
 │  └─crossdomain.xml           # flash跨域文件（可删除）
 ├─artisan                      # 命令行工具
 ├─bootstrap.php                # 引导配置文件
-├─composer.json                # composer配置文件
 └─docker-compose.sample.yml    # docker-compose样例文件
 </pre>
 

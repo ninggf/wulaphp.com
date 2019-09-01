@@ -13,10 +13,10 @@ desc: 用wulaphp写的第一个模块，尝尝鲜
 
 先回顾一下模块相关知识:
 
-1. 将一个或多个业务单元的代码组织在一起形成一个模块
-2. 模块必须拥有唯一的命名空间
-3. 模块必须有一个引导文件`bootstrap.php`
-4. 模块目录位于`modules`目录下
+1. 将一个或多个业务单元的代码组织在一起形成一个模块。
+2. 模块必须拥有唯一的命名空间且与模块目录相同。
+3. 模块必须有一个引导文件`bootstrap.php`。
+4. 模块目录位于`modules`目录下。
 5. 可以通过下边的代码生成模块初始目录结构:
    * `php artisan admin create-module`
 
@@ -24,20 +24,20 @@ desc: 用wulaphp写的第一个模块，尝尝鲜
 
 假设:
 
-1. 我们将HelloWorld模块放在`hello`目录中
-2. 命名空间和模块目录名保持一致也用`hello`
+**我们将HelloWorld模块放在`hello`目录中**
 
 我们可以通过如下命令创建HelloWorld模块:
 
-`php artisan admin create-module -c hello --name HelloWorld hello`
+`php artisan admin create-module --name HelloWorld hello`
 
-> * `-c` 定义命名空间
-> * `--name` 定义模块名
+命令很快完成，此时在`modules`目录里你将看到`hello`目录:
 
-命令很快完成，此时在`modules`目录里你将看到`hello`目录，模块创建完成。
+<img src="/doc/guide/img/hellodir.jpg" width="218px" alt="module dir"/>
+
 命令自动为您创建了引导文件`bootstrap.php`，其内容如下:
 
 ```php
+<?php
 namespace hello;
 
 use wulaphp\app\App;
@@ -66,7 +66,7 @@ App::register(new HelloModule()); # 注册模块实例
 // end of bootstrap.php
 ```
 
-它是一个标准引导文件，已经可以很好的工作，目前我们还不需要修改它。
+它是一个标准引导文件，已经可以很好的工作，目前我们还不需要修改它。**引导文件非常重要，没有它模块就不能工作**。
 
 <p class="tip">如果你不喜欢用使用命令创建模块，你可以手动建立目录和相关文件。</p>
 

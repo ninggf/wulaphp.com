@@ -42,10 +42,10 @@ server {
     location ~ ^/(modules|themes)/.+\.(js|css|png|gif|jpe?g)$ {
         root /your_webapp_dir/;
 
-        #gzip on;
-        #gzip_min_length 1000;
-        #gzip_comp_level 7;
-        #gzip_types text/plain text/css application/x-javascript application/javascript text/javascript;
+        gzip on;
+        gzip_min_length 1000;
+        gzip_comp_level 7;
+        gzip_types text/plain text/css text/javascript;
         #expires 30d;
     }
 
@@ -71,24 +71,12 @@ server {
 3. 按需要开启访问日志或错误日志
 4. 其它你要修改的东东，可以百度，可以google。
 
-### 静态资源 {#static}
-
-上边的配置中通过下边的代码默认将`modules`和`themes`目录设为静态资源目录:
-
-```nginx
-location ~ ^/(modules|themes)/.+\.(js|css|png|gif|jpe?g)$ {
-    ...
-}
-```
-
-如果有需要，可以在`modules`前或`themes`后添加你的静态资源目录。
-
-<p class="tip" markdown=1> 如果需要启用静态资源压缩，请将`gzip*`和`expire`指令前的`#`删除。 </p>
-
 ## 验证
 
 配置好后，重启`nginx`或重新加载配置，然后访问应用首页，你将看到:
 
+<p class="success" markdown=1>
 **Hello wula !!**
+</p>
 
-如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。
+> 如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。

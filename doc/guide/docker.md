@@ -40,6 +40,8 @@ wulaphp提供了`docker-compose`模板文件,如果你想使用Docker运行wulap
 
 使用`$ docker-compose up -d`命令启动相应的容器，然后访问应用首页，你将看到:
 
+<p class="success" markdown=1>
 **Hello wula !!**
+</p>
 
 如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。

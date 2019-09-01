@@ -5,8 +5,8 @@ index: module bootstra
 desc: 模块是wulaphp的代码组织方式
 ---
 
-**wulaphp**通过模块来组织代码。可以将一个或多个业务单元的代码组织在一起形成一个模块。
-模块必须拥有唯一的[命名空间](https://www.php.net/manual/zh/language.namespaces.php)。模块里可以包括：
+**wulaphp**通过模块来组织代码，可以将一个或多个业务单元的代码组织在一起形成一个模块。
+模块必须拥有唯一的[命名空间](https://www.php.net/manual/zh/language.namespaces.php)且与**模块目录名**相同。模块里可以包括：
 
 1. 控制器
 2. 视图文件
@@ -20,29 +20,16 @@ desc: 模块是wulaphp的代码组织方式
 
 ## 模块的目录结构
 
-一个模块就是`modules`目录下的一个目录，以`hello`做为模块**HelloWorld**的目录，其结构如下:
+一个模块就是`modules`目录下的一个目录，以`hello`做为模块**HelloWorld**的目录，其结构大致如下:
 
-<pre>
-hello                       # HelloWorld模块目录
-  ├─classes                 # 模块类目录
-  │  ├─ MyClass1.php        # 模块提供的类文件
-  │  └─ MyClass2.php
-  ├─controllers             # 模块控制器目录
-  │  ├─ IndexController.php # 默认控制器
-  │  └─ MyController.php
-  ├─views                   # 视图目录
-  │  ├─index                # IndexController的视图目录
-  │  │ └─index.tpl          # index动作的基于Smarty模板文件
-  │  └─my                   # MyController的视图目录
-  │    └─abc.php            # abc动作的基于php的模板文件
-  ├─others                  # 其它目录与文件
-  └─bootstrap.php           # 模块引导文件
-</pre>
+<img src="/doc/guide/img/mdir.jpg" width="239px" alt="module dir"/>。
 
 ### 重要说明
 
-1. 上述目录与文件中只有`bootstrap.php`是必须的。
-2. `hello`是自定义的,也可以是其它的名称。
+1. `bootstrap.php`是模块引导文件必须存在。
+2. 所有控制器都要放在`controllers`目录中。
+3. 视图文件放在`views`目录中。
+4. `hello`是自定义的,也可以是其它的名称（**模块的目录名与命名空间必须相同**）。
 
 <p class="tip" markdown=1>上述目录结构可以通过`php artisan admin create-module hello`创建。</p>
 
@@ -69,6 +56,8 @@ wulaphp 对**模块命名空间**有着严格的约定:
 ## 类目录
 
 默认是放在`classes`目录。除了`controllers`与`views`目录，大家可以便宜行事。
+
+<p class="tip" markdown=1>推荐大家把模型类放到`model`目录中，勾子处理器放到`hooks`目录中。</p>
 
 ## 模块的引导文件
 
