@@ -2,8 +2,8 @@
     "require": {
         "ext-yaml": "*",
         "ext-pdo_sqlite": "*",
-        "wula/wulaphp": "^2.10",
-        "wula/booky": "^1.1",
-        "wula/jqadmin": "^2.3"
+        "wula/wulaphp": "^3.0",
+        "wula/booky": "^1.0",
+        "wula/jqadmin": "^2.0"
     }
 }

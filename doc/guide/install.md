@@ -14,7 +14,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 wulaphp的要求不高，基本上默认安装的php就可以运行啦，最小要求如下:
 
-1. php >= 5.6.9 `建议 7.1+`
+1. php >= 7.1
 2. JSON PHP Extension: `json`
 3. Mbstring PHP Extension: `mbstring`
 4. PDO PHP Extension: `PDO`
@@ -24,13 +24,15 @@ wulaphp的要求不高，基本上默认安装的php就可以运行啦，最小�
 
 > 执行 `#php -m` 可以查看安装了哪些扩展。
 
+<p class="tip" markdown="1">`v2.10.x`可以运行在`PHP 5.6.9`及以更高版本上。</p>
+
 ## Composer 方式
 
 我们推荐通过`Composer`方式安装`wulaphp`。
 
 ### 安装
 
-`# composer require wula/wulaphp -vvvv`
+`# composer require wula/wulaphp -vvv`
 
 > 国内的小朋友请耐心的等待或多执行几次上边的代码。如果还是安装不成功，请通过[下载](#download)的方式进行安装。
 
@@ -50,12 +52,12 @@ wulaphp的要求不高，基本上默认安装的php就可以运行啦，最小�
 
 ### Windows 系统
 
-1. 点击此处[下载](https://www.wulaphp.com/wulaphp-latest.zip)最新版本的wulaphp。
+1. 点击此处[下载](http://down.wulaphp.com/wulaphp-latest.zip)最新版本的wulaphp。
 2. 解压到相应的目录即可。
 
 ### 类 Unix 系统
 
-`# wget https://www.wulaphp.com/wulaphp-latest.tar.gz`
+`# wget https://down.wulaphp.com/wulaphp-latest.tar.gz`
 
 `# tar -zxf wulaphp-latest.tar.gz`
 
