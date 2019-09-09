@@ -3,7 +3,7 @@
 {extends file='./layout.tpl'}
 {block body}
     <div id="main" class="fix-sidebar">
-        <div class="sidebar">
+        <div class="sidebar" data-simplebar style="width: 280px">
             <div class="sidebar-inner">
                 <ul class="main-menu">
                     {include './partials/menu.tpl'}

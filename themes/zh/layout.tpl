@@ -16,6 +16,7 @@
     {if $isIndex}
         <link rel="stylesheet" href="{'../css/index.css'|here}">
     {else}
+        <link rel="stylesheet" href="{'../css/simplebar.css'|here}">
         <link rel="stylesheet" href="{'../css/page.css'|here}">
     {/if}
     <script>window.PAGE_TYPE = "{$pageType}"</script>
@@ -30,6 +31,7 @@
 <div id="search-wrapper"></div>
 <script src="{'../js/zepto.min.js'|here}"></script>
 <script src="{'../js/common.js'|here}"></script>
+<script src="{'../js/simplebar.min.js'|here}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
