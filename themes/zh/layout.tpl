@@ -21,7 +21,7 @@
     {/if}
     <script>window.PAGE_TYPE = "{$pageType}"</script>
 </head>
-<body class="{if !$isIndex}docs{/if}">
+<body {if !$isIndex}class="docs"{/if}>
 <div id="mobile-bar"{if $isIndex} class="top"{/if}>
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>

@@ -77,7 +77,7 @@
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-    color: #a6e22e;
+    color: #73ad00;
     font-weight: bold;
 }
 
@@ -1063,8 +1063,7 @@ ul.demo li {
     top: 61px;
     left: 0;
     bottom: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
 }
