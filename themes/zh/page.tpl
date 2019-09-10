@@ -3,7 +3,7 @@
 {extends file='./layout.tpl'}
 {block body}
     <div id="main" class="fix-sidebar">
-        <div class="sidebar" data-simplebar style="width: 280px">
+        <div class="sidebar" style="width: 280px" id="sidebar">
             <div class="sidebar-inner">
                 <ul class="main-menu">
                     {include './partials/menu.tpl'}
@@ -22,11 +22,9 @@
             {if !$page.hideTitle && trim($page.title)}
                 <h1>{$page.title}</h1>
             {/if}
-
             {if $page.showToc !== 0}
                 <div id="toc">{$page.tocStr}</div>
             {/if}
-
             {$page.content}
             {if $prevPage || $nextPage}
                 <div class="guide-links">

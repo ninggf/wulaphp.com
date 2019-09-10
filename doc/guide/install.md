@@ -77,10 +77,10 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 > 如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。
 
-## 与Web Server一起工作 {#deploy}
+## Web服务器配置 {#deploy}
 
 有需要时，[Nginx](nginx.md) 或 [Apache Httpd](httpd.md)任君挑选。
 
-## 官方开发环境
+## 开发环境
 
 可以使用官方提供的[docker](docker.md)或[Vagrant](vagrant.md)免去你配置php环境的痛苦哦。

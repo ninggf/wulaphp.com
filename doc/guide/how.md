@@ -71,4 +71,9 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 
 ## 接下来
 
-去看看如何通过[插件机制](plugin.md)对**wulaphp**进行扩展、定制。
+当你搞懂了以上内容之后，请开始享受**wulaphp**吧，可以从以下几方面入手:
+
+* [模块](module/index.md)
+* [控制器](mvc/controller.md)
+* [视图](mvc/view.md)
+* [配置](config/index.md)

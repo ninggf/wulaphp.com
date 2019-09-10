@@ -1115,6 +1115,11 @@ ul.demo li {
 
 .sidebar .menu-sub {
     font-size: 0.85em;
+    display: none;
+}
+
+.active .menu-sub {
+    display: block;
 }
 
 .sidebar .sidebar-link {
@@ -2034,10 +2039,15 @@ ul.toc ul {
     padding-left: 1.5em;
 }
 
-ul.toc-1, ul.toc-2, ul.toc-3 {
-    font-size: 0.8em;
+ul.toc-1 {
+    font-size: 0.9em;
 }
-
+ul.toc-2 {
+    font-size: 0.95em;
+}
+ul.toc-3 {
+    font-size: 1em;
+}
 @media screen and (min-width: 1300px) {
     #toc {
         position: fixed;

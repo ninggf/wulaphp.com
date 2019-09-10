@@ -94,4 +94,4 @@ App::register(new HelloWorldModule());
 
 ## 接下来
 
-接下来去看一下**wulaphp**的[约定与规范](convention.md)，以便更好的理解它。
+接下来去看一下**wulaphp**的[约定与规范](convention.md)，以便更好的理解与使用它。

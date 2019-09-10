@@ -211,4 +211,4 @@ public function logout() {
 
 ## 接下来
 
-是时候深入了解wulaphp了，首先从它的[目录结构](structure.md)开始吧。
+是时候全面深入了解**wulaphp**了，首先从它的[目录结构](structure.md)开始吧。

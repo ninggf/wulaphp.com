@@ -1,6 +1,10 @@
 - **立即开始**
 - [介绍](guide/index.md)
 - [安装](guide/install.md)
+  - [Nginx](guide/nginx.md)
+  - [Httpd](guide/httpd.md)
+  - [Docker](guide/docker.md)
+  - [Vagrant](guide/vagrant.md)
 - [第一个模块](guide/start.md)
   - [读取配置](guide/cfg.md)
   - [连接数据库](guide/db.md)
@@ -8,21 +12,15 @@
 - [目录结构](guide/structure.md)
   - [模块目录](guide/module.md)
 - [约定规范](guide/convention.md)
-- **工作原理**
-- [如何工作](guide/how.md)
-- [插件与勾子](guide/plugin.md)
-- [注解](guide/annotation.md)
+- [工作原理](guide/how.md)
 - **基础**
+- [模块](guide/module/index.md)
+- [控制器](guide/mvc/controller.md)
+- [视图](guide/mvc/view.md)
+- [配置](guide/config/index.md)
+- [日志](guide/logger.md)
 - **数据库**
-- **配置**
-- [配置详解](guide/config/index.md)
-- [默认配置](guide/config/base.md)
-- [数据库配置](guide/config/db.md)
-- **开发与部署**
-- [Nginx](guide/nginx.md)
-- [Httpd](guide/httpd.md)
-- [Docker](guide/docker.md)
-- [Vagrant](guide/vagrant.md)
+- **高级**
 - **更多**
 - [Hooks](hooks.md)
 - [FQA](fqa.md)
