@@ -5,34 +5,21 @@ index: 1
 desc: 用wulaphp写的第一个模块，尝尝鲜
 ---
 
-在完成安装，了解目录结构与模块等概念后，让我们弄个**HelloWorld**模块跟世界打个招呼，开始`wulaphp`之旅吧。
+让我们弄个**HelloWorld**模块跟世界打个招呼，开始`wulaphp`之旅吧。
 
 {$toc}
 
-## 预备式
-
-先回顾一下模块相关知识:
-
-1. 将一个或多个业务单元的代码组织在一起形成一个模块。
-2. 模块必须拥有唯一的命名空间且与模块目录相同。
-3. 模块必须有一个引导文件`bootstrap.php`。
-4. 模块目录位于`modules`目录下。
-5. 可以通过下边的代码生成模块初始目录结构:
-   * `php artisan admin create-module`
-
 ## 创建模块
 
-假设:
-
-**我们将HelloWorld模块放在`hello`目录中**
-
-我们可以通过如下命令创建HelloWorld模块:
+执行下边的命令:
 
 `php artisan admin create-module --name HelloWorld hello`
 
 命令很快完成，此时在`modules`目录里你将看到`hello`目录:
 
-<img src="/doc/guide/img/hellodir.jpg" width="218px" alt="module dir"/>
+<img src="/doc/guide/img/hellodir.jpg" width="300px" alt="module dir"/>
+
+<small style="margin:0 130px 0">图1</small>
 
 命令自动为您创建了引导文件`bootstrap.php`，其内容如下:
 
@@ -68,7 +55,7 @@ App::register(new HelloModule()); # 注册模块实例
 
 它是一个标准引导文件，已经可以很好的工作，目前我们还不需要修改它。**引导文件非常重要，没有它模块就不能工作**。
 
-<p class="tip">如果你不喜欢用使用命令创建模块，你可以手动建立目录和相关文件。</p>
+> 如果你不喜欢或不能使用命令创建模块，你可以手动在`modules`目录中建立**图1**所示的目录和`bootstrap.php`文件并把上边的代码复制其中。
 
 ### 控制器
 
@@ -102,13 +89,13 @@ class IndexController extends Controller {
 这个控制器相当简单:
 
 * 首先，它继承`wulaphp\mvc\controller\Controller`说明自己是一个控制器.
-* 接着，它创建一个`Index` Action并接收一个**GET**参数`name`:
+* 接着，它创建一个`index` Action并接收一个**GET**参数`name`:
   * `public function index($name = 'World')`
-* 最后，使用`view`函数加载`Index` Action对应的默认视图文件:[views/index/index.tpl](#view)并返回视图实例。
+* 最后，使用`view`函数加载`index` Action对应的默认视图文件:[views/index/index.tpl](#view)并返回视图实例。
 
 ### 视图 {#view}
 
-视图模板文件位于模块的子目录`views`中，可以通过以`view`，`pview`，`xmlview`，`excel`等函数加载。
+视图模板文件位于模块的子目录`views`中，可以通过以`view`，`pview`，`xmlview`，`excel`等函数加载不同引擎的视图文件。
 如果你是通过命令创建的模块，命令已经帮你创建好了视图模板文件`views/index/index.tpl`，否则你需要手动创建它:
 
 ```html
@@ -123,15 +110,15 @@ class IndexController extends Controller {
 </html>
 ```
 
-简单到只显示从控制器传过来的变量，如果对Smarty模板不熟悉，请传送至[Smarty文档](https://www.smarty.net/docs/zh_CN/).
+简单到只显示从控制器传过来的变量，如果对`Smarty`模板不熟悉，请传送至[Smarty文档](https://www.smarty.net/docs/zh_CN/).
 
-> 当`view`(`pview`)函数不指定模板仅传数据时，`wulaphp`将使用与控制器同名目录下与action同名的视图文件。
+> 当`view`(`pview`)函数不指定模板文件仅传数据时，`wulaphp`将使用与控制器同名目录下与action同名的视图文件。
 
 ### 验证
 
 我们有了模块，有了控制器，写了`Index` Action与视图，我们要怎么访问它呢？`wulaphp`使用所见即所得的URL路由机制。
 `hello\IndexController::index`的URL就是`hello/index/index`, 根据约定`index`是默认的路径可以省略，
-所以URL可以简化为`hello`,通过浏览器访问[试一下](/hello)吧。你看到了:
+所以URL可以简化为`hello`,通过浏览器访问[/hello](/hello)吧。你看到了:
 
 **Hello World!**
 
@@ -239,3 +226,7 @@ hello/math/sub/1/2
    1. 默认项目一级目录都是源码目录
 
 > 强烈推荐你使用[PhpStorm](https://www.jetbrains.com/phpstorm/)开发PHP项目。
+
+## 接下来
+
+让我们为`HelloWorld`模块添加一些[配置](cfg.md)并读取它们。

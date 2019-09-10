@@ -19,8 +19,8 @@
                 <h1><br/>
                     又一个PHP框架 </h1>
                 <p>
-                    <a class="button" href="{'guide/index.md'|docurl}">起步</a>
-                    <a class="button" href="/wulaphp-{$config.version}.zip" target="_blank">下载</a>
+                    <a class="button" href="{'guide/install.md'|docurl}">起步</a>
+                    <a class="button" href="http://down.wulaphp.com/wulaphp-{$config.version}.zip" target="_blank">下载</a>
                     <a class="button white" href="https://github.com/ninggf/wulaphp" target="_blank">GITHUB</a>
                 </p>
             </div>
@@ -66,7 +66,7 @@
             <a href="https://packagist.org/packages/wula/wulaphp"><img
                         src="https://poser.pugx.org/wula/wulaphp/license.svg" alt="License"></a>
             <br>
-            Copyright &copy; 2016-{'Y'|date} Wula Team </p>
+            Copyright &copy; 2016-{'Y'|date} Wulaphp Dev Team </p>
     </div>
     <script type="text/javascript">
         var topScrolled = false;

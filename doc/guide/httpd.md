@@ -6,22 +6,23 @@ showToc: 0
 desc: 本文目的是教会大家如何通过配置让wulaphp与Httpd一起工作。
 ---
 
-本文目的是教会大家如何通过配置让`wulaphp`与`Httpd`一起工作，但不会教大家如何安装`httpd`。在开始配置之前请确保:
+本文目的是教会大家如何通过配置让`wulaphp`与`httpd`一起工作。在开始配置之前请确保:
 
-<p class="tip" markdown="1">启用了httpd的`rewrite`和`alias`模块！</p>
+<p class="tip" markdown="1">启用了httpd的`rewrite`和`alias`模块，httpd 最低版本要求为`2.4`。</p>
 
 ## 获取配置
 
 打开命令行并进入应用根目录，执行以下命令:
 
-`# php vendor/bin/wulaphp conf httpd`
+* Windows: `vendor\bin\wulaphp conf httpd localhost`
+* 类Unix:  `vendor/bin/wulaphp conf httpd localhost`
 
 你将获取到适合当前应用的基本配置,如下:
 
 ```httpd
 <VirtualHost *:80>
     DocumentRoot "/your_webapp_dir/wwwroot"
-    ServerName your_server_name
+    ServerName localhost
 
     <Directory "/your_webapp_dir/">
         Options FollowSymLinks
@@ -46,18 +47,17 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Httpd一起工�
 </VirtualHost>
 ```
 
-## 按需要修改
+## 按需修改
 
-将上面的配置复制到配置文件中，并根据实际情况进行修改:
+将命令行输出的配置复制到配置文件中，并根据实际情况进行修改:
 
-1. 域名`your_server_name`改为你的域名
-2. 目录（三处）`/your_webapp_dir/`改为你应用的实际目录
-3. 按需要开启访问日志或错误日志
-4. 其它你要修改的东东，可以百度，可以google。
+1. 按需要开启访问日志或错误日志
+2. 其它你要修改的东东，可以百度，可以google。
+3. **正式部署时，请将`localhost`换成你的域名哦。**
 
 ## 验证
 
-配置好后，重启`httpd`或重新加载配置，然后访问应用首页，你将看到:
+配置好后，重启`httpd`或重新加载配置，然后访问<a href="http://localhost" target="_blank">http://localhost/</a>，你将看到:
 
 <p class="success" markdown=1>
 **Hello wula !!**

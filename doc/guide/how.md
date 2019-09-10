@@ -1,5 +1,6 @@
 ---
-title: 请求处理流程
+title: 如何工作
+showToc: 0
 index: 1
 desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 ---
@@ -7,6 +8,8 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 <p class="success" markdown=1>知其然，知其所以然！如果你知道`wulaphp`是如何工作的，那么你就能很轻松地驾驭它。</p>
 
 本文将告诉你`wulaphp`是如何工作的！
+
+{$toc}
 
 ## 生命周期
 

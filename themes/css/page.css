@@ -1120,7 +1120,9 @@ ul.demo li {
 .sidebar .sidebar-link {
     color: #7f8c8d;
 }
-
+.sidebar strong .sidebar-link{
+    color: #2c3e50;
+}
 .sidebar .sidebar-link.current {
     font-weight: 600;
     color: #42b983;

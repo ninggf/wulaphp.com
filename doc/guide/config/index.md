@@ -1,9 +1,11 @@
 ---
 title: 配置
 index: config conf
-showToc: 1
+showToc: 0
 desc: 让wulaphp按你的配置运行，一切如你所愿
 ---
+
+{$toc}
 
 `wulaphp`默认的[配置加载器](../advance/cfg-loader.md)可以加载以下两类配置:
 
@@ -92,11 +94,10 @@ return [
 2. 定义web服务器的环境变量APPMODE
 3. 在`conf/.env`文件中添加`app_mode=[pro|test|dev|...]`
 
-> `pro`是wulaphp定义的生产模式。wulaphp只有运行在`pro`模式下，才会启用以下功能:
+> **pro**是wulaphp定义的生产模式。只有运行在**pro**模式下，才会启用以下功能:
 >
 > * 运行时缓存(需要yac、apc、xcache等扩展支持)
 > * 模板缓存
-> * 类加载缓存(需要yac、apc、xcache等扩展支持)
 >
 > 产品上线后，强烈建议将运行模式设为`pro`。
 

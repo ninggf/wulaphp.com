@@ -6,14 +6,14 @@ cate: 基础
 desc: wulaphp的默认目录结构
 ---
 
-安装好`wulaphp`框架并初始化后,可以看到初始目录结构：
+默认目录结构如下图:
 
-<img src="/doc/guide/img/dir.jpg" style="width:237px" alt="dir"/>
+<img src="/doc/guide/img/dir.jpg" style="width:300px" alt="dir"/>
 
 ## 详细说明
 
 <pre>
-project
+project                        # 项目部署目录
 ├─conf                         # 配置目录
 │  ├─.env                      # 开发环境配置
 │  ├─.env.example              # 环境配置示例文件
@@ -51,8 +51,8 @@ project
 │    ├─500.tpl                 # 500页面模板
 │    ├─503.tpl                 # 503页面模板
 │    └─template.php            # 主题数据处理器定义文件
-├─vendor                       # composer库目录,不可自定义
-├─wwwroot                      # 网站根目录 (DocumentRoot)
+├─vendor                       # composer 库目录,不可自定义
+├─wwwroot                      # WEB目录 (对外访问目录)
 │  ├─.htaccess                 # 用于 apache 的重写
 │  ├─assets                    # 公共资源目录
 │  ├─index.php                 # 网站入口
@@ -66,19 +66,34 @@ project
 
 ## 目录权限
 
-如果你使用`Mac OS`或`类Unix`系统,那么框架要求**Web服务器**能读写`storage`,`storage/logs`和`storage/logs`目录。
+在`Mac OS`或类`Unix`系统中,框架要求能读写`storage`,`storage/logs`和`storage/logs`目录。
 可以通过下边的命令将它们设为可读写:
 
-`$ chmod 777 storage storage/tmp storage/logs`
+`chmod 777 storage storage/tmp storage/logs`
 
 ## 公共目录 (DocumentRoot)
 
-**wulaphp**是将`wwwroot`目录作为公共(`DocumentRoot`)目录对外提供web服务的,只有这个目录里的文件才可以被用户直接访问.
+默认情况下**wulaphp**将`wwwroot`目录作为公共(`DocumentRoot`)目录对外提供web服务,只有这个目录里的文件才可以被用户直接访问。
+可以通过下文的[自定义目录](#custom)方法修改公共目录。
 
-<p class="tip" markdown=1>可以通过配置web服务器来增加静态资源目录。
-具体可以参考[Nginx 配置](nginx.md#static)与[Httpd 配置](httpd.md#static)</p>
+## 模块目录
 
-## 自定义目录
+详见[模块目录](module.md)。
+
+## 主题目录
+
+和其它框架不同，`wulaphp`有一个特殊的目录:`themes`主题目录。为你创建一个可更换主题的网站助力;为你开发一个CMS系统助力。
+更多参考[主题](theme/index.md)相关文档。
+
+## 配置目录
+
+默认为`conf`，配置文件放在此目录。
+
+## 存储目录
+
+默认为`storage`，日志，模板编译文件等运行时产生文件都可以存储在该目录。
+
+## 自定义目录 {#custom}
 
 `bootstrap.php`是用户可修改的引导配置文件,通过修改此文件中的相关常量定义可以自定义项目目录结构:
 
@@ -87,10 +102,10 @@ project
   * 同时修改web服务器（nginx或httpd）的配置文件
 * `ASSETS_DIR`: 资源目录,默认为`assets`
   * 同时修改`composer.json`中的`extra.wula.assets-dir`
-* `MODULE_DIR`: [模块](module.md)目录,默认为`modules`
+* `MODULE_DIR`: 模块目录,默认为`modules`
   * 同时修改`composer.json`中的`extra.wula.modules-dir`
   * 同时修改web服务器中静态资源配置
-* `THEME_DIR`: [主题](theme/index.md)目录,默认为`themes`
+* `THEME_DIR`: 主题目录,默认为`themes`
   * 同时修改`composer.json`中的`extra.wula.themes-dir`
   * 同时修改web服务器中静态资源配置
 * `EXTENSION_DIR`: 扩展目录,默认为`extensions`
@@ -101,19 +116,6 @@ project
 * `TMP_DIR`: 临时文件目录,默认为`tmp`
 * `LOGS_DIR`: 日志文件,默认为`logs`
 
-## 主题目录
+## 接下来
 
-和其它框架不同，`wulaphp`有一个特殊的目录:`themes`主题目录。为你创建一个可更换主题的网站助力;为你开发一个CMS系统助力。
-在`Controller`(控制器)的`Action`里可以通过以下代码渲染主题中的模板:
-
-```php
-class MyController extends Controller {
-    public function abc(){
-        $data = [];
-        // 你的业务代码 ....
-        return template('my_page.tpl',$data);
-    }
-}
-```
-
-更多参考[主题](theme/index.md)相关文档.
+去学习不得不掌握的[模块目录](module.md)。

@@ -19,7 +19,7 @@
         <div id="sidebar-sponsors-platinum-right"></div>
         <div class="content with-sidebar">
             <div id="ad"></div>
-            {if trim($page.title)}
+            {if !$page.hideTitle && trim($page.title)}
                 <h1>{$page.title}</h1>
             {/if}
 

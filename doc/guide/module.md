@@ -18,7 +18,7 @@ desc: 模块是wulaphp的代码组织方式
 
 > 通过合理的模块设计，可以很好的重用代码哦。
 
-## 模块的目录结构
+## 目录结构
 
 一个模块就是`modules`目录下的一个目录，以`hello`做为模块**HelloWorld**的目录，其结构大致如下:
 
@@ -33,7 +33,7 @@ desc: 模块是wulaphp的代码组织方式
 
 <p class="tip" markdown=1>上述目录结构可以通过`php artisan admin create-module hello`创建。</p>
 
-## 模块的命名空间与类
+## 命名空间与类 {#ns}
 
 wulaphp 对**模块命名空间**有着严格的约定:
 
@@ -57,9 +57,13 @@ wulaphp 对**模块命名空间**有着严格的约定:
 
 默认是放在`classes`目录。除了`controllers`与`views`目录，大家可以便宜行事。
 
-<p class="tip" markdown=1>推荐大家把模型类放到`model`目录中，勾子处理器放到`hooks`目录中。</p>
+<p class="tip" markdown=1>推荐大家把模型类放到`model`目录中</p>
 
-## 模块的引导文件
+## Hooks
+
+勾子类存放目录，此目录内的勾子类通过懒加载的方式在勾子事件触发时才被加载调用。
+
+## 引导文件 {#bootstrap}
 
 `bootstrap.php`是模块引导文件也是整个模块必不可少的一个文件，我们需要在这个文件中定义模块类并将其实例注册到`wulaphp`，内容大致如下:
 
@@ -86,4 +90,8 @@ class HelloWorldModule extends Module {
 App::register(new HelloWorldModule());
 ```
 
-一个简单的模块引导文件就完成了，是不是很简单？ 接下来[立即开始](start.md)编写一个模块吧。
+一个简单的模块引导文件就完成了，是不是很简单？
+
+## 接下来
+
+接下来去看一下**wulaphp**是[如何工作](how.md)的。
