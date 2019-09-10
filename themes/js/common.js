@@ -3,7 +3,9 @@
 
     if (PAGE_TYPE == 'guide') {
         initToc();
-        new SimpleBar(document.getElementById('sidebar'));
+        var top = $('#sidebar li.active').eq(-1).offset().top,
+            h = window.innerHeight - 100;
+        top > h && $('#sidebar').scrollTop(top - h);
     }
     initSearch();
     /**

@@ -1,5 +1,5 @@
-- **立即开始**
 - [介绍](guide/index.md)
+- **立即开始**
 - [安装](guide/install.md)
   - [Nginx](guide/nginx.md)
   - [Httpd](guide/httpd.md)

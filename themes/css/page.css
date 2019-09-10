@@ -236,7 +236,7 @@
 }
 
 body {
-    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Arial,sans-serif;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, Arial, sans-serif;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -313,7 +313,7 @@ a.button.has-icon {
     text-indent: 1.4em;
 }
 
-a.button.has-icon > svg {
+a.button.has-icon>svg {
     position: absolute;
     left: 0.4em;
     top: 0.4em;
@@ -414,7 +414,7 @@ a.button.gray {
     display: block;
 }
 
-#nav .nav-dropdown li > ul {
+#nav .nav-dropdown li>ul {
     padding-left: 0;
 }
 
@@ -484,18 +484,18 @@ sup.beta.beta {
         page-break-inside: avoid;
     }
 
-    h2 + p {
+    h2+p {
         page-break-before: avoid;
     }
 
     a:link:after,
     a:visited:after {
-        content: " [" attr(href) "] ";
+        content: " ["attr(href) "] ";
     }
 }
 
-.content.api h2 > sup,
-.content.api h3 > sup {
+.content.api h2>sup,
+.content.api h3>sup {
     margin-left: 0.3em;
     color: #b9465c;
 }
@@ -513,6 +513,7 @@ i.rotating-clockwise {
     from {
         transform: rotate(0);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -522,6 +523,7 @@ i.rotating-clockwise {
     from {
         transform: rotate(0);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -531,6 +533,7 @@ i.rotating-clockwise {
     from {
         transform: rotate(0);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -540,6 +543,7 @@ i.rotating-clockwise {
     from {
         transform: rotate(0);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -810,15 +814,15 @@ body.docs #nav {
     resize: vertical;
 }
 
-#demo > :first-child,
-.demo > :first-child,
-.content .demo > :first-child {
+#demo> :first-child,
+.demo> :first-child,
+.content .demo> :first-child {
     margin-top: 0;
 }
 
-#demo > :last-child,
-.demo > :last-child,
-.content .demo > :last-child {
+#demo> :last-child,
+.demo> :last-child,
+.content .demo> :last-child {
     margin-bottom: 0;
 }
 
@@ -828,6 +832,7 @@ ul.demo li {
 }
 
 @media screen and (max-width: 900px) {
+
     #demo,
     .demo {
         margin-left: 0;
@@ -839,7 +844,7 @@ ul.demo li {
     text-align: center;
 }
 
-.benchmark-table tbody > tr > th {
+.benchmark-table tbody>tr>th {
     text-align: right;
 }
 
@@ -849,6 +854,7 @@ ul.demo li {
 }
 
 @media print {
+
     #demo,
     .demo,
     .content .demo {
@@ -1029,14 +1035,14 @@ ul.demo li {
     color: #7f8c8d;
 }
 
-#search-page .search-result .breadcrumb + .breadcrumb::before {
+#search-page .search-result .breadcrumb+.breadcrumb::before {
     content: "\203A\A0";
     margin-left: 5px;
     color: #7f8c8d;
 }
 
-.content.guide[class*="migration"] h2 > sup,
-.content.guide[class*="migration"] h3 > sup {
+.content.guide[class*="migration"] h2>sup,
+.content.guide[class*="migration"] h3>sup {
     margin-left: 0.3em;
     color: #b9465c;
 }
@@ -1048,11 +1054,11 @@ ul.demo li {
     border-radius: 2px;
 }
 
-.content.guide[class*="migration"] .upgrade-path > h4 {
+.content.guide[class*="migration"] .upgrade-path>h4 {
     margin-top: 0;
 }
 
-.content.guide[class*="migration"] .upgrade-path > p:last-child {
+.content.guide[class*="migration"] .upgrade-path>p:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -1063,9 +1069,14 @@ ul.demo li {
     top: 61px;
     left: 0;
     bottom: 0;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
+}
+
+.sidebar:hover {
+    overflow-y: auto;
 }
 
 .sidebar-r {
@@ -1125,9 +1136,11 @@ ul.demo li {
 .sidebar .sidebar-link {
     color: #7f8c8d;
 }
-.sidebar strong .sidebar-link{
+
+.sidebar strong .sidebar-link {
     color: #2c3e50;
 }
+
 .sidebar .sidebar-link.current {
     font-weight: 600;
     color: #42b983;
@@ -1212,7 +1225,9 @@ ul.demo li {
 }
 
 @media print {
-    .sidebar, .sidebar-r {
+
+    .sidebar,
+    .sidebar-r {
         display: none;
     }
 }
@@ -1316,7 +1331,7 @@ ul.demo li {
     display: none;
 }
 
-#team-members .vuer .profile h3 > sup {
+#team-members .vuer .profile h3>sup {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.3px;
@@ -1501,7 +1516,7 @@ ul.demo li {
     outline: none;
 }
 
-.style-guide summary > h4 {
+.style-guide summary>h4 {
     display: inline-block;
     margin: 0;
 }
@@ -1536,7 +1551,7 @@ ul.demo li {
     padding: 0.1em 0.4em;
 }
 
-.style-guide a > .style-rule-tag {
+.style-guide a>.style-rule-tag {
     color: #42b983;
 }
 
@@ -1656,7 +1671,7 @@ ul.demo li {
     padding-left: 20px;
 }
 
-.content.api > a:first-of-type > h2 {
+.content.api>a:first-of-type>h2 {
     margin-top: 0;
     padding-top: 0;
 }
@@ -1728,7 +1743,7 @@ ul.demo li {
     position: relative;
 }
 
-.content h3 > a:before {
+.content h3>a:before {
     content: "#";
     color: #42b983;
     position: absolute;
@@ -1784,7 +1799,8 @@ ul.demo li {
     color: #999999;
 }
 
-.content blockquote ul, .content blockquote ol{
+.content blockquote ul,
+.content blockquote ol {
     padding-bottom: 0;
     margin-bottom: -1em;
 }
@@ -1793,7 +1809,7 @@ ul.demo li {
     margin: 1em 0;
 }
 
-.content > table {
+.content>table {
     border-spacing: 0;
     border-collapse: collapse;
     margin: 1.2em auto;
@@ -1802,26 +1818,26 @@ ul.demo li {
     overflow-x: auto;
 }
 
-.content > table td,
-.content > table th {
+.content>table td,
+.content>table th {
     line-height: 1.5em;
     padding: 0.4em 0.8em;
     border: none;
     border: 1px solid #ddd;
 }
 
-.content > table th {
+.content>table th {
     font-weight: bold;
     text-align: left;
 }
 
-.content > table th,
-.content > table tr:nth-child(2n) {
+.content>table th,
+.content>table tr:nth-child(2n) {
     background-color: #f8f8f8;
 }
 
-.content > table th code,
-.content > table tr:nth-child(2n) code {
+.content>table th code,
+.content>table tr:nth-child(2n) code {
     background-color: #efefef;
 }
 
@@ -2029,7 +2045,8 @@ ul.toc a {
 }
 
 
-ul.toc, ul.toc ul {
+ul.toc,
+ul.toc ul {
     margin: 0;
     padding: 0;
     list-style-position: inside;
@@ -2042,12 +2059,15 @@ ul.toc ul {
 ul.toc-1 {
     font-size: 0.9em;
 }
+
 ul.toc-2 {
     font-size: 0.95em;
 }
+
 ul.toc-3 {
     font-size: 1em;
 }
+
 @media screen and (min-width: 1300px) {
     #toc {
         position: fixed;
@@ -2065,7 +2085,8 @@ ul.toc-3 {
         border-bottom: 2px solid #42b983;
     }
 
-    #toc ul.toc, #toc ul.toc ul {
+    #toc ul.toc,
+    #toc ul.toc ul {
         list-style: none;
     }
 }
