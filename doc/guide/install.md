@@ -8,17 +8,16 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 {$toc}
 
-## 环境要求 {#requirements}
+## 环境要求 {#reqs}
 
 `wulaphp`的要求不高，基本上默认安装的`php`就可以运行啦，最小要求如下:
 
-1. php >= 7.1
+1. PHP >= `7.1`
 2. JSON PHP Extension: `json`
-3. Mbstring PHP Extension: `mbstring`
-4. PDO PHP Extension: `PDO`
-5. PDO_MYSQL Extension: `pdo_mysql`
-6. Curl PHP Extension: `curl`
-7. Zip PHP Extension: `zip`
+3. Regular Expressions: `pcre`
+4. Mbstring PHP Extension: `mbstring`
+5. PDO PHP Extension: `PDO`
+6. PDO_MYSQL Extension: `pdo_mysql`
 
 ## Composer 方式
 
@@ -83,4 +82,4 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 ## 开发环境
 
-可以使用官方提供的[docker](docker.md)或[Vagrant](vagrant.md)免去你配置php环境的痛苦哦。
+可以使用[docker](docker.md)或[Vagrant](vagrant.md)免去你配置PHP开发环境的痛苦哦。
