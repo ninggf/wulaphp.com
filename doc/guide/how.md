@@ -68,3 +68,7 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 基于上文的描述，我们为你整理了一个大致的能描述`wulaphp`生命周期的流程图，如下:
 
 ![wulaphp流程图](/themes/imgs/flow.png)
+
+## 接下来
+
+去看看如何通过[插件机制](plugin.md)对**wulaphp**进行扩展、定制。

@@ -7,13 +7,15 @@
   - [开启会话](guide/session.md)
 - [目录结构](guide/structure.md)
   - [模块目录](guide/module.md)
+- [约定规范](guide/convention.md)
 - **工作原理**
 - [如何工作](guide/how.md)
 - [插件与勾子](guide/plugin.md)
 - [注解](guide/annotation.md)
 - **基础**
 - **数据库**
-- **[配置](guide/config/index.md)**
+- **配置**
+- [配置详解](guide/config/index.md)
 - [默认配置](guide/config/base.md)
 - [数据库配置](guide/config/db.md)
 - **开发与部署**

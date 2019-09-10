@@ -50,7 +50,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 执行以下命令进行下载安装:
 
-`wget https://down.wulaphp.com/wulaphp-latest.tar.gz`
+`wget http://down.wulaphp.com/wulaphp-latest.tar.gz`
 
 `tar -zxf wulaphp-latest.tar.gz`
 

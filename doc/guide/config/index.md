@@ -1,5 +1,5 @@
 ---
-title: 配置
+title: 配置详解
 index: config conf
 showToc: 0
 desc: 让wulaphp按你的配置运行，一切如你所愿
