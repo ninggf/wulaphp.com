@@ -10,7 +10,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 
 {$toc}
 
-## 配置
+## 配置 {#cfg}
 
 通过`wulaphp`提供的`docker-compose`模板文件可以很方便的使用`docker`进行开发。按如下步骤进行配置:
 
@@ -32,7 +32,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 
 > 可根据需要选择合适的镜像版本。
 
-### 环境变量
+### 环境变量 {#env}
 
 可以通过环境变量来控制`xdebug`与`apcu`扩展：
 
@@ -41,7 +41,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 * `XDEBUG_ENABLE` 等于1时开启`xdebug`调试,默认`0`，需要调试时设为`1`。
 * `APCU_ENABLE`: 等于1时启用apcu运行时缓存,默认0。
 
-### 外部连接
+### 外部连接 (#ext)
 
 因为`mysql`，`redis`，`memcached`，`gearmand`，`php`运行在各自的docker容器内，需要将其端口映射到主机上才能从外部正常访问它们。
 默认映射了以下端口:
@@ -51,7 +51,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 
 <p class="tip" markdown=1>以上端口在`docker-compose.yml`文件中修改。</p>
 
-### 内部连接
+### 内部连接 {#inter}
 
 因为`mysql`，`redis`，`memcached`，`gearmand`，`php`运行在各自的docker容器内，当我们的程序需要连接他们时(我们写的程序运行在`php`与`web`容器内)，在配置上会稍有不同。
 主要体现在`host`部分，下边列出连接每个服务器所需要的`host`与`port`：
@@ -72,13 +72,13 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
   * host: php
   * port: 9000
 
-## 启动容器
+## 启动容器 {#start}
 
 配置完成后，运行以下命令启动容器(windows用户需要以管理员身份运行):
 
 `docker-compose up -d`
 
-## 验证
+## 验证 {#hello}
 
 使用`docker-compose up -d`命令启动相应的容器后，访问<a href="http://127.0.0.1:8090" target="_blank">http://127.0.0.1:8090</a>，你将看到:
 
@@ -88,8 +88,14 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 
 如果未能看到上边的输出，请移步[FQA](../fqa.md#install)。
 
-## 关闭容器
+## 关闭容器 {#shutdown}
 
 运行以下命令关闭容器:
 
 `docker-compose down`
+
+## 特别说明 {#note}
+
+使用`docker`时，需要进入`wula_php`容器内才能执行`php`相关的命令。可以使用下边的命令进入`wula_php`容器:
+
+`docker exec -ti wula_php bash`

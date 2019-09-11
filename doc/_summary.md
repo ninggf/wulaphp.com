@@ -1,10 +1,6 @@
 - [介绍](guide/index.md)
 - **立即开始**
 - [安装](guide/install.md)
-  - [Nginx](guide/nginx.md)
-  - [Httpd](guide/httpd.md)
-  - [Docker](guide/docker.md)
-  - [Vagrant](guide/vagrant.md)
 - [第一个模块](guide/start.md)
   - [读取配置](guide/cfg.md)
   - [连接数据库](guide/db.md)
@@ -21,6 +17,12 @@
 - [日志](guide/logger.md)
 - **数据库**
 - **高级**
+- 本地开发环境
+- [Docker](guide/docker.md)
+- [Vagrant](guide/vagrant.md)
+- 服务器部署
+- [Nginx](guide/nginx.md)
+- [Httpd](guide/httpd.md)
 - **更多**
 - [Hooks](hooks.md)
 - [FQA](fqa.md)
