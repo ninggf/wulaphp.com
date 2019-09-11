@@ -17,12 +17,12 @@
 - [日志](guide/logger.md)
 - **数据库**
 - **高级**
-- 本地开发环境
-- [Docker](guide/docker.md)
-- [Vagrant](guide/vagrant.md)
+- 开发环境
+- [Docker](guide/docker.md) {.sidebar-link .nsub}
+- [Vagrant](guide/vagrant.md) {.sidebar-link .nsub}
 - 服务器部署
-- [Nginx](guide/nginx.md)
-- [Httpd](guide/httpd.md)
+- [Nginx](guide/nginx.md) {.sidebar-link .nsub}
+- [Httpd](guide/httpd.md) {.sidebar-link .nsub}
 - **更多**
 - [Hooks](hooks.md)
 - [FQA](fqa.md)

@@ -49,11 +49,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 `wget http://down.wulaphp.com/wulaphp-latest.tar.gz`
 
-`tar -zxf wulaphp-latest.tar.gz`
-
-`cd wulaphp`
-
-`chmod 777 storage storage/tmp storage/logs`
+`tar -zxf wulaphp-latest.tar.gz && cd wulaphp`
 
 ### 更新 {#upgrade}
 
@@ -63,7 +59,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 如果你运行在`类Unix`系统上，执行以下操作将目录变为可读写：
 
-`# chmod 777 storage storage/tmp storage/logs`
+`chmod 777 storage storage/tmp storage/logs`
 
 ## 验证 {#hello}
 

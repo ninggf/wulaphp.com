@@ -275,8 +275,8 @@ strong {
 
 code,
 pre {
-    font-family: "Roboto Mono", Monaco, courier, monospace;
-    font-size: 0.75rem;
+    font-family: Consolas, 'Courier New',Courier, monospace;
+    font-size: 0.9rem;
     background-color: #f8f8f8;
     -webkit-font-smoothing: initial;
     -moz-osx-font-smoothing: initial;
@@ -660,7 +660,7 @@ body.docs #nav {
     font-size: 1.5em;
     line-height: 40px;
     color: #2c3e50;
-    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-family: Consolas,'Courier New',"Helvetica Neue", Arial, sans-serif,Courier;
     font-weight: 500;
 }
 
@@ -1094,12 +1094,12 @@ ul.demo li {
 .sidebar ul {
     list-style-type: none;
     margin: 0;
-    line-height: 1.5em;
+    line-height: 1em;
     padding-left: 1em;
 }
 
 .sidebar li {
-    margin-top: 0.15em;
+    margin-top: 10px;
 }
 
 .sidebar .sidebar-inner {
@@ -1146,7 +1146,10 @@ ul.demo li {
     font-weight: 600;
     color: #42b983;
 }
-
+.sidebar .nsub {
+    margin-left: 1em;
+    font-size: 0.85em;
+}
 .sidebar .sidebar-link.new:after {
     content: "NEW";
     display: inline-block;

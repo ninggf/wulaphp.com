@@ -9,9 +9,6 @@
     <meta property="og:title" content="{$page.title}">
     <meta property="og:description" content="{$page.desc|default:$config.siteDesc|escape}">
     <link rel="icon" href="{'../images/logo.png'|here}" type="image/x-icon">
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet'
-          type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Dosis:500&text=wula.php' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{'../css/search.css'|here}">
     {if $isIndex}
         <link rel="stylesheet" href="{'../css/index.css'|here}">
@@ -30,7 +27,7 @@
 <div id="search-wrapper"></div>
 <script src="{'../js/zepto.min.js'|here}"></script>
 <script src="{'../js/common.js'|here}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="{'../js/fastclick.min.js'|here}"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
         FastClick.attach(document.body)
