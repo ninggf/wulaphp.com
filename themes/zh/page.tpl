@@ -3,13 +3,13 @@
 {extends file='./layout.tpl'}
 {block body}
     <div id="main" class="fix-sidebar">
-        <div class="sidebar" style="width: 280px" id="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-inner">
                 <ul class="main-menu">
                     {include './partials/menu.tpl'}
                 </ul>
                 <div class="list">
-                    <a class="become-backer" href="#">
+                    <a class="become-backer" href="https://github.com/ninggf/wulaphp/stargazers" target="_blank">
                         支持一下
                     </a>
                     {$summary}

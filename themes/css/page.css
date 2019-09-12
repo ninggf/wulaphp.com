@@ -1194,7 +1194,6 @@ ul.demo li {
         height: 100%;
         top: 0;
         left: 0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
         -webkit-transform: translate(-280px, 0);
         transform: translate(-280px, 0);
@@ -1221,6 +1220,7 @@ ul.demo li {
     .sidebar.open {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .sidebar .ecosystem ul {
