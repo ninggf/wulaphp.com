@@ -21,29 +21,29 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 - PDO PHP Extension: `PDO`
 - PDO_MYSQL Extension: `pdo_mysql`
 
-## Composer {#composer}
+## 安装 {#install}
 
-### 安装 {#install}
+### Composer {#composer}
 
 `composer require wula/wulaphp -vvv`
 
-> 国内的小朋友请耐心的等待或多执行几次上边的代码。如果还是安装不成功，请通过[下载](#download)的方式进行安装。
+国内的小朋友请耐心的等待或多执行几次上边的代码。如果还是安装不成功，请通过[下载](#download)的方式进行安装。
 
-### 初始化 {#init}
+#### 初始化 {#init}
 
 安装命令完成后，执行以下代码进行项目初始化工作:
 
 - Windows: `vendor\bin\wulaphp int`
 - 类Unix:  `vendor/bin/wulaphp init`
 
-## 下载安装 {#download}
+### 下载 {#download}
 
-### Windows {#windows}
+#### Windows {#windows}
 
 1. 点击此处[下载](http://down.wulaphp.com/wulaphp-latest.zip)最新版本包。
 2. 解压到相应的目录即完成安装。
 
-### 类Unix {#unix}
+#### 类Unix {#unix}
 
 执行以下命令进行下载安装:
 
@@ -51,7 +51,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 `tar -zxf wulaphp-latest.tar.gz && cd wulaphp`
 
-### 更新 {#upgrade}
+#### 更新 {#upgrade}
 
 如果你能正常访问`composer`，执行一下`composer update -vvv`将所有依赖包升级到最新版本。
 
@@ -61,7 +61,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 `chmod 777 storage storage/tmp storage/logs`
 
-## 验证 {#hello}
+## 运行 {#run}
 
 打开命令行，进入应用根目录(<small markdown=1>`artisan`脚本所在的目录</small>)并执行下边的命令(<small>使用内建服务器运行</small>)：
 

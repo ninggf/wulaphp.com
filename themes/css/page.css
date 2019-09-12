@@ -1191,7 +1191,7 @@ ul.demo li {
         position: fixed;
         z-index: 10;
         background-color: #f9f9f9;
-        height: 100%;
+        bottom: 0;
         top: 0;
         left: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
@@ -1200,7 +1200,7 @@ ul.demo li {
     }
 
     .sidebar .sidebar-inner {
-        padding: 50px 10px 10px 20px;
+        padding: 10px 10px 10px 20px;
         box-sizing: border-box;
     }
 
@@ -1221,6 +1221,7 @@ ul.demo li {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
     }
 
     .sidebar .ecosystem ul {

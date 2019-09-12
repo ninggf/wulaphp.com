@@ -118,10 +118,10 @@ class IndexController extends Controller {
 
 我们有了模块，有了控制器，写了`Index` Action与视图，我们要怎么访问它呢？
 
-首先，开启PHP的内建开发服务器(<small>无已开启请路过</small>):
+首先，开启PHP的内建开发服务器(<small>如已开启请跳过</small>):
 
-- Windows: `php -S 127.0.0.1:8090 -t wwwroot\ wwwroot\index.php`
-- 类Unix: `php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`
+* Windows: `php -S 127.0.0.1:8090 -t wwwroot\ wwwroot\index.php`
+* 类Unix: `php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`
 
 然后，通过浏览器访问[http://127.0.0.1:8090/hello](http://127.0.0.1:8090/hello)。你将看到:
 
