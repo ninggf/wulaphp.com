@@ -5,7 +5,7 @@ index: 1
 desc: 用wulaphp写的第一个模块，尝尝鲜
 ---
 
-让我们弄个**HelloWorld**模块跟世界打个招呼，开始`wulaphp`之旅吧。
+让我们弄个**HelloWorld**模块跟世界打个招呼，开始**wulaphp**之旅吧。
 
 {$toc}
 
@@ -112,21 +112,30 @@ class IndexController extends Controller {
 
 简单到只显示从控制器传过来的变量，如果对`Smarty`模板不熟悉，请传送至[Smarty文档](https://www.smarty.net/docs/zh_CN/).
 
-> 当`view`(`pview`)函数不指定模板文件仅传数据时，`wulaphp`将使用与控制器同名目录下与action同名的视图文件。
+> 当`view`(`pview`)函数不指定模板文件仅传数据时，**wulaphp**将使用与控制器同名目录下与action同名的视图文件。
 
 ### 验证
 
-我们有了模块，有了控制器，写了`Index` Action与视图，我们要怎么访问它呢？`wulaphp`使用所见即所得的URL路由机制。
-`hello\IndexController::index`的URL就是`hello/index/index`, 根据约定`index`是默认的路径可以省略，
-所以URL可以简化为`hello`,通过浏览器访问[/hello](/hello)吧。你看到了:
+我们有了模块，有了控制器，写了`Index` Action与视图，我们要怎么访问它呢？
+
+首先，开启PHP的内建开发服务器(<small>无已开启请路过</small>):
+
+- Windows: `php -S 127.0.0.1:8090 -t wwwroot\ wwwroot\index.php`
+- 类Unix: `php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`
+
+然后，通过浏览器访问[http://127.0.0.1:8090/hello](http://127.0.0.1:8090/hello)。你将看到:
 
 **Hello World!**
 
-总感觉有点不对，是不是？参数name呢？`wulaphp`支持默认参数,`name`就是默认参数，它有默认值*World*, 提供参数*Bill*, 将URL变为[hello/Bill](/hello/Bill)即可，你将看到:
+总感觉有点不对，是不是？参数name呢？**wulaphp**支持默认参数,`name`就是默认参数，它有默认值*World*,
+提供参数*Bill*, 将URL变为[http://127.0.0.1:8090/hello/Bill](http://127.0.0.1:8090/hello/Bill)即可，你将看到:
 
 **Hello Bill!**
 
-你也可以通过[hello?name=Bill](/hello?name=Bill)得到相同的结果。
+你也可以通过[http://127.0.0.1:8090/hello?name=Bill](http://127.0.0.1:8090/hello?name=Bill)得到相同的结果。
+
+> **wulaphp**使用所见即所得的URL路由机制。
+> `hello\controllers\IndexController::index`的对应的URL是`hello/index/index`, 根据约定`index`是默认的路径可以省略，所以URL可以简化为`hello`。
 
 ### 另一个 Action
 
@@ -138,7 +147,8 @@ public function add($i, $j) {
 }
 ```
 
-访问[hello/add/1/2](/hello/add/1/2), 你看到**the result is: 3**了吗？
+访问[http://127.0.0.1:8090/hello/add/1/2](http://127.0.0.1:8090/hello/add/1/2),
+你看到**the result is: 3**了吗？
 
 ## 另一个控制器
 
@@ -167,7 +177,7 @@ class MathController extends Controller {
 }
 ```
 
-浏览器访问[hello/math/add/1/2](/hello/math/add/1/2)结果如下:
+浏览器访问[http://127.0.0.1:8090/hello/math/add/1/2](http://127.0.0.1:8090/hello/math/add/1/2)结果如下:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -176,13 +186,13 @@ class MathController extends Controller {
 </math>
 ```
 
-访问[hello/math/sub/3/1](/hello/math/sub/3/1)结果如下:
+访问[http://127.0.0.1:8090/hello/math/sub/3/1](http://127.0.0.1:8090/hello/math/sub/3/1)结果如下:
 
 ```json
 {"result":2}
 ```
 
-访问[hello/math/mul/3/1](/hello/math/mul/3/1)结果如下:
+访问[http://127.0.0.1:8090/hello/math/mul/3/1](http://127.0.0.1:8090/hello/math/mul/3/1)结果如下:
 
 500页面提示您：
 
@@ -192,7 +202,7 @@ class MathController extends Controller {
 
 ## URL路由简述
 
-如你所见`wulaphp`的URL路由基本上是**所见即所得**的, 以`hello/math/sub/1/2`为例来讲解路由规则:
+如你所见**wulaphp**的URL路由基本上是**所见即所得**的, 以`hello/math/sub/1/2`为例来讲解路由规则:
 <pre>
 hello/math/sub/1/2
  │     │    │  └─└────────── 参数（*）

@@ -92,7 +92,7 @@ return [
     </html>
     ```
 
-3. 访问[hello/info](/hello/info)你将看到:
+3. 访问[http://127.0.0.1:8090/hello/info](http://127.0.0.1:8090/hello/info)你将看到:
 
     ```html
     <!DOCTYPE html>
@@ -146,7 +146,7 @@ return [
     }
     ```
 
-3. 访问[hello/info/info-hello](/hello/info/info-hello)你将看到:
+3. 访问[http://127.0.0.1:8090/hello/info/info-hello](http://127.0.0.1:8090/hello/info/info-hello)你将看到:
 
     ```html
     <!DOCTYPE html>

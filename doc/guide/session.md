@@ -45,8 +45,8 @@ class SessDemoController extends Controller {
 
 ### 验证
 
-1. 访问[hello/sess-demo/set](/hello/sess-demo/set).
-2. 访问[hello/sess-demo](/hello/sess-demo),你将看到:
+1. 访问[http://127.0.0.1:8090/hello/sess-demo/set](http://127.0.0.1:8090/hello/sess-demo/set).
+2. 访问[http://127.0.0.1:8090/hello/sess-demo](http://127.0.0.1:8090/hello/sess-demo),你将看到:
 
     ```json
     {"name":"wulaphp is great!"}
@@ -211,4 +211,4 @@ public function logout() {
 
 ## 接下来
 
-是时候全面深入了解**wulaphp**了，首先从它的[目录结构](structure.md)开始吧。
+全面深入了解**wulaphp**，首先从它的[目录结构](structure.md)开始吧。

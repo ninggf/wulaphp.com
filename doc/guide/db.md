@@ -161,7 +161,7 @@ class UserController extends Controller {
 
 ### 验证 {#url}
 
-访问[hello/user](/hello/user),结果如你想见。
+访问[http://127.0.0.1:8090/hello/user](http://127.0.0.1:8090/hello/user),结果如你想见。
 
 ## 更多显示方式 {#more}
 
