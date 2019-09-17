@@ -1,5 +1,6 @@
 ---
 title: 安装
+pageTitle: 安装和环境配置
 index: 1
 cate: 基础
 showToc: 0
@@ -80,4 +81,4 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 ## Web服务器配置 {#deploy}
 
-有需要时，[Nginx](nginx.md) 或 [Apache Httpd](httpd.md)任君挑选。
+**wulaphp**可以很方便的和[Nginx](nginx.md)或[Apache Httpd](httpd.md)集成在一起使用。

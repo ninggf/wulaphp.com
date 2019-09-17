@@ -1,6 +1,9 @@
 {$isIndex=true}
 {$pageType='index'}
 {extends file='./layout.tpl'}
+{block title}
+    <title>wulaphp 一个PHP框架</title>
+{{/block}}
 {block body}
     <div class="sidebar">
         <div class="sidebar-inner">
@@ -19,7 +22,7 @@
                 <h1><br/>
                     又一个PHP框架 </h1>
                 <p>
-                    <a class="button" href="{'guide/install.md'|docurl}">起步</a>
+                    <a class="button" href="{'guide/install.md'|docurl}">开始使用</a>
                     <a class="button" href="http://down.wulaphp.com/wulaphp-{$config.version}.zip" target="_blank">下载</a>
                     <a class="button white" href="https://github.com/ninggf/wulaphp" target="_blank">GITHUB</a>
                 </p>

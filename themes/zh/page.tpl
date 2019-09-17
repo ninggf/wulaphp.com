@@ -20,7 +20,7 @@
         <div class="content with-sidebar">
             <div id="ad"></div>
             {if !$page.hideTitle && trim($page.title)}
-                <h1>{$page.title}</h1>
+                <h1>{$page.pageTitle|default:$page.title}</h1>
             {/if}
             {if $page.showToc !== 0}
                 <div id="toc">{$page.tocStr}</div>
