@@ -13,7 +13,7 @@ desc: 用wulaphp写的第一个模块，尝尝鲜
 
 执行下边的命令:
 
-`php artisan admin create-module --name "HelloWorld hello"`
+`php artisan admin create-module --name "Hello World" hello`
 
 命令很快完成，此时在`modules`目录里你将看到`hello`目录:
 
@@ -37,7 +37,7 @@ use wulaphp\app\Module;
  */
 class HelloModule extends Module {
     public function getName() {
-        return 'HelloWorld';
+        return 'Hello World';
     }
 
     public function getDescription() {
