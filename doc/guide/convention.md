@@ -37,7 +37,7 @@ class MyController extends Controller{
 ## 类名与懒加载 {#lz}
 
 类名遵循**大写驼峰**命名规则,如:`MyController`、`UserModel`。
-wulaphp使用懒加载机制在需要的时候才加载类以提升程序性能，所以请保证**类名与文件名**相同且存放在与命名空间相对应的目录中,如:
+**wulaphp**使用懒加载机制在需要的时候才加载类以提升程序性能，所以要求**类名与文件名**相同且存放在与命名空间相对应的目录中,如:
 
 ```php
 <?php
@@ -66,11 +66,15 @@ class UserModel extends Table{
 
 ## 控制器类名 {#controller}
 
-所有控制器的类可以以`Controller`结尾。如:`UserController`, `Index`.
+控制器类的类名以`Controller`结尾且与文件名相同，如:`UserController`。
+
+> 控制器类名可以不以`Controller`结尾，如:`User`。
 
 ## 模型类名 {#model}
 
 数据模型类推荐以`Model`、`View`、`Table`结尾。如:`UserModel`,`UserView`,`StudentTable`.
+
+> 不以`Model`、`View`、`Table`结尾也是可以的。
 
 ## 模型主键 {#pk}
 
@@ -78,7 +82,7 @@ class UserModel extends Table{
 
 ## 配置约定 {#conf}
 
-wulaphp的所有配置文件位于`conf`目录中,其中:
+**wulaphp**的所有配置文件位于`conf`目录中,其中:
 
 1. 普通配置文件以`_config[_mode].php`结尾
    * `config.php`为默认配置文件

@@ -11,7 +11,7 @@ desc: 使用wulaphp提供的SessionSupport使用会话(Session)功能
 
 在`wulaphp`中使用会话很简单，只需为`Controller`添加`SessionSupport`特性即可, 眼见为实。
 
-## 简单尝鲜
+## 简单尝鲜 {#simple}
 
 我们实现一个小功能以演示会话的基础应用，创建`hello\controllers\SessDemoController`:
 
@@ -43,10 +43,10 @@ class SessDemoController extends Controller {
 }
 ```
 
-### 验证
+### 验证 {#check}
 
-1. 访问[http://127.0.0.1:8090/hello/sess-demo/set](http://127.0.0.1:8090/hello/sess-demo/set).
-2. 访问[http://127.0.0.1:8090/hello/sess-demo](http://127.0.0.1:8090/hello/sess-demo),你将看到:
+1. 首先访问[http://127.0.0.1:8090/hello/sess-demo/set](http://127.0.0.1:8090/hello/sess-demo/set).
+2. 然后访问[http://127.0.0.1:8090/hello/sess-demo](http://127.0.0.1:8090/hello/sess-demo),你将看到:
 
     ```json
     {"name":"wulaphp is great!"}
@@ -199,16 +199,16 @@ public function logout() {
 
 一个简单的登录功能就完成了，用[连接数据库](db.md)一节中创建的用户(`user1、user2、user3、user4、user5`，默认的密码是`123321`)去登录一下试试吧。
 
-## 说明
+## 说明 {#note}
 
 1. `sess_del`函数为wualphp提供的会话快捷操作函数
-    * sess_del 取值并删除
-    * sess_get 取值
+    * `sess_del` 取值并删除
+    * `sess_get` 取值
 2. `{'hello/user/login'|app}`中`app`是wulaphp提供的Smarty模板修饰器(`modifier`)
     * 模板中的模块控制器的URL都应使用`app`修饰器，因为模块的目录名是可变的
-3. `rqst` 读取POST和GET数据,同时还有`irqst`,`frqst`等.
-4. 当我们以POST方法请求`hello/user/login`时,请求将优先分发给`loginPost`处理.
+3. `rqst` 读取**POST**和**GET**数据,同时还有`irqst`,`frqst`等.
+4. 当我们以**POST**方法请求`hello/user/login`时,请求将优先分发给`loginPost`处理.
 
-## 接下来
+## 接下来 {#next}
 
 全面深入了解**wulaphp**，首先从它的[目录结构](structure.md)开始吧。

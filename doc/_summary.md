@@ -6,14 +6,14 @@
   - [连接数据库](guide/db.md)
   - [开启会话](guide/session.md)
 - [目录结构](guide/structure.md)
-  - [模块目录](guide/module.md)
 - [约定规范](guide/convention.md)
-- [工作原理](guide/how.md)
+- [如何工作](guide/how.md)
 - **基础**
 - [模块](guide/module/index.md)
 - [控制器](guide/mvc/controller.md)
 - [视图](guide/mvc/view.md)
 - [配置](guide/config/index.md)
+- [插件](guide/plugin.md)
 - [日志](guide/logger.md)
 - **数据库**
 - **高级**

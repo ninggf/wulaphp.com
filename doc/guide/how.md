@@ -7,17 +7,15 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 
 <p class="success" markdown=1>知其然，知其所以然！如果你知道`wulaphp`是如何工作的，那么你就能很轻松地驾驭它。</p>
 
-本文将告诉你`wulaphp`是如何工作的！
-
 {$toc}
 
-## 生命周期
+## 生命周期 {#lifecycle}
 
-`wulaphp`中有**HTTP 请求分发**与**Console 脚本**两种生命周期。
+**wulaphp**中有**HTTP 请求**与**Console 脚本**两种生命周期。
 
-### HTTP 请求分发
+### HTTP 请求 {#req}
 
-#### 入口
+#### 入口 {#entry1}
 
 所有HTTP请求都会被WEB服务器(`nginx`、`httpd`等)通过重写的方式转发到入口文件:`wwwroot/index.php`。
 入口文件加载`bootstrap.php`文件对框架进行引导，框架引导完成后通过`App::run`启动**HTTP**请求分发。
@@ -41,7 +39,7 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 7. 加载模块
    1. 模块绑定勾子处理器
 
-#### 分发请求
+#### 分发请求 {#despatch}
 
 `App::run`函数创建路由器`Router`的实例并将请求交由其分发。路由器将请求分发给不同的分发器处理。系统默认提供了3个分发器:
 
@@ -51,11 +49,11 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 
 如果上述分发器分发请求失败，则路由器会将请求分发给用户[自定义分发器](advance/dispacther.md)处理。
 
-#### 绘制视图
+#### 绘制视图 {#render}
 
 如果路由器分发成功，其会得到一个视图。路由器将视图交给`Response`响应实例绘制并输出给用户。
 
-### Console 脚本
+### Console 脚本 {#artisan}
 
 所有**Console 脚本**直接加载`bootstrap.php`文件完成框架引导(同[HTTP请求分发中的框架引导](#bootstrap))，不必启动**HTTP**请求分发！
 
@@ -63,17 +61,14 @@ desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 
 > 可以通过`wulaphp`提供的[artisan](artisan/index.md)命令更优雅的编写**Console 命令**
 
-## 流程图
+## 流程图 {#flow}
 
 基于上文的描述，我们为你整理了一个大致的能描述`wulaphp`生命周期的流程图，如下:
 
 ![wulaphp流程图](/themes/imgs/flow.png)
 
-## 接下来
+## 接下来 {#next}
 
-当你搞懂了以上内容之后，请开始享受**wulaphp**吧，可以从以下几方面入手:
+当你搞懂了以上内容之后，请开始享受**wulaphp**吧，立即从[模块]开始。
 
-* [模块](module/index.md)
-* [控制器](mvc/controller.md)
-* [视图](mvc/view.md)
-* [配置](config/index.md)
+[模块]: module/index.md

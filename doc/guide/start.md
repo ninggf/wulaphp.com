@@ -9,11 +9,11 @@ desc: 用wulaphp写的第一个模块，尝尝鲜
 
 {$toc}
 
-## 创建模块
+## 创建模块 {#create}
 
 执行下边的命令:
 
-`php artisan admin create-module --name HelloWorld hello`
+`php artisan admin create-module --name "HelloWorld hello"`
 
 命令很快完成，此时在`modules`目录里你将看到`hello`目录:
 
@@ -55,11 +55,11 @@ App::register(new HelloModule()); # 注册模块实例
 
 它是一个标准引导文件，已经可以很好的工作，目前我们还不需要修改它。**引导文件非常重要，没有它模块就不能工作**。
 
-> 如果你不喜欢或不能使用命令创建模块，你可以手动在`modules`目录中建立**图1**所示的目录和`bootstrap.php`文件并把上边的代码复制其中。
+<p class="tip" markdown=1>如果你不喜欢或不能使用命令创建模块，你可以手动在`modules`目录中建立**图1**所示的目录和`bootstrap.php`文件并把上边的代码复制其中。</p>
 
-### 控制器
+### 控制器 {#controller}
 
-控制器位于模块的子目录`controllers`中，控制器类名与控制器名文件名相同(**使用Windows系统的同学注意文件名大小写**)。
+控制器位于模块的子目录`controllers`中，控制器类的类名与控制器名文件名必须相同(**使用Windows的同学请注意文件名大小写**)。
 如果你是通过命令创建的模块，命令会帮你创建`IndexController`和对应的视图`index.tpl`，否则你需要手动创建它们:
 
 ```php
@@ -110,34 +110,41 @@ class IndexController extends Controller {
 </html>
 ```
 
-简单到只显示从控制器传过来的变量，如果对`Smarty`模板不熟悉，请传送至[Smarty文档](https://www.smarty.net/docs/zh_CN/).
+它是一个**Smarty**模板文件，简单到只显示从控制器传过来的变量。如果你对`Smarty`模板不熟悉，请传送至[Smarty文档](https://www.smarty.net/docs/zh_CN/).
 
-> 当`view`(`pview`)函数不指定模板文件仅传数据时，**wulaphp**将使用与控制器同名目录下与action同名的视图文件。
+> 当`view`(`pview`)函数不指定模板文件仅传数据时，**wulaphp**将使用`views`(视图)目录里与控制器同名目录下与action同名的视图文件。
 
-### 验证
+### 验证 {#run}
 
-我们有了模块，有了控制器，写了`Index` Action与视图，我们要怎么访问它呢？
+我们有了模块，有了控制器，写了`index` Action与视图，我们要怎么访问它呢？
 
 首先，开启PHP的内建开发服务器(<small>如已开启请跳过</small>):
 
-* Windows: `php -S 127.0.0.1:8090 -t wwwroot\ wwwroot\index.php`
-* 类Unix: `php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`
+**Windows:** `php -S 127.0.0.1:8090 -t wwwroot\ wwwroot\index.php`
+
+**类Unix:** `php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`
 
 然后，通过浏览器访问[http://127.0.0.1:8090/hello](http://127.0.0.1:8090/hello)。你将看到:
 
-**Hello World!**
+<div class="demo-wrapper"> <div class="demo">
+<h1>Hello World!</h1>
+</div></div>
 
 总感觉有点不对，是不是？参数name呢？**wulaphp**支持默认参数,`name`就是默认参数，它有默认值*World*,
 提供参数*Bill*, 将URL变为[http://127.0.0.1:8090/hello/Bill](http://127.0.0.1:8090/hello/Bill)即可，你将看到:
 
-**Hello Bill!**
+<div class="demo-wrapper"> <div class="demo">
+<h1>Hello  Bill!</h1>
+</div></div>
 
 你也可以通过[http://127.0.0.1:8090/hello?name=Bill](http://127.0.0.1:8090/hello?name=Bill)得到相同的结果。
 
-> **wulaphp**使用所见即所得的URL路由机制。
-> `hello\controllers\IndexController::index`的对应的URL是`hello/index/index`, 根据约定`index`是默认的路径可以省略，所以URL可以简化为`hello`。
+> 重要说明:
+>
+> 1. **wulaphp**使用所见即所得的URL路由机制。
+> 2. `hello\controllers\IndexController::index`的对应的URL是`hello/index/index`, 根据约定`index`是默认的路径可以省略，所以URL可以简化为`hello`。
 
-### 另一个 Action
+### 另一个 Action {#otherm}
 
 在`IndexController`类中添加add方法：
 
@@ -150,7 +157,7 @@ public function add($i, $j) {
 访问[http://127.0.0.1:8090/hello/add/1/2](http://127.0.0.1:8090/hello/add/1/2),
 你看到**the result is: 3**了吗？
 
-## 另一个控制器
+## 另一个控制器 {#otherC}
 
 `IndexControll`是默认控制器，总不能所有代码都在写在它里边。再创建一个控制器`MathController`:
 
@@ -200,15 +207,15 @@ class MathController extends Controller {
 
 因为没有提供视图。请尝试解决并得到正确的输出:**结果是: 3**
 
-## URL路由简述
+## URL路由简述 {#url}
 
 如你所见**wulaphp**的URL路由基本上是**所见即所得**的, 以`hello/math/sub/1/2`为例来讲解路由规则:
 <pre>
 hello/math/sub/1/2
  │     │    │  └─└────────── 参数（*）
- │     │    └─────────────── action/参数（*）
- │     └──────────────────── 控制器名/action（*）
- └────────────────────────── 模块目录
+ │     │    └─────────────── action 或者 参数（*）
+ │     └──────────────────── 控制器名 或 action（*）
+ └────────────────────────── 模块
 </pre>
 
 > * 带*的表示可以没有。
@@ -221,12 +228,11 @@ hello/math/sub/1/2
 3. IndexController的math方法，接受三个参数:sub,1,2
 4. IndexController的index方法，接收四个参数:math,sub,1,2
 
-如果经过上述4步分发都找不到控制器或者参数个数不对，则分发失败。
-如果模块有子模块，则路由规则参见[子模块](module/submodule.md#url)相关的路由规则.
+如果经过上述4步分发都找不到控制器或者参数个数不匹配，则分发失败，此时路由器将请求分发给其它分发器处理，详见[高级路由](advance/dispacther.md)。
 
-## 小技巧
+## 小技巧 {#tips}
 
-将模块根目录`modules`设为源码目录,在创建类，接口，Trait时就不需要为它们**手动编写命名空间**了，设置方式如下:
+将`modules`目录设为源码目录，在创建类，接口，Trait时就不需要为它们**手动编写命名空间**了，设置方式如下:
 
 1. **PhpStorm**
    1. 在项目工具窗口中右击`modules`目录
@@ -235,8 +241,8 @@ hello/math/sub/1/2
 2. **Zend Studio**
    1. 默认项目一级目录都是源码目录
 
-> 强烈推荐你使用[PhpStorm](https://www.jetbrains.com/phpstorm/)开发PHP项目。
+> 强烈推荐你使用<a href="https://www.jetbrains.com/phpstorm/" target="_blank">PhpStorm</a>。
 
-## 接下来
+## 接下来 {#next}
 
 让我们为`HelloWorld`模块添加一些[配置](cfg.md)并读取它们。

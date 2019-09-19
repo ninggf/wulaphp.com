@@ -7,7 +7,7 @@ desc: wulaphp配置读取
 
 {$toc}
 
-## 添加配置
+## 添加配置 {#add}
 
 打开`conf/config.php`文件，它看起来差不多是这样的:
 
@@ -47,7 +47,7 @@ return [
 ];
 ```
 
-## 读取配置
+## 读取配置 {#read}
 
 1. 添加`InfoController`控制器到**HelloWorld**模块:
 
@@ -74,7 +74,7 @@ return [
     }
     ```
 
-2. 创建`views/info/index.tpl`:
+2. 创建对应的视图模板文件`views/info/index.tpl`:
 
     ```html
     <!DOCTYPE html>
@@ -112,7 +112,7 @@ return [
 
 读取配置就是这么简单。
 
-## 自定义配置
+## 自定义配置 {#custom}
 
 上边是把配置添加到默认配置组了，下边我们创建自定义配置组:`hello`。
 
@@ -172,7 +172,7 @@ return [
 
 好啦，配置就是这么简单。
 
-## 读取方法
+## 读取方法 {#gets}
 
 也许你已经注意到了`App::cfg`、`App::icfg`等读取配置的方式,`wulaphp`读取配置的快捷方法还有以下种:
 
@@ -180,15 +180,15 @@ return [
 2. `App::icfg($name, $default = 0)`:读取`int`型配置
 3. `App::icfgn($name, $default = 0)`:
     * 读取`int`型配置
-    * 如果配置值为0则返回`$default`
+    * 如果配置值为0或未配置则返回`$default`
 4. `App::acfg($name, $default = [])`:加载`array`型配置
 5. `App::cfg($name = '@default', $default = '')`:
     * 调用`App::cfg()`时返回默认配置(Configuration)实例.
     * 调用`App::cfg('@hello')`时返回`hello`配置实例.
     * 调用`App::cfg('name@hello')`时返回`hello`配置中`name`配置项的值.
 
-更多配置相关信息,请移步[配置详解](config/index.md).
+更多配置相关信息,请移步[配置详解](config/index.md)。
 
-## 接下来
+## 接下来 {#next}
 
-不连数据库的WEB应用都不能叫WEB应用，让我们[连上数据库](db.md)吧.
+让我们[连上数据库](db.md)吧，从数据库里拿点东西出来。
