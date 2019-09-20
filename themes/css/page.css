@@ -233,7 +233,9 @@
         display: none;
     }
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: -apple-system, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, Arial, sans-serif;
     font-size: 16px;
@@ -1068,6 +1070,7 @@ ul.demo li {
     top: 61px;
     left: 0;
     bottom: 0;
+    width: 280px;
     overflow-x: hidden;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
@@ -1193,6 +1196,7 @@ ul.demo li {
         bottom: 0;
         top: 0;
         left: 0;
+        width: 218px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
         -webkit-transform: translate(-280px, 0);
         transform: translate(-280px, 0);
