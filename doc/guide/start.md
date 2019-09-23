@@ -31,7 +31,7 @@ use wulaphp\app\App;
 use wulaphp\app\Module;
 
 /**
- * HelloWorld
+ * Hello World
  *
  * @package hello
  */
@@ -39,17 +39,9 @@ class HelloModule extends Module {
     public function getName() {
         return 'Hello World';
     }
-
-    public function getDescription() {
-        return '描述';
-    }
-
-    public function getHomePageURL() {
-        return '';
-    }
 }
 
-App::register(new HelloModule()); # 注册模块实例
+App::register(new HelloModule());
 // end of bootstrap.php
 ```
 
@@ -60,7 +52,7 @@ App::register(new HelloModule()); # 注册模块实例
 ### 控制器 {#controller}
 
 控制器位于模块的子目录`controllers`中，控制器类的类名与控制器名文件名必须相同(**使用Windows的同学请注意文件名大小写**)。
-如果你是通过命令创建的模块，命令会帮你创建`IndexController`和对应的视图`index.tpl`，否则你需要手动创建它们:
+如果你是通过命令创建的模块，命令会帮你创建`IndexController`和对应的视图`index.tpl`，否则你需要手动创建它们，将其代码改为下边的内容:
 
 ```php
 <?php
@@ -75,7 +67,7 @@ class IndexController extends Controller {
    /**
     * 默认控制方法.
     *
-    * @param string $name
+    * @param string $name GET请求参数，默认值为:World
     *
     * @return \wulaphp\mvc\view\View
     */
@@ -89,14 +81,14 @@ class IndexController extends Controller {
 这个控制器相当简单:
 
 * 首先，它继承`wulaphp\mvc\controller\Controller`说明自己是一个控制器.
-* 接着，它创建一个`index` Action并接收一个**GET**参数`name`:
+* 接着，它创建一个`index` Action并接收一个**GET**参数`name`(其默认值为`World`):
   * `public function index($name = 'World')`
 * 最后，使用`view`函数加载`index` Action对应的默认视图文件:[views/index/index.tpl](#view)并返回视图实例。
 
 ### 视图 {#view}
 
 视图模板文件位于模块的子目录`views`中，可以通过以`view`，`pview`，`xmlview`，`excel`等函数加载不同引擎的视图文件。
-如果你是通过命令创建的模块，命令已经帮你创建好了视图模板文件`views/index/index.tpl`，否则你需要手动创建它:
+如果你是通过命令创建的模块，命令已经帮你创建好了视图模板文件`views/index/index.tpl`，否则你需要手动创建它，将其代码改为下边的内容:
 
 ```html
 <html>
