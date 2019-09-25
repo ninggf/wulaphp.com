@@ -70,6 +70,10 @@ project                        # 项目部署目录
 
 `chmod 777 storage storage/tmp storage/logs`
 
+## 框架引导文件 {#bootstrap}
+
+`bootstrap.php`是框架的引导文件，负责初始化并拉起框架。可通过该文件对框架进行一定的自定义定制。
+
 ## 公共目录 (DocumentRoot) {#wwwroot}
 
 默认情况下**wulaphp**将`wwwroot`目录作为公共(`DocumentRoot`)目录对外提供web服务,只有这个目录里的文件才可以被用户直接访问。
