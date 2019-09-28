@@ -100,11 +100,11 @@ App::register(new HelloWorldModule()); # 注册模块
 
 然后把所有测试用例类放到`tests`目录，通过以下命令运行测试：
 
-**类Unix** `vendor/bin/phpunit --prepend bootstrap.php -c modules/hello/phpunit.xml`
+**类Unix** `vendor/bin/phpunit --prepend bootstrap.php -c modules/hello/phpunit.xml.dist`
 
-**Windows** `vendor\bin\phpunit --prepend bootstrap.php -c modules\hello\phpunit.xml`
+**Windows** `vendor\bin\phpunit --prepend bootstrap.php -c modules\hello\phpunit.xml.dist`
 
-> 把`hello`换成真实的模块。
+> 如果使用**3.0**之前版本的**wulaphp**则不需要添加`--prepend`参数。
 
 ## 其它类 {#others}
 
@@ -118,7 +118,7 @@ App::register(new HelloWorldModule()); # 注册模块
 
 **Windows** `php artisan hello\scripts\greeting.php`
 
-这样的好处是：`greeting.php`不需要引用框架的引导文件。
+这样的好处是：脚本不需要引用框架的引导文件，由`artisan`帮你引用。
 
 ## 模块加载器 {#loader}
 
