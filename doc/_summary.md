@@ -15,6 +15,7 @@
   - [控制器特性](guide/mvc/supports.md)
 - [视图](guide/mvc/view.md)
 - [主题](guide/theme.md)
+  - [Smarty标签](guide/advance/smarty.funcs.md)
 - [配置](guide/config/index.md)
   - [默认配置](guide/config/base.md)
   - [数据库配置](guide/config/db.md)
@@ -32,7 +33,6 @@
 - [配置加载器](guide/advance/cfg-loader.md)
 - [扩展加载器](guide/advance/ext-loader.md)
 - [RBAC授权认证](guide/advance/rbac.md)
-- [Smarty标签](guide/advance/smarty.funcs.md)
 - [i18n国际化](guide/advance/i18n.md)
 - **更多**
 - [Hooks](hooks.md)

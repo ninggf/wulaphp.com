@@ -55,5 +55,5 @@ return [
 6. `upload` 文件上传配置，详见[文件上传](../utils/uploader.md)。
 7. `resource.combinate` 影响Smarty函数[combinate](../advance/smarty.funcs.md#combinate)。
 8. `resource.minify` 影响Smarty函数[minify](../advance/smarty.funcs.md#minify)。
-9. `proxy` 详见[curl扩展](#http://php.net/manual/zh/function.curl-setopt.php)。
+9. `proxy` 详见[curl扩展](http://php.net/manual/zh/function.curl-setopt.php)。
    * `type`为空，不使用代理。
