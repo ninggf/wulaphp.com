@@ -28,7 +28,7 @@ desc: 模块化，让代码重用成为可能。
 
 打开命令行并执行:
 
-`php artisan admin create-module --name "Hello World" hello`
+`php artisan create module --name "Hello World" hello`
 
 命令将为你创建:
 
@@ -84,9 +84,9 @@ App::register(new HelloWorldModule()); # 注册模块
 
 其中`Smarty`,`PHP`,`Excel`需要编写模板文件，详见[视图](../mvc/view.md)。
 
-## 事件与勾子 {#hook}
+## 勾子(事件) {#hook}
 
-将处理相应事件的勾子类放在`hooks`目录中，当事件发生时框架会自动加载勾子类并执行相应的方法。详见[插件](../plugin.md)
+将处理相应勾子(事件)的处理器类放在`hooks`目录中，当事件发生时框架会自动加载处理器类并执行相应的方法。详见[插件](../plugin.md)
 
 ## 模型类 {#model}
 
@@ -119,6 +119,43 @@ App::register(new HelloWorldModule()); # 注册模块
 **Windows** `php artisan hello\scripts\greeting.php`
 
 这样的好处是：脚本不需要引用框架的引导文件，由`artisan`帮你引用。
+
+## 默认模块
+
+wulaphp支持默认模块(默认的默认模块是`app`)，何谓默认模块？就是URL中未指定模块目录时还可以访问的模块。要设置默认模块，只需要在`bootstrap.php`文件中定义常量`DEFAULT_MODULE`:
+
+```php
+/* 配置系统的默认模块配置,请取消下一行的注释，将其值改为模块命名空间 */
+define('DEFAULT_MODULE', 'abc');
+```
+
+原URL `abc/add/user`在将`abc`设置默认模块后就可以通过`add/user`访问啦(前提是没有`add`模块哦)。
+更多URL路由信息请查看[高级路由](../advance/route.md)。
+
+> 默认模块的功能应尽量简单！
+
+## 子模块
+
+详见[子模块](submodule.md)
+
+## 公共模块
+
+如果你有一颗开源的心，可以将你写的牛逼的模块作为`Composer`包发布分享给其他人,只需要简单地添加一个composer.json并提交到[Composer库](http://packagist.org/)即可，示例如下:
+
+```json
+{
+  "name": "mymodule/mymodule",
+  "type": "wula-module",
+  "require": {
+    "wula/wula-installer": "^2.0"
+  }
+}
+```
+
+1. `type`必须为`wula-module`，这样它才能被正确安装到模块目录。
+2. 必须依赖`wula/wula-installer`，不然composer不知道如何安装它。
+3. 其它依赖请根据实际情况添加.
+4. 其它各项composer配置请根据实现情况添加.
 
 ## 模块加载器 {#loader}
 

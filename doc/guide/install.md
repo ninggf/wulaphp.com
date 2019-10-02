@@ -19,8 +19,6 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 - JSON PHP Extension: `json`
 - Regular Expressions: `pcre`
 - Mbstring PHP Extension: `mbstring`
-- PDO PHP Extension: `PDO`
-- PDO_MYSQL Extension: `pdo_mysql`
 
 ## 安装 {#install}
 

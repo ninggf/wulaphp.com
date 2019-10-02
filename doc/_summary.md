@@ -10,19 +10,36 @@
 - [如何工作](guide/how.md)
 - **基础**
 - [模块](guide/module/index.md)
+  - [子模块](guide/module/submodule.md)
 - [控制器](guide/mvc/controller.md)
+  - [控制器特性](guide/mvc/supports.md)
 - [视图](guide/mvc/view.md)
+- [主题](guide/theme.md)
 - [配置](guide/config/index.md)
+  - [默认配置](guide/config/base.md)
+  - [数据库配置](guide/config/db.md)
+  - [缓存配置](guide/config/cache.md)
+  - [Redis配置](guide/config/redis.md)
+  - [集群运行时缓存](guide/config/cluster.md)
+- [扩展](guide/extension.md)
 - [插件](guide/plugin.md)
 - [日志](guide/logger.md)
 - **数据库**
 - **高级**
+- [高级路由](guide/advance/route.md)
+- [模块加载器](guide/advance/loader.md)
+- [配置加载器](guide/advance/cfg-loader.md)
+- [扩展加载器](guide/advance/ext-loader.md)
+- [自定义分发器](guide/advance/dispacther.md)
+- [RBAC授权认证](guide/advance/rbac.md)
+- [Smarty标签](guide/advance/smarty.funcs.md)
+- [i18n国际化](guide/advance/i18n.md)
+- **更多**
+- [Hooks](hooks.md)
+- [FQA](fqa.md)
 - 开发环境
 - [Docker](guide/docker.md) {.sidebar-link .nsub}
 - [Vagrant](guide/vagrant.md) {.sidebar-link .nsub}
 - 服务器部署
 - [Nginx](guide/nginx.md) {.sidebar-link .nsub}
 - [Httpd](guide/httpd.md) {.sidebar-link .nsub}
-- **更多**
-- [Hooks](hooks.md)
-- [FQA](fqa.md)

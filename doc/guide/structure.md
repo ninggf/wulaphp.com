@@ -99,7 +99,7 @@ project                        # 项目部署目录
 
 <img src="/doc/guide/img/mdir.jpg" width="239px" alt="module dir"/>。
 
-<p class="tip" markdown=1>上述目录结构可以通过`php artisan admin create-module hello`创建。</p>
+<p class="tip" markdown=1>上述目录结构可以通过`php artisan create module hello`创建。</p>
 
 ### 命名空间 {#ns}
 
