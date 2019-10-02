@@ -39,6 +39,28 @@ class AdminController extends Controller{
             //未登录啊
         }
     }
+
+    /**
+     * 用户被禁用时.
+     *
+     * @param mixed $view
+     *
+     * @return mixed
+     */
+    protected function onLocked($view) {
+        return $view ? $view : 'user is locked';
+    }
+
+    /**
+     * 用户锁定界面时.
+     *
+     * @param mixed $view
+     *
+     * @return mixed
+     */
+    protected function onScreenLocked($view) {
+        return $view ? $view : 'screen is locked';
+    }
 }
 ```
 
@@ -46,7 +68,12 @@ class AdminController extends Controller{
 >
 > 1. `PassportSupport`依赖`SessionSupport`存储通行证数据，所以要在其之前使用`SessionSupport`。
 > 2. 可以通过`$passportType`指定当前控制器使用的通过行类型。`admin`类型的通行证可以通过勾子`passport\newAdminPassport`自定义创建。
-> 3. 通行证登录、退出等操作详见[授权认证](../advance/rbac.md)。
+> 3. 当`$passprt->status !== 1`时`onLocked`会被调用。
+> 4. 当调用了`$passport->lockScreen()`后再访问无`@unlock`注解的方法时`onScreenLocked`会被调用。
+>    * 可以通过调用`$passport->unlockScreen($password)`解锁屏幕。
+>    * 控制器中解锁屏幕的方法需要添加`@unlock`注解。
+> 5. Smarty模板中可以通过`$myPassport`访问通行证变量。
+> 6. 通行证登录、退出等操作详见[授权认证](../advance/rbac.md)。
 
 ## RbacSupport
 

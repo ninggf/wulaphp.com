@@ -199,7 +199,7 @@ class MathController extends Controller {
 
 因为没有提供视图。请尝试解决并得到正确的输出:**结果是: 3**
 
-## URL路由简述 {#url}
+## URL路由 {#url}
 
 如你所见**wulaphp**的URL路由基本上是**所见即所得**的, 以`hello/math/sub/1/2`为例来讲解路由规则:
 <pre>
@@ -220,7 +220,7 @@ hello/math/sub/1/2
 3. IndexController的math方法，接受三个参数:sub,1,2
 4. IndexController的index方法，接收四个参数:math,sub,1,2
 
-如果经过上述4步分发都找不到控制器或者参数个数不匹配，则分发失败，此时路由器将请求分发给其它分发器处理，详见[高级路由](advance/dispacther.md)。
+如果经过上述4步分发都找不到控制器或者参数个数不匹配，则分发失败，此时路由器将请求分发给其它分发器处理，详见[高级路由](advance/route.md#mvc)。
 
 ## 小技巧 {#tips}
 

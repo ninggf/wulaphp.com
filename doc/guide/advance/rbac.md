@@ -61,10 +61,10 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
         protected $passportType = 'vip';
 
         /**
-        * 需要登录时。
-        *
-        * @param $view
-        */
+         * 需要登录时。
+         *
+         * @param $view
+         */
         protected function needLogin($view) {
             //直接跳转到登录页
             App::redirect('auth/login');
@@ -88,25 +88,25 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
 
     class VipxPassport extends Passport {
         /**
-        * 当前用户是否是$role角色.
-        *
-        * @param string|array $roles
-        *
-        * @return bool
-        */
+         * 当前用户是否是$role角色.
+         *
+         * @param string|array $roles
+         *
+         * @return bool
+         */
         public function is($roles) {
             return !empty(array_intersect(['管理员', '超级管理员'], (array)$roles));
         }
 
         /**
-        * 鉴权.
-        *
-        * @param string $op    操作
-        * @param string $res   资源
-        * @param array  $extra 额外数据
-        *
-        * @return bool 可以对资源($res)进行操作($op)时返回true，反之返回false。
-        */
+         * 鉴权.
+         *
+         * @param string $op    操作
+         * @param string $res   资源
+         * @param array  $extra 额外数据
+         *
+         * @return bool 可以对资源($res)进行操作($op)时返回true，反之返回false。
+         */
         protected function checkAcl($op, $res, $extra) {
             if ($op == 'add' && $res == 'user') {
                 return true;
@@ -116,12 +116,12 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
         }
 
         /**
-        * 登录.
-        *
-        * @param array $data
-        *
-        * @return bool 登录成功返回true,登录失败返回false.
-        */
+         * 登录.
+         *
+         * @param array $data
+         *
+         * @return bool 登录成功返回true,登录失败返回false.
+         */
         protected function doAuth($data = null) {
             if ($data && $data['username'] == 'leo' && $data['passwd'] == '123321') {
                 $this->uid      = 1;
@@ -142,24 +142,24 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
     > 1. `is` 判断用户是否拥有一个或多个角色.示例中假设登录的用户是『管理员』和『超级管理员』。
     > 2. `checkAcl` 鉴权，示例演示登录用户只有`add user`和`del role`权限。
     > 3. `doAuth` 登录，示例演示只要用户名是`leo`密码是`123321`就可以登录。
-4. 修改引导文件使用自定义的VipxPassport类:
+
+4. 添加处理器`auth\hooks\passport\NewVipPassport`响应勾子(事件)`passport\newVipPassport`:
 
     ```php
-    /**
-    * 绑定到勾子passport\newVipPassport
-    * @param $passport
-    *
-    * @filter passport\newVipPassport
-    * @return Passport
-    */
-    public static function createPassport($passport) {
-        if ($passport instanceof Passport) {
-            $passport = new VipxPassport();
-        }
+    <?php
+    namespace auth\hooks\passport;
 
-        return $passport;
+    use auth\classes\VipxPassport;
+    use wulaphp\hook\Alter;
+
+    class NewVipPassport extends Alter {
+        public function alter($value, ...$args) {
+            return new VipxPassport();
+        }
     }
     ```
+
+    > 详见插件的[懒绑定](../plugin.md#lazy)功能。
 
 5. 创建`auth\controllers\LoginController`(出于演示目的，此处直接登录):
 
@@ -186,6 +186,8 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
     }
     ```
 
+    > 请尝试提供一个界面让用户输入用户名和密码
+
 6. 创建`auth\controllers\AclController`(授权示例将写在此控制器):
 
     ```php
@@ -196,10 +198,10 @@ wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实�
     use auth\classes\AuthedController;
 
     /**
-    * Class AclController
-    * @package auth\controllers
-    * @login
-    */
+     * Class AclController
+     * @package auth\controllers
+     * @login
+     */
     class AclController extends AuthedController {
         public function index() {
             return 'Hello ' . $this->passport->nickname;
@@ -247,9 +249,9 @@ RbacSupport还支持以下几个注解:
 
     ```php
     /**
-    * @acl add:user
-    * @aclmsg 你没权限添加用户
-    */
+     * @acl add:user
+     * @aclmsg 你没权限添加用户
+     */
     public function addUser() {
         return 'you are adding a new user';
     }
@@ -260,9 +262,9 @@ RbacSupport还支持以下几个注解:
 
     ```php
     /**
-    * @acl    del:user
-    * @aclmsg 你没权限删除用户
-    */
+     * @acl    del:user
+     * @aclmsg 你没权限删除用户
+     */
     public function delUser() {
         return 'you are deleting a user';
     }
@@ -273,9 +275,9 @@ RbacSupport还支持以下几个注解:
 
     ```php
     /**
-    * @roles  人事,人事总监
-    * @aclmsg 你没权限看用户列表
-    */
+     * @roles  人事,人事总监
+     * @aclmsg 你没权限看用户列表
+     */
     public function listUser() {
         return 'you are viewing user list';
     }

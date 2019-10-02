@@ -25,12 +25,12 @@
 - [插件](guide/plugin.md)
 - [日志](guide/logger.md)
 - **数据库**
+- **工具类**
 - **高级**
 - [高级路由](guide/advance/route.md)
 - [模块加载器](guide/advance/loader.md)
 - [配置加载器](guide/advance/cfg-loader.md)
 - [扩展加载器](guide/advance/ext-loader.md)
-- [自定义分发器](guide/advance/dispacther.md)
 - [RBAC授权认证](guide/advance/rbac.md)
 - [Smarty标签](guide/advance/smarty.funcs.md)
 - [i18n国际化](guide/advance/i18n.md)

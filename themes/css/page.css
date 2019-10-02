@@ -1788,6 +1788,12 @@ ul.demo li {
     margin: 0.2em 0 -1.2em;
 }
 
+.content ul li ul,
+.content ol li ul{
+    position: inherit;
+    margin: 0.2em 0 -0.2em;
+}
+
 .content a {
     color: #42b983;
     font-weight: 600;
