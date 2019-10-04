@@ -34,9 +34,10 @@ return [
         'security' => false //启用安全
     ],
     'upload'         => [
-        'path'  => 'files',//文件上传保存根目录（相对于wwwroot)
-        'dir'   => 1, // 存储目录，0:按年；1:按年月；2:按年月日
-        'group' => 0, // 存储分组数，当上传量比较大时可以设置此值
+        'uploader' => 'file',//文件上传器
+        'path'     => 'files',//文件上传保存根目录（相对于wwwroot)
+        'dir'      => 1, // 存储目录，0:按年；1:按年月；2:按年月日
+        'group'    => 0, // 存储分组数，当上传量比较大时可以设置此值
     ],
     'resource'       => [
         'combinate' => 0,// 是否合并js,css

@@ -150,6 +150,33 @@ class VipController extends Controller{
 
 重要的是`{include "$workspaceView"}`。`$workspaceView`是通过`$this->render`加载的模板。
 
+## UploadSupport
+
+支持原生和[Plupload](https://www.plupload.com/)方式上传文件，通过调用该特性提供的`upload`方法完成文件上传。`upload`方法说明如下:
+
+```php
+/**
+ * 上传文件.
+ *
+ * @param string|UploadFile|null $dest                  目标目录或文件定义
+ * @param int                    $maxSize               最大上传体积
+ * @param bool                   $canUpload             是否可以上传
+ * @param \wulaphp\io\IUploader  $uploader              使用指定文件上传器.
+ * @param \Closure               $fileMetaDataExtractor 上传之前的解析文件数据的回调function($path, $size, $width, $height).
+ * @param array                  $allowed               允许的域名,默认使用allowd方法检测.
+ *
+ * @return array 上传结果
+ */
+protected final function upload($dest = null, $maxSize = 10000000, $canUpload = true, $uploader = null, \Closure $fileMetaDataExtractor = null, $allowed = [])
+```
+
+根据具体要求修改相应参数控制你的文件上传即可。`$dest`参数可以是一个`UploadFile`实例，对上传进行精确控制，此时以下参数将被`$dest`的属性代替:
+
+1. `$maxSize`
+2. `$fileMetaDataExtractor`
+3. `$uploader`
+4. `allowed`
+
 ## URLGroupSupport
 
 可以将模块、控制器URL进行分组。假如有两个模块,`a`和`b`，各有一个控制器`CController`，它们的URL分别为`a/c`和`b/c`。可以通过此特性修改他们的访问URL，比如修改为`d/a/c`和`d/b/c`。不多说了，上代码：

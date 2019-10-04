@@ -1,10 +1,13 @@
 ---
 title: 文件上传
-type: guide
-order: 604
+showToc: 0
+index: upload
+desc: 快捷地上传文件
 ---
 
-在wulaphp中通过[UploadFile](#UploadFile)类和[文件上传器](#文件上传器)可以很方便的完成文件上传工作。
+{$toc}
+
+在wulaphp中通过[UploadFile](#UploadFile)类和[文件上传器](#uploder)可以很方便的完成文件上传工作。
 
 ## UploadFile
 
@@ -27,7 +30,7 @@ foreach ($files as $upf) {
 }
 ```
 
-### 构造函数
+### 构造函数 {#new}
 
 参数:
 
@@ -53,17 +56,70 @@ foreach ($files as $upf) {
 
 **string** 上传出错信息.
 
-## 文件上传器
+## 文件上传器 {#uploader}
 
 UploadFile只能处理通过表单上传的文件且存储在本地，
 如果你是通过其它方法上传文件（比如plupload,swfupload等)且不存储在本地，
 wulaphp也提供了相应的解决方案: `Uploader`。
-wulaphp内置了`LocaleUploader`(本地文件上传器)，可以通过继承`\wulaphp\io\Uploader`实现自己的文件上传器。
+wulaphp内置了`LocaleUploader`(本地文件上传器)和`FtpUploder`，可以通过继承`\wulaphp\io\Uploader`实现自己的文件上传器。
 
-代码中通过`$uploader = Uploader::getUploader()`获取系统默认的文件上传器或`$uploader = Uploader::getUploader('myUploader')`,
+代码中通过`$uploader = Uploader::getUploader()`获取系统默认的文件上传器或`$uploader = Uploader::getUploader('myUploader')`获取自定义文件上传器,
 通过`$uploader->save()`将文件保存到它该保存的地方，比如阿里云OSS，千牛等等。
 
-### 自定义文件上传器
+### LocaleUploder
+
+要使用`LocaleUploder`做为系统默认文件上传器请向下边这样修改默认配置文件`conf/config.php`:
+
+```php
+[
+    ...,
+    'upload'=>[
+        'uploader' => 'file',
+        'path'     => 'files',//文件上传保存根目录（相对于wwwroot)
+        'dir'      => 1, // 存储目录，0:按年；1:按年月；2:按年月日
+        'group'    => 0, // 存储分组数，当上传量比较大时可以设置此值
+    ],
+    ...
+]
+```
+
+或媒体配置文件`conf/media_config.php`:
+
+```php
+[
+    'default_uploader'=>'file',
+    'save_path'     => 'files',//文件上传保存根目录（相对于wwwroot)
+    'dir'      => 1, // 存储目录，0:按年；1:按年月；2:按年月日
+    'group_num'    => 0, // 存储分组数，当上传量比较大时可以设置此值
+]
+```
+
+### FtpUploder
+
+要使用`FtpUploader`做为系统默认文件上传器请修改`conf/media_config.php`配置文件:
+
+```php
+[
+    'default_uploader'=>'ftp',
+    'save_path'     => 'files',//文件上传保存根目录（相对于wwwroot)
+    'dir'      => 1, // 存储目录，0:按年；1:按年月；2:按年月日
+    'group_num'    => 0, // 存储分组数，当上传量比较大时可以设置此值,
+    'params' => 'host=ftp_server_host&port=25&user=ftp&password=888&timeout=5&passive='//参数
+]
+```
+
+> **params 说明**
+>
+> 1. `host`: FTP服务器主机名或IP
+> 2. `port`: FTP端口
+> 3. `user`: 用户名
+> 4. `password`: 密码
+> 5. `timeout`: 超时
+> 6. `passive`: 被动模块
+
+<p class="tip" markdown=1>需要`ftp`扩展才能使用`FtpUploader`!</p>
+
+### 自定义文件上传器 {#custom}
 
 继承`\wulaphp\io\Uploader`并实现以下方法:
 
@@ -93,3 +149,7 @@ wulaphp内置了`LocaleUploader`(本地文件上传器)，可以通过继承`\wu
 
 具体可以参考[LocaleUploader](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/io/LocaleUploader.php)源代码实现你的文件上传器（需要把上传的文件保存到其它地方时）。
 然后通过勾子`upload\getUploader`修改默认文件上传器,通过勾子`upload\regUploaders`将上传器注册到系统。
+
+## UploadSupport
+
+为你的控制器添加`UploadSupport`特性可以快速实现文件上传功能，详见[UploadSupport](../mvc/supports.md#UploadSupport)。

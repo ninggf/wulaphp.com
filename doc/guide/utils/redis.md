@@ -1,17 +1,20 @@
 ---
 title: Redis
 type: guide
-order: 601
+showToc: 0
 ---
 
 wulaphp提供了俩类供你快速地使用`Redis`:
 
-1. [RedisClient](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/util/RedisClient.php)类，通过它可以方便的获取一个[Redis](https://github.com/phpredis/phpredis/)实例:
+1. [RedisClient](https://github.com/ninggf/wulaphp/blob/master/wulaphp/util/RedisClient.php)类，通过它可以方便的获取一个[Redis](https://github.com/phpredis/phpredis/)实例:
+
     ```php
     $redis = RedisClient::getRedis();
     ```
+
     获取`Redis`实例后，随便你耍。
-2. [RedisLock](https://github.com/ninggf/wulaphp/blob/v2.0/wulaphp/util/RedisLock.php)类，基于Redis实现的简单的分布式锁
+2. [RedisLock](https://github.com/ninggf/wulaphp/blob/master/wulaphp/util/RedisLock.php)类，基于Redis实现的简单的分布式锁
+
     ```php
     RedisLock::nblock('my-lock',function(){
         //锁住之后你要干啥?
@@ -20,7 +23,7 @@ wulaphp提供了俩类供你快速地使用`Redis`:
 
 看上去简单，使用起来好像也不难。But~~~，你得配置它。
 
-## 配置
+## 配置 {#config}
 
 通过`conf/redis_config.php`来配置Redis:
 
@@ -42,6 +45,7 @@ return ['host'=>'localhost','port'=>6379,'db'=>0,'auth'=>'','timeout'=>5];
 ```
 
 > `addRedisServer`参数/配置数组说明如下:
+>
 > 1. host - 服务器IP/域名
 > 2. port - 端口(默认6379)
 > 3. database - 缓存在哪个库(默认0)
@@ -70,7 +74,7 @@ return ['host'=>'localhost','port'=>6379,'db'=>0,'auth'=>'','timeout'=>5];
  *
  * @param  int|null             $db     数据库，不为null时将替换配置中的数据库
  * @param string                $prefix key前缀.
- * 
+ *
  * @return \Redis
  * @throws \Exception when the redis extension is not installed.
  */
@@ -87,25 +91,29 @@ public static function getRedis($cnf = null, $db = null, $prefix = '')
 
 ## RedisLock
 
-RedisLock类提供了四个静态方法实现基于Redis的简单锁:
+RedisLock类提供了五个静态方法实现基于Redis的简单锁:
 
 1. `RedisLock::nblock($lock, \Closure $callback, $timeout = 120)`:
     * 非阻塞锁，锁住就执行$callback并返回其返回值，锁不住就返回false。
-    * $lock - 锁名
-    * $callback - 锁住后要执行的回调
-    * $timeout - 锁自动释放时间,默认为120秒
+    * `$lock` - 锁名
+    * `$callback` - 锁住后要执行的回调
+    * `$timeout` - 锁自动释放时间,默认为120秒
 2. `RedisLock::lock($lock, \Closure $callback, $timeout = 30)`:
     * 阻塞锁，无法获取锁时返回false，成功获取锁后返回$callback的返回值.
-    * $lock - 锁名。
-    * $callback - 锁住后要执行的回调。
-    * $timeout - 多久锁不住返回false。
+    * `$lock` - 锁名。
+    * `$callback` - 锁住后要执行的回调。
+    * `$timeout` - 多久锁不住返回false。
 3. `RedisLock::ulock($lock, $timeout = 30, &$wait = null)`:
-    * 用户锁，不自动释放，需要用户手动释放.
-    * $lock - 锁名
-    * $timeout - 获取锁超时
-    * $wait - 是否等待了锁(有些时候不需要等可以立即获到锁那么此时`$wait=false`).
-4. `RedisLock::uunlock($lock)`:
+    * 用户阻塞锁，不自动释放，需要用户手动释放.
+    * `$lock` - 锁名
+    * `$timeout` - 获取锁超时
+    * `$wait` - 是否等待了锁(有些时候不需要等可以立即获到锁那么此时`$wait=false`)
+4. `RedisLock::unblock($lock,$timeout)`
+    * 用户非阻塞锁，需要用户手动释放，获取锁成功返回`true`，反之`false`。
+    * `$lock` - 锁名
+    * `$timeout` - 获取锁超时
+5. `RedisLock::release($lock)`,`RedisLock::unlock($lock)`:
     * 释放通过`RedisLock::ulock`获取到的锁.
-    * $lock - 锁名
+    * `$lock` - 锁名
 
 关于Redis就说这么多了。

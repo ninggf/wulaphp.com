@@ -155,12 +155,14 @@ class AuthController extends Controller{
 
 讲真，知道PUT和DELETE的请举手，不能分清GET和POST请抓紧时间自学一波。
 
-## URL映射 {#url}
+## URL生成 {#url}
 
 无论是控制器还是方法，如果他们使用了驼峰方式命名，如:`MyInfoController`、`doLogin`, 请记住在URL中用`-`连接驼峰:
 
 1. `my-info`
 2. `do-login`
+
+请一定要通过`App::url`和`App::action`方法生成URL，他们可以保证生成的URL在不同情况下是正确的。比如默认模块的URL、设置了别名的模块的URL、设置了别名的URL、启用了`urlGroup`的控制器的URL等等，详见[App::url](../utils/app.md#url)和[App::action](../utils/app.md#action)。Smarty模板中一定要通过`app`和`action`修饰器生成URL，他们的作用同`App:url`和`App::action`，详见[修饰器](../theme.md#modifiers)。
 
 ## 视图模板 {#tpl}
 
