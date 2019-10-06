@@ -100,7 +100,7 @@ if ($options) {
 }
 ```
 
-更多配置请参考[数据库配置](db/index.md)。
+更多配置请参考[数据库配置](config/db.md)。
 
 ## 显示用户列表 {#ulist}
 

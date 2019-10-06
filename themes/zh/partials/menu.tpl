@@ -4,7 +4,7 @@
     </form>
 </li>
 <li><a href="{'guide/index.md'|docurl}" class="nav-link{if preg_match('#^guide/?.*#',$url)} current{/if}">文档</a></li>
-<li><a href="http://down.wulaphp.com/wulaphp-{$config.version}.zip" class="nav-link" target="_blank">下载</a></li>
+<li><a href="{'download.md'|docurl}" class="nav-link{if $url =='download.html'} current{/if}">下载</a></li>
 <li><a href="{'hooks.md'|docurl}" class="nav-link{if $url =='hooks.html'} current{/if}">扩展点</a></li>
 <li class="nav-dropdown-container ecosystem">
     <a class="nav-link">其它</a><span class="arrow"></span>

@@ -13,7 +13,7 @@ desc: 通过数据校验器，保证数据安全
 ## Validator
 
 wulaphp提供了一个[Validator](https://github.com/ninggf/wulaphp/blob/master/wulaphp/validator/Validator.php)，它是一个PHP的[Trait](http://php.net/manual/zh/language.oop5.traits.php)。
-[Table](https://github.com/ninggf/wulaphp/blob/master/wulaphp/db/Table.php)的子类(模型)使用它之后，那么调用`Table`的`insert`, `inserts`, `update`方法时就会自动对数据根据设定的规则进行校验；
+[Table](../db/model.md)的子类(模型)使用它之后，那么调用`Table`的`insert`, `inserts`, `update`方法时就会自动对数据根据设定的规则进行校验；
 [Params](https://github.com/ninggf/wulaphp/blob/master/wulaphp/util/Params.php)的子类使用它，就可以方便的获取合法的参数（数据）。
 
 ## 简单示例 {#simple}

@@ -120,7 +120,7 @@ App::register(new HelloWorldModule()); # 注册模块
 
 这样的好处是：脚本不需要引用框架的引导文件，由`artisan`帮你引用。
 
-## 默认模块
+## 默认模块 {#default}
 
 wulaphp支持默认模块(默认的默认模块是`app`)，何谓默认模块？就是URL中未指定模块目录时还可以访问的模块。要设置默认模块，只需要在`bootstrap.php`文件中定义常量`DEFAULT_MODULE`:
 
@@ -134,11 +134,27 @@ define('DEFAULT_MODULE', 'abc');
 
 > 默认模块的功能应尽量简单！
 
-## 子模块
+## 模块别名 {#alias}
+
+在默认配置文件`conf/config.php`中可以为模块定义别名，当模块定义了别名以后，访问模块的URL中模块目录将变为相应的别名,如:
+
+```php
+[
+    ...,
+    'alias' => [
+        'mymodule' => 'hello'
+    ]
+    ...
+]
+```
+
+此时URL中模块目录`hello`对应的部分都将换为`mymodule`。为了适应这种变化，URL的生成请使用`App::url`或`App::action`(Smarty模板中使用`app`和`action`[修饰器](../theme.md#modifiers)),详见控制器[URL生成](../mvc/controller.md#url)。
+
+## 子模块 {#submodule}
 
 详见[子模块](submodule.md)
 
-## 公共模块
+## 公共模块 {#open}
 
 如果你有一颗开源的心，可以将你写的牛逼的模块作为`Composer`包发布分享给其他人,只需要简单地添加一个composer.json并提交到[Composer库](http://packagist.org/)即可，示例如下:
 

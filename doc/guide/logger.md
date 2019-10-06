@@ -67,7 +67,7 @@ class MyLogger extends \wulaphp\util\CommonLogger {
 
 > 说明:
 >
-> 1. 在log方法中可以`$channel`获取到当前分组。
+> 1. 在log方法中可以`$this->channel`获取到当前分组。
 > 2. $level为int型，可以使用常量`DEBUG_DEBUG`,`DEBUG_WARN`,`DEBUG_INFO`,`DEBUG_ERROR`,`DEBUG_OFF`进行判断级别。
 > 3. $content为`debug_backtrace`的数据。
 

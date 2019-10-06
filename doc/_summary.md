@@ -27,11 +27,22 @@
 - [日志](guide/logger.md)
 - [第三方库](guide/lib.md)
 - **数据库**
+- [数据库连接](guide/db/index.md)
+- [查询](guide/db/query.md)
+- [模型](guide/db/model.md)
+- [ORM](guide/db/orm.md)
+- [事务](guide/db/trans.md)
+- [数据校验](guide/advance/validator.md)
 - **命令行工具**
 - [artisan](guide/artisan/index.md)
 - [admin](guide/artisan/admin.md)
 - [create](guide/artisan/create.md)
 - [service](guide/artisan/service.md)
+- **接口开发**
+- [服务端开发](guide/rest/server.md)
+- [API开发](guide/rest/index.md)
+- [客户端接入](guide/rest/client.md)
+- [全局错误代码](guide/rest/code.md)
 - **工具类**
 - [App类](guide/utils/app.md)
 - [输入输出](guide/utils/io.md)
@@ -45,12 +56,12 @@
 - [模块加载器](guide/advance/loader.md)
 - [配置加载器](guide/advance/cfg-loader.md)
 - [扩展加载器](guide/advance/ext-loader.md)
-- [数据校验](guide/advance/validator.md)
 - [RBAC授权认证](guide/advance/rbac.md)
 - [i18n国际化](guide/advance/i18n.md)
 - **更多**
 - [Hooks](hooks.md)
 - [FQA](fqa.md)
+- [下载](download.md)
 - 开发环境
 - [Docker](guide/docker.md) {.sidebar-link .nsub}
 - [Vagrant](guide/vagrant.md) {.sidebar-link .nsub}
