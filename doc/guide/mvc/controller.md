@@ -47,7 +47,7 @@ class IndexController extends Controller {
 1. `IndexController` 为模块的默认控制器。
 2. `index` 方法为控制器的默认方法(Action)。
 
-默认控制器与默认方法将影响URL路由，具体请传送至[URL路由简述](../start.md#url)。
+默认控制器与默认方法将影响URL路由，具体请传送至[URL路由](../start.md#url)。
 
 ## 方法(Action) {#action}
 
