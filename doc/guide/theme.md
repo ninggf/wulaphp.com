@@ -117,7 +117,7 @@ $view = template('abc.tpl',$data)->mustache();
 模板文件的加载会受到用户选择的语言影响，具体见<a href="advance/i18n.html">I18N</a>国际化。
 </p>
 
-### 勾子与failback {#hook}
+### 勾子与失败回滚 {#hook}
 
 1. 可以通过`get_theme`勾子来设置当前使用的**主题**。
     * `themes`目录下可以有多个主题，默认加载`default`主题下的模板。
