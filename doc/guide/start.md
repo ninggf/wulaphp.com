@@ -151,7 +151,7 @@ public function add($i, $j) {
 
 ## 另一个控制器 {#otherC}
 
-`IndexControll`是默认控制器，总不能所有代码都在写在它里边。再创建一个控制器`MathController`:
+`IndexController`是默认控制器，总不能所有代码都在写在它里边。再创建一个控制器`MathController`:
 
 ```php
 <?php
