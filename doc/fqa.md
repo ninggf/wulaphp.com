@@ -14,9 +14,8 @@ desc: 常见问题来这里找答案
 3. Q：为什么`php vendor/bin/wulaphp init`运行失败?
    1. A：请将`php`所在目录加入环境变量`PATH`中即可。
    2. A：要初始化的目录不为空。
-4. Q：为什么`php -S 127.0.0.1:8090 -t wwwroot/ wwwroot/index.php`运行失败?
-   1. A：请将`php`所在目录加入环境变量`PATH`中即可。
-   2. A：`8090`端口被占用，换一个端口。
+4. Q：为什么`php artisan serve`运行失败?
+   1. A：`8080`端口被占用，换一个端口。
 5. Q：为什么验证时看不到**Hello wula !!**，而是报错或出现空白页?
    1. A：请确保环境符合最小要求，详见[环境要求](guide/install.md#requirements)。
    2. A：查看php的错误日志，以精确定位问题。

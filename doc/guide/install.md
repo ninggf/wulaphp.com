@@ -63,11 +63,11 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 ## 运行 {#run}
 
-打开命令行，进入wwwroot目录并执行下边的命令(<small>使用内建服务器运行</small>)：
+打开命令行，执行下边的命令(<small>使用内建服务器运行</small>)：
 
-`php -S 127.0.0.1:8090 index.php`
+`php artisan serve`
 
-通过浏览器访问<a href="http://127.0.0.1:8090" target="_blank">http://127.0.0.1:8090</a>，看到下边的输出:
+通过浏览器访问`http://127.0.0.1:8080`，看到下边的输出:
 
 <div class="demo-wrapper"> <div class="demo">
 <h1>Hello wula !!</h1>

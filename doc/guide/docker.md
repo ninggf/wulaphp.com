@@ -41,7 +41,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 * `XDEBUG_ENABLE` 等于1时开启`xdebug`调试,默认`0`，需要调试时设为`1`。
 * `APCU_ENABLE`: 等于1时启用apcu运行时缓存,默认0。
 
-### 外部连接 (#ext)
+### 外部连接 {#ext}
 
 因为`mysql`，`redis`，`memcached`，`gearmand`，`php`运行在各自的docker容器内，需要将其端口映射到主机上才能从外部正常访问它们。
 默认映射了以下端口:
@@ -80,7 +80,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工�
 
 ## 验证 {#hello}
 
-使用`docker-compose up -d`命令启动相应的容器后，访问<a href="http://127.0.0.1:8090" target="_blank">http://127.0.0.1:8090</a>，你将看到:
+使用`docker-compose up -d`命令启动相应的容器后，访问`http://127.0.0.1:8090`，你将看到:
 
 <p class="success" markdown=1>
 **Hello wula !!**

@@ -45,8 +45,8 @@ class SessDemoController extends Controller {
 
 ### 验证 {#check}
 
-1. 首先访问[http://127.0.0.1:8090/hello/sess-demo/set](http://127.0.0.1:8090/hello/sess-demo/set).
-2. 然后访问[http://127.0.0.1:8090/hello/sess-demo](http://127.0.0.1:8090/hello/sess-demo),你将看到:
+1. 首先访问`http://127.0.0.1:8080/hello/sess-demo/set`.
+2. 然后访问`http://127.0.0.1:8080/hello/sess-demo`,你将看到:
 
     ```json
     {"name":"wulaphp is great!"}

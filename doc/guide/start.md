@@ -110,24 +110,24 @@ class IndexController extends Controller {
 
 我们有了模块，有了控制器，写了`index` Action与视图，我们要怎么访问它呢？
 
-首先，进入`wwwroot`目录然后开启PHP的内建开发服务器(<small>如已开启请跳过</small>):
+首先，开启PHP的内建开发服务器(<small>如已开启请跳过</small>):
 
- `php -S 127.0.0.1:8090 index.php`
+ `php artisan serve`
 
-然后，通过浏览器访问[http://127.0.0.1:8090/hello](http://127.0.0.1:8090/hello)。你将看到:
+然后，通过浏览器访问`http://127.0.0.1:8080/hello`。你将看到:
 
 <div class="demo-wrapper"> <div class="demo">
 <h1>Hello World!</h1>
 </div></div>
 
 总感觉有点不对，是不是？参数name呢？**wulaphp**支持默认参数,`name`就是默认参数，它有默认值*World*,
-提供参数*Bill*, 将URL变为[http://127.0.0.1:8090/hello/Bill](http://127.0.0.1:8090/hello/Bill)即可，你将看到:
+提供参数*Bill*, 将URL变为`http://127.0.0.1:8080/hello/Bill`即可，你将看到:
 
 <div class="demo-wrapper"> <div class="demo">
 <h1>Hello  Bill!</h1>
 </div></div>
 
-你也可以通过[http://127.0.0.1:8090/hello?name=Bill](http://127.0.0.1:8090/hello?name=Bill)得到相同的结果。
+你也可以通过`http://127.0.0.1:8080/hello?name=Bill`得到相同的结果。
 
 > 重要说明:
 >
@@ -144,7 +144,7 @@ public function add($i, $j) {
 }
 ```
 
-访问[http://127.0.0.1:8090/hello/add/1/2](http://127.0.0.1:8090/hello/add/1/2),
+访问`http://127.0.0.1:8080/hello/add/1/2,
 你看到**the result is: 3**了吗？
 
 ## 另一个控制器 {#otherC}
@@ -174,7 +174,7 @@ class MathController extends Controller {
 }
 ```
 
-浏览器访问[http://127.0.0.1:8090/hello/math/add/1/2](http://127.0.0.1:8090/hello/math/add/1/2)结果如下:
+浏览器访问`http://127.0.0.1:8080/hello/math/add/1/2`结果如下:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -183,13 +183,13 @@ class MathController extends Controller {
 </math>
 ```
 
-访问[http://127.0.0.1:8090/hello/math/sub/3/1](http://127.0.0.1:8090/hello/math/sub/3/1)结果如下:
+访问`http://127.0.0.1:8080/hello/math/sub/3/1`结果如下:
 
 ```json
 {"result":2}
 ```
 
-访问[http://127.0.0.1:8090/hello/math/mul/3/1](http://127.0.0.1:8090/hello/math/mul/3/1)结果如下:
+访问`http://127.0.0.1:8080/hello/math/mul/3/1`结果如下:
 
 500页面提示您：
 

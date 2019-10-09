@@ -209,8 +209,7 @@ print_r($rst->getReturn());
 
 首先，启动PHP内置WEB SERVER:
 
-1. *Unix: `php -S 127.0.0.1:9090 -t wwwroot wwwroot/index.php`
-2. Windows: `php -S 127.0.0.1:9090 -t wwwroot wwwroot\index.php`
+`php artisan serve`
 
 然后，通过`artisan`命令运行脚本`api_test.php`：
 
