@@ -4,6 +4,7 @@
     </form>
 </li>
 <li><a href="{'guide/index.md'|docurl}" class="nav-link{if preg_match('#^guide/?.*#',$url)} current{/if}">文档</a></li>
+<li><a href="{'api/index.md'|docurl}" class="nav-link{if preg_match('#^api/?.*#',$url)} current{/if}">API</a></li>
 <li><a href="{'download.md'|docurl}" class="nav-link{if $url =='download.html'} current{/if}">下载</a></li>
 <li><a href="{'hooks.md'|docurl}" class="nav-link{if $url =='hooks.html'} current{/if}">扩展点</a></li>
 <li class="nav-dropdown-container ecosystem">

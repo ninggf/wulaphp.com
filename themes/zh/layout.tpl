@@ -3,7 +3,7 @@
 <head>
     {block title}
     <title>{$page.pageTitle|default:$page.title|default:'文档'} - wulaphp 中文文档</title>
-    {{/block}}
+    {/block}
     <meta charset="utf-8">
     <meta name="description" content="{$page.desc|default:$config.siteDesc|escape}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
