@@ -1,19 +1,20 @@
 (function () {
     initMobileMenu();
 
-    if (PAGE_TYPE == 'guide') {
+    if (PAGE_TYPE !== 'index') {
         initToc();
-        var top = $('#sidebar li.active').eq(-1).offset().top,
-            h = window.innerHeight - 100;
+        var cur = $('#sidebar li.active'), top = cur.length > 0 ? cur.eq(-1).offset().top : 0,
+            h                                  = window.innerHeight - 100;
         top > h && $('#sidebar').scrollTop(top - h);
     }
     initSearch();
+
     /**
      * Mobile burger menu button and gesture for toggling sidebar
      */
     function initMobileMenu() {
-        var mobileBar = document.getElementById('mobile-bar')
-        var sidebar = document.querySelector('.sidebar')
+        var mobileBar  = document.getElementById('mobile-bar')
+        var sidebar    = document.querySelector('.sidebar')
         var menuButton = mobileBar.querySelector('.menu-button')
 
         menuButton.addEventListener('click', function () {
@@ -28,7 +29,7 @@
 
         // Toggle sidebar on swipe
         var start = {},
-            end = {}
+            end   = {}
 
         document.body.addEventListener('touchstart', function (e) {
             start.x = e.changedTouches[0].clientX
@@ -50,12 +51,12 @@
     }
 
     function initToc() {
-        var toc = document.querySelector('#toc'),
-            main = document.querySelector('div.content'),
+        var toc     = document.querySelector('#toc'),
+            main    = document.querySelector('div.content'),
             showToc = function () {
                 var w = window.innerWidth;
                 if (w >= 1300) {
-                    toc.style.left = main.offsetLeft + main.offsetWidth + 15 + 'px';
+                    toc.style.left    = main.offsetLeft + main.offsetWidth + 15 + 'px';
                     toc.style.display = 'block'
                 } else {
                     toc.style.left = 'unset'
@@ -68,19 +69,19 @@
     }
 
     function initSearch() {
-        var query = $('input.search-query'),
-            nav = document.getElementById('nav'),
+        var query   = $('input.search-query'),
+            nav     = document.getElementById('nav'),
             wrapper = document.getElementById('search-wrapper'),
-            timer = 0,
-            qkey = '',
-            url = '//' + location.host + '/search-doc.do',
-            search = function () {
+            timer   = 0,
+            qkey    = '',
+            url     = '//' + location.host + '/search-doc.do',
+            search  = function () {
                 $.get(url, {
                     q: qkey
                 }, function (data) {
                     if (data && data.hits) {
                         wrapper.innerHTML = '';
-                        var list = $('<ul class="search-rst"></ul>');
+                        var list          = $('<ul class="search-rst"></ul>');
                         $(data.pages).each(function (i, p) {
                             $('<li><a href="' + p.url + '">' + (p.cate ? '[' + p.cate + '] ' : '') + p.title + '</a></li>').appendTo(list)
                         });
@@ -93,12 +94,12 @@
         if (query.length > 0) {
             query.on('focus', function (e) {
                 if (window.innerWidth > 899) {
-                    var left = nav.offsetLeft;
+                    var left           = nav.offsetLeft;
                     wrapper.style.left = left + 'px';
-                    wrapper.style.top = '50px'
+                    wrapper.style.top  = '50px'
                 } else {
                     wrapper.style.left = '20px';
-                    wrapper.style.top = '90px'
+                    wrapper.style.top  = '90px'
                 }
             });
             query.on('click', function (e) {
@@ -116,10 +117,10 @@
                 }
                 if (qkey) {
                     wrapper.style.display = 'block'
-                    timer = setTimeout(search, 500);
+                    timer                 = setTimeout(search, 500);
                 } else {
                     wrapper.style.display = 'none'
-                    wrapper.innerHTML = '';
+                    wrapper.innerHTML     = '';
                 }
             });
             document.addEventListener('click', function () {

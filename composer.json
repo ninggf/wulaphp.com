@@ -1,5 +1,6 @@
 {
     "require": {
+        "php": ">= 7.1",
         "ext-yaml": "*",
         "ext-pdo_sqlite": "*",
         "wula/wulaphp": "^3.0",
