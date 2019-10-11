@@ -26,14 +26,14 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 #### Windows {#windows}
 
-1. 点击[此处下载](http://down.wulaphp.com/wulaphp-latest.zip)最新版本包。
+1. 点击[此处下载](https://www.wulaphp.com/wulaphp-latest.zip)最新版本包。
 2. 解压到相应的目录即完成安装。
 
 #### 类Unix {#unix}
 
 执行以下命令进行下载安装:
 
-`wget http://down.wulaphp.com/wulaphp-latest.tar.gz`
+`wget https://www.wulaphp.com/wulaphp-latest.tar.gz`
 
 `tar -zxf wulaphp-latest.tar.gz && cd wulaphp`
 

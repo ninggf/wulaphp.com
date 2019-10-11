@@ -7,12 +7,12 @@ showToc: 0
 
 需要php 7.1及以上版本:
 
-1. [zip](http://down.wulaphp.com/wulaphp-latest.zip)
-2. [gz](http://down.wulaphp.com/wulaphp-latest.tar.gz)
+1. [zip](https://www.wulaphp.com/wulaphp-latest.zip)
+2. [gz](https://www.wulaphp.com/wulaphp-latest.tar.gz)
 
 ## V2
 
 需要php 5.6.9及以上版本:
 
-1. [zip](http://down.wulaphp.com/wulaphp-v2.zip)
-2. [gz](http://down.wulaphp.com/wulaphp-v2.tar.gz)
+1. [zip](https://www.wulaphp.com/wulaphp-v2.zip)
+2. [gz](https://www.wulaphp.com/wulaphp-v2.tar.gz)
