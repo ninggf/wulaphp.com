@@ -34,6 +34,7 @@ namespace gendoc {
         foreach ($clzs as $clz) {
             _gendoc($clz, $apis);
         }
+        ksort($apis);
         $data = json_encode($apis, JSON_UNESCAPED_SLASHES);
         file_put_contents(BOOKY_ROOT . 'api.json', $data);
         createIdx($classes);
@@ -172,12 +173,9 @@ namespace gendoc {
                 if ($doc) {
                     $ann = new Annotation($p);
                     $doc = $ann->getDoc();
-                    $var = $ann->getString('var');
-                    if (preg_match('#\\\\?wulaphp\\\\.+$#', $var)) {
-                        $f    = str_replace(['wulaphp', '\\'], ['api', '/'], trim($var, ' []'));
-                        $mp[] = "[{$var}]($f.html)";
-                    } else if ($type) {
-                        $mp[] = "`$type`";
+                    $var = $ann->getString('var', $type);
+                    if ($var) {
+                        $mp[] = getUrl($var);
                     }
                     $mp[] = $doc;
                 } else if ($type) {
@@ -290,6 +288,7 @@ namespace gendoc {
     }
 
     function createIdx($classes) {
+        ksort($classes);
         foreach ($classes as $cls) {
             if (isset($cls['children'])) {
                 $file = BOOKY_ROOT . ltrim($cls['url'], '/') . '/index.md';

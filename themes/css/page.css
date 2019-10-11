@@ -2146,7 +2146,7 @@ ul.toc-3 {
         top: 6px;
         left: -20px;
         background: #fff;
-        border: 1px dashed #999;
+        border: 1px solid #999;
         border-radius: 50%;
     }
 }
