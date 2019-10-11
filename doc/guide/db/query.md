@@ -1,12 +1,11 @@
 ---
 title: 查询
-showToc: 0
+showToc: 1
 index: query select
 type: guide
 order: 15
 ---
 
-{$toc}
 
 在[数据库连接](index.md)中使用数据库连接直接进行数据库操作，实在是太暴力。本文档提供一个不那么暴力的简单访问方式。
 

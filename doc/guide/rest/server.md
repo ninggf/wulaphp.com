@@ -1,10 +1,8 @@
 ---
 title: 服务端开发
-showToc: 0
+showToc: 1
 index: 1
 ---
-
-{$toc}
 
 ## 概述 {#intro}
 

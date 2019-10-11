@@ -30,11 +30,11 @@ namespace gendoc {
         $clzs    = array_map(function ($v) use ($search) {
             return str_replace($search, ['', '', '\\'], $v);
         }, $files);
-        $apis    = &$classes['index']['children'];
+        $apis    = &$classes['api']['children'];
         foreach ($clzs as $clz) {
             _gendoc($clz, $apis);
         }
-        $data = json_encode($apis);
+        $data = json_encode($apis, JSON_UNESCAPED_SLASHES);
         file_put_contents(BOOKY_ROOT . 'api.json', $data);
         createIdx($classes);
     }
@@ -293,7 +293,7 @@ namespace gendoc {
         foreach ($classes as $cls) {
             if (isset($cls['children'])) {
                 $file = BOOKY_ROOT . ltrim($cls['url'], '/') . '/index.md';
-                echo $file, "created! \n";
+                echo $file, " created! \n";
                 file_put_contents($file, "---\ntitle: {$cls['title']}\nlayout: api\napiHome: 1\n---\n\n");
                 createIdx($cls['children']);
             }

@@ -1,10 +1,8 @@
 ---
 title: 模块
-showToc: 0
+showToc: 1
 desc: 模块化，让代码重用成为可能。
 ---
-
-{$toc}
 
 ## 概述 {#overview}
 

@@ -8,8 +8,6 @@ desc: wualphp的App类
 
 {$toc}
 
-使用wulaphp真的要瞅一瞅它的[源代码](https://github.com/ninggf/wulaphp/blob/master/wulaphp/app/App.php)。
-
 除去之前文档中提到的`cfg`系列、`table`、`db`等方法，本文档注重讲解以下几个方法。
 
 ## res
@@ -132,3 +130,5 @@ $url = App::assets('a/b/c.png');
 返回:
 
 无，直接输出页面内容(可以通过缓冲获取到内容)。
+
+更多关于App类的用法，请参考[App](/api/app/App.html)的API文档。

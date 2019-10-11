@@ -1,11 +1,9 @@
 ---
 title: 视图
-showToc: 0
+showToc: 1
 index : 1
 desc: 我有我风格，怎么优秀怎么表现
 ---
-
-{$toc}
 
 ## 概述
 
