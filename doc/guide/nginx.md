@@ -15,7 +15,7 @@ desc: 本文目的是教会大家如何通过配置让wulaphp与Nginx一起工�
 打开命令行并进入应用根目录，执行以下命令:
 
 * Windows: `vendor\bin\wulaphp conf nginx localhost`
-* 类Unix:  `vendor/bin/wulaphp conf nginx localhost`
+* Mac/Linux:  `vendor/bin/wulaphp conf nginx localhost`
 
 你将获取到适合当前应用的基本配置,大致如下:
 
@@ -73,7 +73,7 @@ server {
 
 ## 验证
 
-配置好后，重启`nginx`或重新加载配置，然后访问<a href="http://localhost" target="_blank">http://localhost/</a>，你将看到:
+配置好后，重启`nginx`或重新加载配置，然后访问`http://localhost`，你将看到:
 
 <p class="success" markdown=1>
 **Hello wula !!**

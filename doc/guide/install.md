@@ -29,7 +29,7 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 1. 点击[此处下载](https://www.wulaphp.com/wulaphp-latest.zip)最新版本包。
 2. 解压到相应的目录即完成安装。
 
-#### 类Unix {#unix}
+#### Mac/Linux {#unix}
 
 执行以下命令进行下载安装:
 
@@ -53,11 +53,11 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 **Windows:** `vendor\bin\wulaphp int`
 
-**类Unix:**  `vendor/bin/wulaphp init`
+**Mac/Linux:**  `vendor/bin/wulaphp init`
 
 ## 目录权限 {#chmod}
 
-如果你运行在`类Unix`系统上，执行以下操作将目录变为可读写：
+如果你运行在`Mac or Linux`系统上，执行以下操作将目录变为可读写：
 
 `chmod 777 storage storage/tmp storage/logs`
 
