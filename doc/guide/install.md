@@ -48,9 +48,9 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 </p>
 
 1. 配置阿里云镜像
-    `composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/`
+   * `composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/`
 2. 安装
-    `composer require wula/wulaphp -vvv`
+   * `composer require wula/wulaphp -vvv`
 3. 初始化
    * **Windows:** `vendor\bin\wulaphp int`
    * **Mac/Linux:**  `vendor/bin/wulaphp init`
