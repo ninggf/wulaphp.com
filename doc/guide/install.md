@@ -47,6 +47,12 @@ desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 
 国内的小朋友请耐心的等待或多执行几次上边的代码。如果还是安装不成功，请通过[下载](#download)的方式进行安装。
 
+<p class="tip" markdown=1>
+国内小朋友的副利，感谢阿里云提供的[镜像](https://developer.aliyun.com/composer)！
+
+`composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/`
+</p>
+
 #### 初始化 {#init}
 
 安装完成后，执行以下代码进行项目初始化工作:
