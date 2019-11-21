@@ -1,7 +1,9 @@
 ---
 title: 模块
 showToc: 1
-desc: 模块化，让代码重用成为可能。
+index: 模块 module bootstrap
+keywords: wulaphp模块 module 模块功能 引导文件 bootstrap
+desc: 模块化，让代码重用成为可能，通过引导文件(bootstrap)让模块变的可用
 ---
 
 ## 概述 {#overview}

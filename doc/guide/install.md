@@ -4,6 +4,7 @@ pageTitle: 安装和环境配置
 index: 1
 cate: 基础
 showToc: 0
+keywords: wulaphp安装 环境要求 wulaphp下载 
 desc: 本文目的是教会大家正确并顺利地安装wulaphp。
 ---
 

@@ -2,6 +2,7 @@
 title: 管理命令
 showToc: 0
 index: admin artisan
+keywords: admin artisan 管理命令 管理员命令 命令行
 desc: 简单的管理命令
 ---
 

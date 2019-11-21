@@ -2,6 +2,7 @@
 title: 约定规范
 showToc: 0
 index: 1
+keywords: wulaphp 约定 编码规范 路由约定 命名规范
 desc: wulaphp的约定与规范
 ---
 

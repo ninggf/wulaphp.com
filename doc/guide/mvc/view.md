@@ -1,8 +1,9 @@
 ---
 title: 视图
 showToc: 1
-index : 1
-desc: 我有我风格，怎么优秀怎么表现
+index : view 视图
+keywords: view 视图 mvc视图作用 smarty模板 主题视图 Theme Json视图
+desc: 我有我风格，怎么优秀怎么表现,善用视图一切都是那么简单
 ---
 
 ## 概述

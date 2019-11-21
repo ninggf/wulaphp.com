@@ -1,7 +1,8 @@
 ---
 title: 控制器特性
 showToc: 0
-index: 1
+index: 特性 support
+keywords: 特性 support 控制器特性 中间件技术 自定义特性
 desc: 让你的控制器无所不能
 ---
 
@@ -9,7 +10,7 @@ desc: 让你的控制器无所不能
 
 ## 概述
 
-控制器[Controller](controller.md)功能太简单了，啥功能都得自己从头写。现代WEB应用哪能离开会话，登录授权这些功能。得益于PHP的[Trait](http://php.net/manual/zh/language.oop5.traits.php)，wulaphp利用Trait实现了为控制器动态添加功能特性。当然[自己实现一个特性](#custom)也是很简单的。
+控制器[Controller](controller.md)功能太简单了，啥功能都得自己从头写。现代WEB应用哪能离开会话，登录授权这些功能。得益于PHP的[Trait](http://php.net/manual/zh/language.oop5.traits.php)，wulaphp利用Trait实现了为控制器动态添加功能特性（类似其它框架的中间件技术）。当然[自己实现一个特性](#custom)也是很简单的。
 
 ## SessionSupport
 

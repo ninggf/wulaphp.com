@@ -1,6 +1,7 @@
 ---
 title: 缓存配置
-index: cache
+index: cache 缓存
+keywords: cache 缓存 memcached redis
 showToc: 0
 desc: 配置缓存，利用缓存加速你的应用
 ---

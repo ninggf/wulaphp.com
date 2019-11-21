@@ -1,7 +1,9 @@
 ---
 title: 模块加载器
 showToc: 0
-index: 1
+index: 模块 加载 module loadder
+keywords: 模块 加载 module loadder
+desc: 自定义你的模块加载器，只加载你喜欢的模块
 ---
 
 {$toc}

@@ -3,6 +3,8 @@ title: 输入输出
 showToc: 0
 type: guide
 index: redirect 重定向 cooke cache uuid
+keywords: redirect 重定向 cooke cache uuid 输入输出 post get IO
+desc: 没有输入输出的算法都不能叫算法，何况WEB应用呼
 order: 602
 ---
 

@@ -2,6 +2,7 @@
 title: 文件上传
 showToc: 0
 index: upload
+keywords: upload 文件上传 php文件上传
 desc: 快捷地上传文件
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 配置详解
 index: config conf
+keywords: config conf 配置管理 wulaphp配置 配置功能
 showToc: 0
 desc: 让wulaphp按你的配置运行，一切如你所愿
 ---

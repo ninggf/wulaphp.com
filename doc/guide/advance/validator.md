@@ -1,7 +1,8 @@
 ---
 title: 数据校验
 showToc: 0
-index: 1
+index: 数据 校验
+keywords: 数据 校验 Validator 参数校验 内置校验规则
 type: guide
 desc: 通过数据校验器，保证数据安全
 ---

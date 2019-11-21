@@ -1,7 +1,8 @@
 ---
 title: 读取配置
 showToc: 0
-index: 1
+index: config cfg get
+keywords: config cfg get 读取配置 wulaphp
 desc: wulaphp配置读取
 ---
 

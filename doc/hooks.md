@@ -3,6 +3,7 @@ title: Hooks
 showToc: 0
 index: hooks plugin extension handler alter
 keywords: hooks plugin extension handler alter
+desc: 本文列出内核定义的勾子(事件)
 ---
 
 wulaphp内置勾子(事件)一览表:

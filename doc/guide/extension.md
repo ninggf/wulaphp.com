@@ -1,7 +1,8 @@
 ---
 title: 扩展
 showToc: 0
-index: 1
+index: ext 扩展
+keywords: extension 扩展技术 类库 内聚
 desc: 扩展 - 将通用功能进行高度内聚形成类库供wulaphp模块调用
 ---
 

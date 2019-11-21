@@ -1,7 +1,8 @@
 ---
 title: Redis 配置
 showToc: 0
-index: 1
+index: redis 配置
+keywords: redis 配置 wulaphp的redis配置 连上redis 连接redis
 desc: 教你如果配置Redis
 ---
 

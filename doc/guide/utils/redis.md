@@ -1,6 +1,9 @@
 ---
 title: Redis
 type: guide
+index: redis cache
+keywords: redis cache 缓存 key-value NoSQL
+desc: 通过wulaphp提供的俩类供你快速地使用Redis
 showToc: 0
 ---
 

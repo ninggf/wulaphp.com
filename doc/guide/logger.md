@@ -1,6 +1,7 @@
 ---
 title: 日志
-index: 1
+index: logger log
+keywords: logger log 日志 wulaphp的日志 日志级别
 cate: 基础
 showToc: 0
 desc: 了解程序的运行情况，在问题出现时进行快速定位排查

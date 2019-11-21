@@ -1,7 +1,8 @@
 ---
 title: 控制器
 showToc: 0
-index: 1
+index: controller 控制器
+keywords: controller 控制器 mvc 模式 phpmvc 设计模式 简单mvc
 desc: 控制器，一切尽在你的掌握之中
 ---
 

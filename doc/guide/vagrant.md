@@ -2,6 +2,7 @@
 title: Vagrant
 cate: 基础
 index: 1
+keywords: wulaphp vagrant homestead
 desc: 本文目的是教会大家使用wulaphp官方提供的Vagrant开发环境。
 ---
 
@@ -76,7 +77,7 @@ Vagrant.configure("2") do |config|
   # 为了使用nfs共享文件
   config.vm.network "private_network", type: "dhcp"
 
-  # 此处使用nfs共享文件，切记，切记！！
+  # 此处使用nfs共享文件
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
   config.vm.provider "virtualbox" do |vb|
@@ -86,6 +87,16 @@ Vagrant.configure("2") do |config|
   end
 end
 ```
+
+<p class="tip" markdown=1>
+如果通过`nfs`共享出现问题，比如：文件无法同步、文件无法正常访问，请使用默认的文件共享方式，像下边这样修改配置文件:
+
+```ruby
+  config.vm.synced_folder ".", "/vagrant"
+```
+
+共享目录可以根据需要自行修改。
+</p>
 
 ### 启动虚拟机 {#start}
 

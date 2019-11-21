@@ -1,6 +1,7 @@
 ---
 title: 数据模型
-index: 1
+index: 模型 model
+keywords: 模型 model 数据库模块 datamodel DAO
 desc: 利用数据模型进行高效的数据库操作
 ---
 

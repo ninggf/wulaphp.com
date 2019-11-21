@@ -2,6 +2,7 @@
 title: 从 Hello World 模块开始
 showToc: 0
 index: 1
+keywords: wulaphp module 模块 创建模块 URL路由
 desc: 用wulaphp写的第一个模块，尝尝鲜
 ---
 

@@ -2,6 +2,7 @@
 title: create 脚手架
 showToc: 0
 index: admin artisan
+keywords: admin artisan 命令行工具 脚手架
 desc: 脚本架，通过此命令可以快速创建模块，控制器等
 ---
 

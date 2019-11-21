@@ -1,7 +1,9 @@
 ---
 title: 全局错误代码
 showToc: 0
-index: 1
+index: code error restful
+keywords: wulaphp RESTFul Error Code 全局错误代码
+desc: 本文列出基于wulaphp RESTFul API实例的服务器的全局错误代码
 ---
 
 {$toc}

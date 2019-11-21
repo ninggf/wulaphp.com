@@ -1,7 +1,9 @@
 ---
 title: 客户端接入
 showToc: 0
-index: 1
+index: rest client
+keywords: rest client RESTFul 客户端 业务参数 公共参数 签名算法 md5算法 php签名 java签名
+desc: 开速接入RESTFul服务器，可自定义签名算法，支持业务、公共参数
 ---
 
 {$toc}

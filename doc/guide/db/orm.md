@@ -1,7 +1,9 @@
 ---
 title: ORM
 showToc: 0
-index: 1
+index: orm database model 一对一 一对多 多对多
+keywords: orm database model 对象关系映射 phporm mysql postgresql 一对一 一对多 多对多
+desc: ORM(Object Relational Mapping)对象关系映射
 ---
 
 {$toc}

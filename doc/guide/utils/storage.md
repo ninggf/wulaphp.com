@@ -2,6 +2,7 @@
 title: 文件存储
 showToc: 0
 index: storage ssdb oss 千牛
+keywords: storage ssdb oss 千牛 文件存储
 desc: 将文件以合适的方式保存
 ---
 

@@ -2,7 +2,9 @@
 title: 命令行
 showToc: 0
 type: guide
-index: 1
+index: command 命令行 工具 命令
+keywords: command 命令行 工具 命令 artisan
+desc: 通过artisan命令快速完成自定义命令开发
 ---
 
 {$toc}

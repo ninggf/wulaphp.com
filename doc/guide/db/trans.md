@@ -1,12 +1,14 @@
 ---
 title: 事务
 showToc: 0
-index: 1
+index: 事务 数据库 trans
+keywords: 事务 数据库 transaction mysql事务 开启事务 提交事务 回滚事务
+desc: 在wulaphp中使用数据库事务是一件轻松愉悦的事,无论开启、提交还是回滚都是那么简单
 ---
 
 {$toc}
 
-如果你需要事务支持，请认真阅读本文档. 总体来说在wulaphp中使用事务是一件轻松愉悦的事务!
+如果你需要事务支持，请认真阅读本文档. 总体来说在wulaphp中使用事务是一件轻松愉悦的事!
 
 ## 简单事务 {#trans}
 

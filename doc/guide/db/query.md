@@ -2,8 +2,10 @@
 title: 查询
 showToc: 1
 index: query select
+keywords: query select 数据库查询 mysql 选择语句 mysql查询 数据库操作
 type: guide
 order: 15
+desc: 优雅的数据库（mysql）查询(query,select)操作方式
 ---
 
 

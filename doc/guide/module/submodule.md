@@ -1,7 +1,8 @@
 ---
 title: 子模块
 showToc: 0
-index: 1
+index: 子模块 sub submodule
+keywords: 子模块 sub submodule 业务 业务封装 业务分解
 desc: 子模块，将大业务分解小业务，每个小业务封装在一个子模块中
 ---
 

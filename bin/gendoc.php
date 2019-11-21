@@ -76,17 +76,19 @@ namespace gendoc {
         $node[]     = ['title' => $cln, 'url' => $ns . '/' . $cln . '.html'];
         $file       = BOOKY_ROOT . str_replace(['wulaphp', '\\'], ['api', '/'], $clz) . '.md';
         $dir        = BOOKY_ROOT . $ns;
+        $doc        = $ann->getDoc();
         $markdown[] = 'title: ' . $cln;
         $markdown[] = 'layout: api';
-        $markdown[] = 'index: 1';
+        $markdown[] = 'index: '.$cln;
+        $markdown[] = 'keywords: '.$cln;
         $markdown[] = 'class: ' . $clz;
+        $markdown[] = 'desc: ' . str_replace("\n",'',$doc);
         $markdown[] = "---\n\n";
 
         if (!is_dir($dir) && !mkdir($dir, 0755, true)) {
             die('cannot create dir: ' . $dir);
         }
 
-        $doc = $ann->getDoc();
         $t   = $obj->isInterface() ? '接口' : ($obj->isTrait() ? 'Trait' : '类');
 
         $markdown[] = '## ' . $cln . " $t {#$cln}\n";

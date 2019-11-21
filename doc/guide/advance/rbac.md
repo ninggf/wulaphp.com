@@ -1,7 +1,9 @@
 ---
 title: RBAC 授权认证
 showToc: 0
-index: rbac
+index: rbac 授权 登录 验权 auth wulaphp
+keywords: rbac 授权 登录 验权 auth wulaphp authority
+desc: wulaphp提供了可扩展的授权认证机制，按套路可以很轻松地实现用户授权认证 
 ---
 
 {$toc}

@@ -1,7 +1,9 @@
 ---
 title: 服务端开发
 showToc: 1
-index: 1
+index: restful server
+keywords: RESTFul Server 服务器 接口开发 快速接口开发 API名称 API文档 文档生成
+desc: 利用框架提供的RESTFulServer可以很方便地开发符合RESTFul风格的接口服务器
 ---
 
 ## 概述 {#intro}

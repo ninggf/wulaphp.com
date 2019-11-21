@@ -1,6 +1,7 @@
 ---
 title: 介绍
 index: 0
+keywords: wulaphp mvc
 showToc: 0
 desc: 本文主要告诉你wulaphp是什么
 ---

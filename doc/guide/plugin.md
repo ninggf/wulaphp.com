@@ -2,6 +2,7 @@
 title: 插件
 showToc: 0
 index: 1
+keywords: wulaphp 插件 plugin
 desc: 插件机制:开闭原则的最佳应用
 ---
 

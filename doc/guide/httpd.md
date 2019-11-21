@@ -1,7 +1,8 @@
 ---
 title: Httpd 配置
 cate: 基础
-index: 1
+index: httpd
+keywords: httpd apache rewrite 重写规则
 showToc: 0
 desc: 本文目的是教会大家如何通过配置让wulaphp与Httpd一起工作。
 ---

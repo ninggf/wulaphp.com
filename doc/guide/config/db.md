@@ -1,6 +1,7 @@
 ---
 title: 数据库配置
 index: db database
+keywords: db database 数据库 数据库配置 configure config
 desc: 教你如何配置数据库以便连上数据库
 ---
 

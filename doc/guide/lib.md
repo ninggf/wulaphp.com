@@ -1,6 +1,7 @@
 ---
 title: 第三方库
 showToc: 0
+keywords: 第一方类库
 desc: 使用第三方类库
 ---
 

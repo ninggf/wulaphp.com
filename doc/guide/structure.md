@@ -3,6 +3,7 @@ title: 目录结构
 index: 1
 showToc: 1
 cate: 基础
+keywords: wulaphp 目录结构
 desc: wulaphp的默认目录结构
 ---
 

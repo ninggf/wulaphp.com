@@ -1,6 +1,7 @@
 ---
 title: 基础配置
-index: base
+index: base 配置
+keywords: base 配置 基础配置 默认配置
 showToc: 0
 desc: wulaphp基础配置，让wulaphp按你的想法运行
 ---

@@ -2,7 +2,8 @@
 title: Nginx 配置
 cate: 基础
 showToc: 0
-index: 1
+index: nginx
+keywords: nginx wulaphp
 desc: 本文目的是教会大家如何通过配置让wulaphp与Nginx一起工作
 ---
 

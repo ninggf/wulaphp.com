@@ -2,6 +2,8 @@
 title: 缓存
 catalog: 工具
 showToc: 0
+index: cache 缓存
+keywords: cache 缓存 数据缓存 缓存服务器 缓存类 memcached redis ssdb leveldb 自定义缓存类
 desc: 现代应用程序必不可少的缓存
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 数据库
 showToc: 0
-index: 1
+index: mysql database db 
+keywords: mysql database db sqlite postgresql 数据库 连接数据库 连接MYSQL 连上MYSQL 数据库驱动
 desc: 基于数据库模型和数据库直接方式快速度访问你的数据库
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: API 开发
 showToc: 0
-index: 1
+index: api
+keywords: API RESTFul 接口开发 快速接口开发 API名称 API文档 文档生成
+desc: 1分钟实现自己的RESTFul风格的接口开发，尽享文档生成便利
 ---
 
 {$toc}

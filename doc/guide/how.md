@@ -2,6 +2,7 @@
 title: 如何工作
 showToc: 0
 index: 1
+keywords: 生命周期 入口 引导 框架 bootstrap http
 desc: 详细说明wulaphp处理请求的流程，知其然，知其所以然。
 ---
 

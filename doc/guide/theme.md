@@ -2,6 +2,7 @@
 title: 主题
 showToc: 0
 index: 1
+keywords: wulaphp 主题 theme 模板 template
 desc: 让CMS的开发不再那么难
 ---
 

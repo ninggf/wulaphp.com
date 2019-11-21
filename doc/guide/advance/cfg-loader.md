@@ -1,7 +1,8 @@
 ---
 title: 配置加载器
 showToc: 0
-index: 1
+index: configure loadder wulaphp 配置 加载器
+keywords: configure loadder wulaphp 配置 加载器
 desc: 随心所欲地加载自己的配置
 ---
 

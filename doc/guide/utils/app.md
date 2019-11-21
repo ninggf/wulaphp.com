@@ -1,6 +1,8 @@
 ---
 title: App 类
 showToc: 0
+index: app
+keywords: wulaphp App类 内核类 应用类
 type: guide
 order: 606
 desc: wualphp的App类

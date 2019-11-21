@@ -2,6 +2,7 @@
 title: service 服务管理
 showToc: 0
 index: service artisan
+keywords: service artisan 服务管理 服务管理命令 后台服务
 desc: 可管理的后台服务
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: Smarty 标签
 showToc: 0
-index: 1
+index: Smarty 标签 模板 区块 modifier 修饰器
+keywords: Smarty 标签 模板 区块 modifier 修饰器
+desc: wulaphp利用Smarty的扩展特性为其增加了一些函数，有了这些函数，让wulaphp更强大更灵活了
 ---
 
 {$toc}

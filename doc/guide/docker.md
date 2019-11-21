@@ -1,7 +1,8 @@
 ---
 title: Docker 配置
 cate: 基础
-index: 1
+index: docker
+keywords: docker wulaphp docker配置 环境变量 容器
 showToc: 0
 desc: 本文目的是教会大家如何通过配置让wulaphp与Docker一起工作。
 ---

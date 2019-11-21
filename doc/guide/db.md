@@ -1,7 +1,8 @@
 ---
 title: 连接数据库
 showToc: 0
-index: 1
+index: db database mysql
+keywords: db database mysql 操作mysql 连接数据库 连接mysql
 desc: 使用wulaphp连接数据库并操作数据库
 ---
 

@@ -2,6 +2,7 @@
 title: 开启会话
 showToc: 0
 index: 1
+keywords: wulaphp session 会话
 desc: 使用wulaphp提供的SessionSupport使用会话(Session)功能
 ---
 

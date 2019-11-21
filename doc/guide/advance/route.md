@@ -1,7 +1,8 @@
 ---
 title: 高级路由
 showToc: 0
-index: route, 别名, alias
+index: 路由, route, 别名, alias
+keywords: route, 别名, alias, 路由, router, 自定义路由, 请求分发
 desc: 随心所欲地分发HTTP请求
 ---
 

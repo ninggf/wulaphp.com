@@ -2,6 +2,8 @@
 title: 公共函数库
 showToc: 0
 index: aryget pure_comman_string in_atag
+keywords: wulaphp 公共函数库 全局函数
+desc: wulaphp的公共函数库，全局函数
 ---
 
 最喜欢PHP了，不仅支持面向对象编程，还支持面向过程编程，wulaphp提供的[wula/common](https://github.com/ninggf/wula-common/blob/master/common.php)包(可独立使用)里有些好用的函数(你可以直接读代码)，供君享用:
