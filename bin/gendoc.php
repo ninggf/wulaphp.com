@@ -80,7 +80,7 @@ namespace gendoc {
         $markdown[] = 'title: ' . $cln;
         $markdown[] = 'layout: api';
         $markdown[] = 'index: '.$cln;
-        $markdown[] = 'keywords: '.$cln;
+        $markdown[] = 'keywords: wulaphp '.$cln;
         $markdown[] = 'class: ' . $clz;
         $markdown[] = 'desc: ' . str_replace("\n",'',$doc);
         $markdown[] = "---\n\n";
