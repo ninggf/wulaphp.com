@@ -1,7 +1,8 @@
 ---
 title: FQA
-index: 1
+index: wulaphp FQA artisan
 desc: 常见问题来这里找答案
+keywords: wulaphp FQA artisan
 ---
 
 ## 安装问题 {#install}

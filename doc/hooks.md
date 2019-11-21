@@ -1,7 +1,8 @@
 ---
 title: Hooks
 showToc: 0
-index: 1
+index: hooks plugin extension handler alter
+keywords: hooks plugin extension handler alter
 ---
 
 wulaphp内置勾子(事件)一览表:
@@ -40,7 +41,7 @@ wulaphp内置勾子(事件)一览表:
 |passport\new{$type}Passport|A|Passport实例|获取Passport实例时，$type为Passport类型|
 |passport\on{$type}PassportLogout|H|Passport实例|Passport退出时|
 |passport\on{$type}PassportLogin|H|Passport实例|Passport登录时|
-|rbac\getExtraChecker\\{$resId}|A|无|获取指定资源的额外验证器时|
+|rbac\checker\\{$resId}|A|无|获取指定资源的额外验证器时|
 |passport\restore{$type}Passport|H|Passport实例|从会话中恢复时|
 |{$className}::onParseFields|A|FormTable实例|解析表单字段时|
 |mvc\admin\needLogin|A|视图|需要登录时|

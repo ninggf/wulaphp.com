@@ -5,7 +5,11 @@
     <title>{$page.pageTitle|default:$page.title|default:'文档'} - wulaphp 中文文档</title>
     {/block}
     <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="description" content="{$page.desc|default:$config.siteDesc|escape}">
+    <meta name="keywords" content="{$page.keywords|default:$page.pageTitle|default:$page.title|default:'wulaphp php mvc'}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{$page.title}">

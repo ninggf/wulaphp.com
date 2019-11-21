@@ -309,7 +309,7 @@ RbacSupport还支持以下几个注解:
             return true;
         }
     }
-    bind('rbac\getExtraChecker\user\account',function($checker){
+    bind('rbac\checker\user\account',function($checker){
         $checker = new UserAccountChecker();
         return $checker;
     });
