@@ -56,7 +56,7 @@ wulaphp提供了一个[Request](https://github.com/ninggf/wulaphp/blob/master/wu
 $uuid = $_COOKIE['uuid'];
 ```
 
-wulaphp还提供了一些很好用的函数，可以传送至[公共函数库](common.html)).
+wulaphp还提供了一些很好用的函数，可以传送至[公共函数库](common.md)).
 
 ## 输出 {#res}
 
